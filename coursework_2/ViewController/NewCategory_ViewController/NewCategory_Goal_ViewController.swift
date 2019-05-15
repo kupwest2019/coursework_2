@@ -9,14 +9,18 @@
 import UIKit
 import CoreData
 
-class NewCategory_Goal_ViewController: UIViewController {
+class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
     var new_category: Category_obj = Category_obj()
     var new_activity : Activity_obj?
+    let number = ["5","6","7","8","9","10","15"]
 
+    @IBOutlet weak var picker_goal: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        picker_goal.delegate = self
+        picker_goal.dataSource = self
         print(new_category)
         // Do any additional setup after loading the view.
     }
@@ -34,10 +38,15 @@ class NewCategory_Goal_ViewController: UIViewController {
             let entity = NSEntityDescription.entity(forEntityName: "Category", in: context)
             let newElement = NSManagedObject(entity: entity!, insertInto: context)
             
+            
+            let choosenGoal : NSNumber = Int32(number[picker_goal.selectedRow(inComponent: 0)])! as NSNumber
+            
+            
+            
             newElement.setValue(new_category.color, forKey: "colour")
-            newElement.setValue("not defined", forKey: "goal")
+            newElement.setValue(choosenGoal, forKey: "goal")
             newElement.setValue(new_category.name, forKey: "name")
-            newElement.setValue(false, forKey: "has_goal")
+
 
             // saving a entity
             do {
@@ -52,6 +61,28 @@ class NewCategory_Goal_ViewController: UIViewController {
         }
         
     }
+    
+    
+   
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return number.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return number[row]
+    }
+    
+    
+  
+    
+    
+    
     
     
     

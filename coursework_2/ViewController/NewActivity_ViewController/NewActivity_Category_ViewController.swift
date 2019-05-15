@@ -37,6 +37,7 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
 
     @IBOutlet weak var picker_category: UIPickerView!
     
+    @IBOutlet weak var nextButton: UIBarButtonItem!
     
     var categories : [String] = []
     var item : [Category] = []
@@ -57,10 +58,15 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
     }
     
     // to refresh in case of add new category
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         //populateCategories()
-        populateCategories2()
         
+        
+        
+        populateCategories2()
+        if (item.count == 0){
+            self.nextButton.isEnabled = false
+        }
         picker_category.delegate = self
         picker_category.dataSource = self
         
@@ -131,18 +137,7 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
     
     
     // check if at least 1 category can be selected ...
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        var goAhead : Bool = false
-        
-        if (item.count == 0){
-            print("NO CATEGORY AVAILABLE")
-        }
-        else{
-            goAhead = true
-        }
-        
-        return goAhead
-    }
+   
     
     
     // segue policy
