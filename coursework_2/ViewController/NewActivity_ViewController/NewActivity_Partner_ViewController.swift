@@ -28,8 +28,7 @@ class NewActivity_Partner_ViewController: UIViewController {
              if (result){
                 print("ITEM UPDATED!!!!")
 
-                deleting_previous_activity()
-                writing_on_CoreData()
+                writing_on_CoreDataUpdate()
                 
             }
              else{
@@ -81,6 +80,109 @@ class NewActivity_Partner_ViewController: UIViewController {
         }
         
     }
+    
+    
+    // manage Update CoreData
+    func writing_on_CoreDataUpdate(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        // create a new entity
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
+        // filtering
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        let filter = NSPredicate(format: "name == %@", self.oldActivity!.name!)
+        request.predicate = filter
+        
+        // doing the request -- fetching the request
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            let resultdata = result as! [Activity]
+            
+            for newElement in resultdata{
+                newElement.setValue(new_activity?.start_date, forKey: "start_date")
+                newElement.setValue(new_activity?.not_infinite, forKey: "not_infinite")
+                newElement.setValue(new_activity?.end_date, forKey: "end_date")
+                newElement.setValue(new_activity?.duration, forKey: "duration")
+                newElement.setValue(new_activity?.time, forKey: "time")
+                newElement.setValue(new_activity?.mon_trigger, forKey: "monday")
+                newElement.setValue(new_activity?.tue_trigger, forKey: "tuesday")
+                newElement.setValue(new_activity?.wed_trigger, forKey: "wednseday")
+                newElement.setValue(new_activity?.thr_trigger, forKey: "thursday")
+                newElement.setValue(new_activity?.fri_trigger, forKey: "friday")
+                newElement.setValue(new_activity?.sat_trigger, forKey: "saturday")
+                newElement.setValue(new_activity?.sun_trigger, forKey: "sunday")
+                newElement.setValue(new_activity?.month_trigger, forKey: "monthly")
+                newElement.setValue(new_activity?.week_trigger, forKey: "weekly")
+                newElement.setValue(new_activity?.daily_trigger, forKey: "daily")
+                newElement.setValue(new_activity?.time_choice, forKey: "time_choice")
+                newElement.setValue(new_activity?.duration_choice, forKey: "duration_choice")
+                
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+                
+                // filtering
+                //request.predicate = NSPredicate(format: "age = %@", "12")
+                
+                
+                // add to New Category
+
+                if let category = new_activity?.category{
+                    let filter = NSPredicate(format: "name == %@", category)
+                    request.predicate = filter
+                    
+                    // doing the request -- fetching the request
+                    request.returnsObjectsAsFaults = false
+                    do {
+                        let result = try context.fetch(request)
+                        for data in result as! [Category] {
+                            
+                            
+                            //                    var category = Category(context: context)
+                            //                    category = data
+                            data.addToActivities(newElement)
+                            
+                            print(category)
+                        }
+                        
+                    } catch {
+                        
+                        print("Failed")
+                    }
+                }
+                
+                // remove from previous Category
+                if let category = oldActivity!.cateogry{
+                    let filter = NSPredicate(format: "name == %@", category)
+                    request.predicate = filter
+                    
+                    // doing the request -- fetching the request
+                    request.returnsObjectsAsFaults = false
+                    do {
+                        let result = try context.fetch(request)
+                        for data in result as! [Category] {
+                            
+                            
+                            //                    var category = Category(context: context)
+                            //                    category = data
+                            data.removeFromActivities(newElement)
+                            
+                            print(category)
+                        }
+                        
+                    } catch {
+                        
+                        print("Failed")
+                    }
+                }
+                try context.save()
+            }
+  
+        } catch {
+            print("Failed")
+        }
+    }
+    
     
     func writing_on_CoreData(){
         // instantiation

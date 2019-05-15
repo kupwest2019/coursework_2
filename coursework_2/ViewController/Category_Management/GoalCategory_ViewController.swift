@@ -51,7 +51,7 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
             let choosenGoal : NSNumber = Int32(number[picker_goal.selectedRow(inComponent: 0)])! as NSNumber
             
             
-            
+            // manage Update
             if(self.editingRequest){
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
                 // filtering
@@ -75,6 +75,7 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
                     print("Failed")
                 }
             }
+                // Manage Insert in coreData
             else{
                 // create a new entity
                 let entity = NSEntityDescription.entity(forEntityName: "Category", in: context)
