@@ -30,6 +30,13 @@
 		EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */; };
 		EBBC31FE228B998A0064451F /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31FD228B998A0064451F /* RoundLabel.swift */; };
 		EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */; };
+		EBD1A81A228C05EE0007B38A /* Helper_Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A819228C05EE0007B38A /* Helper_Methods.swift */; };
+		EBD1A81C228C1A460007B38A /* ViewDetailTracker_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A81B228C1A460007B38A /* ViewDetailTracker_ViewController.swift */; };
+		EBD1A820228C22310007B38A /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A81F228C22310007B38A /* CustomTableViewCell.swift */; };
+		EBD1A823228C2FFF0007B38A /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A822228C2FFF0007B38A /* Test1.swift */; };
+		EBD1A824228C2FFF0007B38A /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A822228C2FFF0007B38A /* Test1.swift */; };
+		EBD1A826228C312C0007B38A /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A825228C312C0007B38A /* Stopwatch.swift */; };
+		EBD1A827228C312C0007B38A /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A825228C312C0007B38A /* Stopwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,11 @@
 		EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBottonIBDesign.swift; sourceTree = "<group>"; };
 		EBBC31FD228B998A0064451F /* RoundLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTrackerCalendar_ViewController.swift; sourceTree = "<group>"; };
+		EBD1A819228C05EE0007B38A /* Helper_Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper_Methods.swift; sourceTree = "<group>"; };
+		EBD1A81B228C1A460007B38A /* ViewDetailTracker_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailTracker_ViewController.swift; sourceTree = "<group>"; };
+		EBD1A81F228C22310007B38A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		EBD1A822228C2FFF0007B38A /* Test1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
+		EBD1A825228C312C0007B38A /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +172,8 @@
 		EB482ED32289C671001F1F3F /* coursework_2 */ = {
 			isa = PBXGroup;
 			children = (
+				EBD1A821228C2FC90007B38A /* PaintCode_Framework */,
+				EBD1A818228C05D90007B38A /* Helper */,
 				EBBC31FF228B9B5A0064451F /* TaskTrackerCalendar */,
 				EBBC31F6228B990F0064451F /* GraphicElements */,
 				EB04DB84228AD16400703614 /* CoreDataHelper */,
@@ -191,6 +205,7 @@
 				EBBC31F9228B995C0064451F /* RoundedTextFieldIBDesign.swift */,
 				EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */,
 				EBBC31FD228B998A0064451F /* RoundLabel.swift */,
+				EBD1A81F228C22310007B38A /* CustomTableViewCell.swift */,
 			);
 			path = GraphicElements;
 			sourceTree = "<group>";
@@ -199,8 +214,26 @@
 			isa = PBXGroup;
 			children = (
 				EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */,
+				EBD1A81B228C1A460007B38A /* ViewDetailTracker_ViewController.swift */,
 			);
 			path = TaskTrackerCalendar;
+			sourceTree = "<group>";
+		};
+		EBD1A818228C05D90007B38A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1A819228C05EE0007B38A /* Helper_Methods.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		EBD1A821228C2FC90007B38A /* PaintCode_Framework */ = {
+			isa = PBXGroup;
+			children = (
+				EBD1A822228C2FFF0007B38A /* Test1.swift */,
+				EBD1A825228C312C0007B38A /* Stopwatch.swift */,
+			);
+			path = PaintCode_Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,14 +339,19 @@
 			files = (
 				EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */,
 				EBBC31FE228B998A0064451F /* RoundLabel.swift in Sources */,
+				EBD1A820228C22310007B38A /* CustomTableViewCell.swift in Sources */,
 				EB04DB81228ABB4700703614 /* NewCategory_Color_ViewController.swift in Sources */,
 				EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */,
 				EB04DB7F228ABAE600703614 /* NewCategory_Name_ViewController.swift in Sources */,
 				EB482ED72289C671001F1F3F /* ViewController.swift in Sources */,
+				EBD1A826228C312C0007B38A /* Stopwatch.swift in Sources */,
 				EB04DB7A228ABAB900703614 /* NewActivity_TimeDuration_ViewController.swift in Sources */,
 				EB04DB83228ABB5B00703614 /* NewCategory_Goal_ViewController.swift in Sources */,
 				EB04DB74228ABA5400703614 /* NewActivity_Category_ViewController.swift in Sources */,
+				EBD1A823228C2FFF0007B38A /* Test1.swift in Sources */,
+				EBD1A81C228C1A460007B38A /* ViewDetailTracker_ViewController.swift in Sources */,
 				EB04DB89228B1B1000703614 /* Activity_TableViewController.swift in Sources */,
+				EBD1A81A228C05EE0007B38A /* Helper_Methods.swift in Sources */,
 				EB04DB76228ABA9400703614 /* NewActivity_Dates_ViewController.swift in Sources */,
 				EBBC31FA228B995C0064451F /* RoundedTextFieldIBDesign.swift in Sources */,
 				EBBC31F8228B99310064451F /* CustomColor.swift in Sources */,
@@ -331,6 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB482EED2289C672001F1F3F /* coursework_2Tests.swift in Sources */,
+				EBD1A827228C312C0007B38A /* Stopwatch.swift in Sources */,
+				EBD1A824228C2FFF0007B38A /* Test1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

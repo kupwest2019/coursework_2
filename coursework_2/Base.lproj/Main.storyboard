@@ -1404,7 +1404,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bhK-hV-hBh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="We3-g4-aUr"/>
+                    <navigationItem key="navigationItem" id="We3-g4-aUr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="lIO-Zf-z7j">
+                            <connections>
+                                <segue destination="It1-hT-ZtW" kind="show" identifier="selectedDay" id="5IC-so-IaG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="day01" destination="koV-wD-xY0" id="aKh-Ty-Moc"/>
                         <outlet property="day02" destination="AZk-xK-QQX" id="Bhm-6w-2Kc"/>
@@ -1443,6 +1449,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEr-pn-wnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3210" y="-317"/>
+        </scene>
+        <!--View Detail Tracker View Controller-->
+        <scene sceneID="psU-3N-g1E">
+            <objects>
+                <viewController id="It1-hT-ZtW" customClass="ViewDetailTracker_ViewController" customModule="coursework_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LJy-d9-LzE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-Db-txT">
+                                <rect key="frame" x="16" y="64" width="288" height="214"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-2W-lSk" customClass="Stopwatch" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="59" y="286" width="202" height="196"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dhk-Iy-wjc" firstAttribute="bottom" secondItem="DbI-Db-txT" secondAttribute="bottom" constant="241" id="5hX-Fx-Xvu"/>
+                            <constraint firstItem="Dhk-Iy-wjc" firstAttribute="trailing" secondItem="DbI-Db-txT" secondAttribute="trailing" constant="16" id="Mcf-5S-nBj"/>
+                            <constraint firstItem="Dhk-Iy-wjc" firstAttribute="bottom" secondItem="2hU-2W-lSk" secondAttribute="bottom" constant="37" id="NUI-VB-vcT"/>
+                            <constraint firstItem="2hU-2W-lSk" firstAttribute="leading" secondItem="Dhk-Iy-wjc" secondAttribute="leading" constant="59" id="Nzd-gZ-ava"/>
+                            <constraint firstItem="DbI-Db-txT" firstAttribute="top" secondItem="Dhk-Iy-wjc" secondAttribute="top" id="RgC-4l-Kt2"/>
+                            <constraint firstItem="Dhk-Iy-wjc" firstAttribute="trailing" secondItem="2hU-2W-lSk" secondAttribute="trailing" constant="59" id="WoA-QH-Bej"/>
+                            <constraint firstItem="2hU-2W-lSk" firstAttribute="top" secondItem="DbI-Db-txT" secondAttribute="bottom" constant="8" id="YKA-jR-PNS"/>
+                            <constraint firstItem="DbI-Db-txT" firstAttribute="leading" secondItem="Dhk-Iy-wjc" secondAttribute="leading" constant="16" id="ZSl-6J-mMc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dhk-Iy-wjc"/>
+                    </view>
+                    <connections>
+                        <outlet property="animation" destination="2hU-2W-lSk" id="U9c-ij-wzU"/>
+                        <outlet property="tabView" destination="DbI-Db-txT" id="GZK-IU-mDm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubz-xE-4ZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4541.25" y="-298.94366197183098"/>
         </scene>
         <!--Settings-->
         <scene sceneID="q2p-Gy-ClC">
@@ -1590,6 +1635,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="z9A-ad-AFt"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrB-aV-tKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

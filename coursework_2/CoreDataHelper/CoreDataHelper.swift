@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct Category_obj{
     var color : String = ""
@@ -14,7 +15,16 @@ struct Category_obj{
     var goal : String = ""
 }
     
-   
+
+struct Calendar_Day_Activity{
+    var activities_scheduled : [Activity] = []
+    var day_number : Int = 0
+    init(day : Int) {
+        day_number = day
+    }
+}
+
+
 
 struct Activity_obj {
     var name : String?

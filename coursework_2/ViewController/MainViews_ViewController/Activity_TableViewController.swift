@@ -46,6 +46,20 @@ class Activity_TableViewController: UITableViewController {
         return self.item.count
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //-> NB SAME TYPE OF CELL
+        let item = self.item[indexPath.row]
+        cell.textLabel?.text = item.name!
+        return cell
+    }
+    
+    
+    
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     
     func populateList(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -70,20 +84,6 @@ class Activity_TableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //-> NB SAME TYPE OF CELL
-        let item = self.item[indexPath.row]
-        cell.textLabel?.text = item.name!
-        return cell
-    }
-
-    
-    
-    
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
     
     

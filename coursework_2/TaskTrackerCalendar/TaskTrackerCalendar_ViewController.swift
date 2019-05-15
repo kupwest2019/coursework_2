@@ -16,6 +16,14 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     var counter : Int = 0
     
     var totalNumberOfDaysInAMonth : Int = 0
+    var existsActivityScheduledForTheMonth : Bool = false
+    
+    var arreyButton : [RoundButtonDesignable] = []
+    var arrey_scheduled_activities : [Calendar_Day_Activity] = []
+    var actualButton : RoundButtonDesignable?
+
+
+    
     
     @IBOutlet weak var label_yearmonth: UILabel!
     
@@ -52,7 +60,6 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     @IBOutlet weak var day25: RoundButtonDesignable!
     @IBOutlet weak var day30: RoundButtonDesignable!
     
-    var arreyButton : [RoundButtonDesignable] = []
     
     
     func populateArreyButton(){
@@ -89,9 +96,88 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         arreyButton.append(day31)
     }
 
+    
+    
+    // tracking activities - calendar
+    var day01_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 01)
+    var day02_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 02)
+    var day03_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 03)
+    var day04_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 04)
+    var day05_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 05)
+    var day06_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 06)
+    var day07_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 07)
+    var day08_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 08)
+    var day09_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 09)
+    var day10_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 10)
+    var day11_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 11)
+    var day12_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 12)
+    var day13_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 13)
+    var day14_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 14)
+    var day15_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 15)
+    var day16_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 16)
+    var day17_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 17)
+    var day18_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 18)
+    var day19_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 19)
+    var day20_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 20)
+    var day21_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 21)
+    var day22_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 22)
+    var day23_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 23)
+    var day24_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 24)
+    var day25_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 25)
+    var day26_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 26)
+    var day27_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 27)
+    var day28_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 28)
+    var day29_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 29)
+    var day30_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 30)
+    var day31_tracking : Calendar_Day_Activity = Calendar_Day_Activity(day: 31)
+    
+
+    func populateArreyScheduledActivities(){
+        arrey_scheduled_activities.append(day01_tracking)
+        arrey_scheduled_activities.append(day02_tracking)
+        arrey_scheduled_activities.append(day03_tracking)
+        arrey_scheduled_activities.append(day04_tracking)
+        arrey_scheduled_activities.append(day05_tracking)
+        arrey_scheduled_activities.append(day06_tracking)
+        arrey_scheduled_activities.append(day07_tracking)
+        arrey_scheduled_activities.append(day08_tracking)
+        arrey_scheduled_activities.append(day09_tracking)
+        arrey_scheduled_activities.append(day10_tracking)
+        arrey_scheduled_activities.append(day11_tracking)
+        arrey_scheduled_activities.append(day12_tracking)
+        arrey_scheduled_activities.append(day13_tracking)
+        arrey_scheduled_activities.append(day14_tracking)
+        arrey_scheduled_activities.append(day15_tracking)
+        arrey_scheduled_activities.append(day16_tracking)
+        arrey_scheduled_activities.append(day17_tracking)
+        arrey_scheduled_activities.append(day18_tracking)
+        arrey_scheduled_activities.append(day19_tracking)
+        arrey_scheduled_activities.append(day20_tracking)
+        arrey_scheduled_activities.append(day21_tracking)
+        arrey_scheduled_activities.append(day22_tracking)
+        arrey_scheduled_activities.append(day23_tracking)
+        arrey_scheduled_activities.append(day24_tracking)
+        arrey_scheduled_activities.append(day25_tracking)
+        arrey_scheduled_activities.append(day26_tracking)
+        arrey_scheduled_activities.append(day27_tracking)
+        arrey_scheduled_activities.append(day28_tracking)
+        arrey_scheduled_activities.append(day29_tracking)
+        arrey_scheduled_activities.append(day30_tracking)
+        arrey_scheduled_activities.append(day31_tracking)
+   
+    }
+    
+    // clear the scheudle activities while the month is changing
+    func clear_arrey_scheduled_activities(){
+        for index in 0...arrey_scheduled_activities.count-1{
+            arrey_scheduled_activities[index].activities_scheduled.removeAll()
+        }
+    }
+    
     // days func
     @IBAction func next(_ sender: UIButton) {
         counter = counter+1
+        clear_arrey_scheduled_activities()
         updateDays(counter)
     }
     
@@ -99,6 +185,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     
     @IBAction func prev(_ sender: UIButton) {
         counter = counter-1
+        clear_arrey_scheduled_activities()
         updateDays(counter)
     
     }
@@ -106,8 +193,10 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         populateArreyButton()
+        populateArreyScheduledActivities()
         updateDays(counter)
         setButtonSelectable()
+        
         
 
         // Do any additional setup after loading the view.
@@ -123,7 +212,6 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     
     
     // select button
-    var actualButton : RoundButtonDesignable?
     @objc func myButtonTapped(sender : RoundButtonDesignable){
         
         var i = 0
@@ -175,7 +263,9 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         let calanderDate = Calendar.current.dateComponents([.year, .month], from: newMonth!)
         label_yearmonth.text = "\(calanderDate.month!) - \(calanderDate.year!)"
         
-        queryActivitis(calanderDate.month!, calanderDate.year!, numDays!)
+        // query activities -> populate activities to be executed arrey
+        queryActivitis(newMonth!, numDays!)
+        
         
         var day : Int = 0
         
@@ -195,34 +285,25 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             day = day+1
             
         }
+        
+        refreshCalendarView()
+        
     }
     
     
-    func queryActivitis(_ month : Int, _ year: Int, _ days:Int){
+    func queryActivitis(_ newDate : Date, _ days:Int){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
-        // filtering
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        
-        var dateComponents = DateComponents()
-        dateComponents.year = year
-        dateComponents.month = month
-        dateComponents.day = 1
-        dateComponents.timeZone = TimeZone(abbreviation: "UTC") // Japan Standard Time
-        dateComponents.hour = 0
-        dateComponents.minute = 00
-        
-        // Create date from components
-        let userCalendar = Calendar.current // user calendar
-        let startDate = userCalendar.date(from: dateComponents)
-        
-        
-        dateComponents.day = days
-        let endDate = userCalendar.date(from: dateComponents)
 
-        let fromPredicate = NSPredicate(format: "end_date >= %@", startDate! as NSDate)
-        let toPredicate = NSPredicate(format: "start_date < %@", endDate! as NSDate)
+        
+        let date_helper : DealWithDate = DealWithDate()
+        let startDate = date_helper.returnOnlyDayMonthYear_customDay(inputDate: newDate, day: 1)
+        let endDate = date_helper.returnOnlyDayMonthYear_customDay_endDate(inputDate: newDate, day: days)
+
+
+        let fromPredicate = NSPredicate(format: "end_date >= %@", startDate as NSDate)
+        let toPredicate = NSPredicate(format: "start_date < %@", endDate as NSDate)
         let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
         
         request.predicate = datePredicate
@@ -234,7 +315,8 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             print("number of occurence present present --> ", result.count)
             
             for i in result{
-                print(i)
+                populateScheduledActivities(activity: i as! Activity, maxDay: days, startDate: startDate, endDate: endDate)
+                
             }
             
         } catch {
@@ -242,14 +324,109 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func populateScheduledActivities(activity : Activity, maxDay : Int, startDate : Date, endDate : Date){
+        
+        let date_helper : DealWithDate = DealWithDate()
+        
+        let startdate_activity = date_helper.returnOnlyDayMonthYear(inputDate: activity.start_date!)
+        let enddate_activity = date_helper.returnOnlyDayMonthYear_LastDate(inputDate: activity.end_date!)
+        
+        if (activity.monthly == true){
+            
+            var newValue = Calendar.current.date(byAdding: .month, value: 0, to: startdate_activity)
+            
+            while(newValue! <= enddate_activity && newValue! <= endDate){
+          
+                
+                print("Evaluation Date --> \(newValue!)")
+                print("Activity Start --> \(startdate_activity)")
+                print("Activity End --> \(enddate_activity)")
+                
+                // check if consider the activity
+                if (newValue! >= startdate_activity && newValue! <= enddate_activity
+                    && newValue! >= startDate && newValue! <= endDate){
+                    
+                    addToScheduledActivities(activity: activity, day: newValue!)
+                    existsActivityScheduledForTheMonth = true
+                }
+                
+                newValue = Calendar.current.date(byAdding: .month, value: 1, to: newValue!)
+            
+            }
+            
+        }
+        else if (activity.daily == true){
+            
+        }
+        else if (activity.weekly == true){
+            
+        }
+        
     }
-    */
+    
+    
+    // add activity in a specific day
+    func addToScheduledActivities(activity : Activity, day: Date){
+        print("Activity must be executed in \(day)")
+        
+        for index in 0...arrey_scheduled_activities.count-1{
+            
+            let date_helper : DealWithDate = DealWithDate()
+            let date_to_be_executed = date_helper.returnCalendarDayMonthYear(inputDate: day)
+            
+            if (arrey_scheduled_activities[index].day_number == date_to_be_executed.day){
+                print("Acitivity will be executed in \(arrey_scheduled_activities[index].day_number)")
+                arrey_scheduled_activities[index].activities_scheduled.append(activity)
+                
+                //i.activities_scheduled.append(activity)
+            }
+        }
+
+    }
+    
+    func refreshCalendarView(){
+        
+        if(existsActivityScheduledForTheMonth){
+            for index in 0...totalNumberOfDaysInAMonth-1{
+                if (arrey_scheduled_activities[index].activities_scheduled.count > 0){
+                    arreyButton[index].backgroundColor = UIColor.magenta
+                }
+            }
+        }
+        else{
+            for index in 0...totalNumberOfDaysInAMonth-1{
+                arreyButton[index].backgroundColor = UIColor.lightGray
+                
+            }
+        }
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        var goAhead : Bool = false
+        
+        if (actualButton?.isSelected == true){
+            goAhead = true
+        }
+        
+        
+        return goAhead
+    }
+    
+    
+    // segue policy
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "selectedDay"){
+            let passingArgument = segue.destination as? ViewDetailTracker_ViewController
+            
+            if let index = arreyButton.firstIndex(of: actualButton!){
+                print (index)
+                passingArgument?.selectedDAyInfo = arrey_scheduled_activities[index]
+            }
+            
+            
+            
+        }
+    }
 
 }
