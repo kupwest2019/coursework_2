@@ -189,11 +189,19 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     }
     
     func clearArrey(){
+        
+        //remove background color
+        
+        
+        
         self.arrey_scheduled_activities.removeAll()
         self.arreyButton.removeAll()
         self.arrey_scheduled_activities.removeAll()
         
     }
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         clearArrey()
@@ -201,6 +209,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         populateArreyScheduledActivities()
         updateDays(counter_monthSelected)
         setButtonSelectable()
+
     }
     
     
@@ -216,7 +225,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         }
     }
     
-    
+    let myColor : MyCustomColors = MyCustomColors()
     
     // select button
     @objc func myButtonTapped(sender : RoundButtonDesignable){
@@ -230,30 +239,35 @@ class TaskTrackerCalendar_ViewController: UIViewController {
                 print("you are still in the same button")
             }
             else{
-                print("claen Button")
+                print("claer Button")
 
                 while (i<totalNumberOfDaysInAMonth){
-                    arreyButton[i].borderColor = UIColor.orange
+                    arreyButton[i].borderColor = myColor.light_orange
+                    sender.shadowColor = myColor.light_orange
                     arreyButton[i].isSelected = false
                     i = i+1
                 }
             }
         }
-        
-        
         // manage select - unselect
         actualButton = sender
         if sender.isSelected == true{
             print("deselected")
             sender.isSelected = false
-            sender.borderColor = UIColor.orange
+            sender.borderColor = myColor.light_orange
+            sender.shadowColor = myColor.light_orange
+            
+
 
             
         }
         else{
             print("selected")
             sender.isSelected = true
-            sender.borderColor = UIColor.red
+            sender.borderColor = myColor.orange
+            sender.shadowColor = myColor.orange
+            
+           // sender.backgroundColor = myColor.blue
 
         }
     }
@@ -282,14 +296,27 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             i.isEnabled = false
             i.isOpaque = true
             i.borderColor = UIColor.white
+            i.tintColor = .clear
+            i.shadowRadius = 0
+            i.shadowOpacity = 0
+            i.setTitleColor(UIColor.lightGray, for: .normal)
+           
+            
+
 
         }
         
         while(day<numDays!){
-            arreyButton[day].backgroundColor = UIColor.lightGray
+            arreyButton[day].backgroundColor = myColor.light_yellow
             arreyButton[day].isEnabled = true
             arreyButton[day].isOpaque = false
-            arreyButton[day].borderColor = UIColor.orange
+            arreyButton[day].borderColor = myColor.light_orange
+            arreyButton[day].setTitleColor(myColor.blue, for: .normal)
+            arreyButton[day].setTitleColor(myColor.blue, for: .selected)
+            arreyButton[day].shadowRadius = 1
+            arreyButton[day].shadowOpacity = 2
+            arreyButton[day].shadowColor = myColor.light_orange
+            
             day = day+1
             
         }
@@ -535,13 +562,13 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         if(existsActivityScheduledForTheMonth){
             for index in 0...totalNumberOfDaysInAMonth-1{
                 if (arrey_scheduled_activities[index].activities_scheduled.count > 0){
-                    arreyButton[index].backgroundColor = UIColor.magenta
+                    arreyButton[index].backgroundColor = myColor.green
                 }
             }
         }
         else{
             for index in 0...totalNumberOfDaysInAMonth-1{
-                arreyButton[index].backgroundColor = UIColor.lightGray
+                arreyButton[index].backgroundColor = myColor.light_yellow
                 
             }
         }
