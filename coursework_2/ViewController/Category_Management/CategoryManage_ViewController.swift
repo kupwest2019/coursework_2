@@ -38,16 +38,24 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // self.registerCustomCell()
+       
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // self.registerCustomCell()
+        activities.removeAll()
+        
         self.editingButton.isEnabled = false
         self.tabView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tabView.dataSource = self
         self.tabView.delegate = self
-
+        
         populateList()
-
-        // Do any additional setup after loading the view.
     }
+    
+    
     func registerCustomCell(){
         let textFieldCell = UINib(nibName: "CustomCellTabView", bundle: nil)
         self.tabView.register(textFieldCell, forCellReuseIdentifier: "CustomCellTabView")
@@ -96,7 +104,13 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
             let alertController = UIAlertController(title: "Warning", message: "Are you sure?", preferredStyle: .alert)
             
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-                self.rowDownload(indexPath: indexPath)
+                self.delete_CoreData(indexPath: indexPath)
+                
+                self.activities.remove(at: indexPath.row)
+                self.tabView.beginUpdates()
+                self.tabView.deleteRows(at: [indexPath], with: .automatic)
+                self.tabView.endUpdates()
+                
             })
             
             alertController.addAction(deleteAction)
@@ -107,7 +121,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
     }
     
     
-    func rowDownload(indexPath: IndexPath){
+    func delete_CoreData(indexPath: IndexPath){
         print("YOO DELETING")
         
         
@@ -160,10 +174,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
                 print("Failed")
             }
             
-            self.activities.remove(at: indexPath.row)
-            self.tabView.beginUpdates()
-            self.tabView.deleteRows(at: [indexPath], with: .automatic)
-            self.tabView.endUpdates()
+           
         }
         
         

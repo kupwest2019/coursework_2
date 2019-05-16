@@ -33,6 +33,7 @@
 		EB482EED2289C672001F1F3F /* coursework_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */; };
 		EBA57E66228C66B40021F18A /* ColorCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA57E65228C66B40021F18A /* ColorCategory_ViewController.swift */; };
 		EBA57E68228C66C40021F18A /* GoalCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA57E67228C66C40021F18A /* GoalCategory_ViewController.swift */; };
+		EBB397F7228D703900723640 /* TrackerChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB397F6228D703900723640 /* TrackerChart.swift */; };
 		EBBC31F8228B99310064451F /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31F7228B99310064451F /* CustomColor.swift */; };
 		EBBC31FA228B995C0064451F /* RoundedTextFieldIBDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31F9228B995C0064451F /* RoundedTextFieldIBDesign.swift */; };
 		EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */; };
@@ -90,6 +91,7 @@
 		EB482EEE2289C672001F1F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBA57E65228C66B40021F18A /* ColorCategory_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCategory_ViewController.swift; sourceTree = "<group>"; };
 		EBA57E67228C66C40021F18A /* GoalCategory_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategory_ViewController.swift; sourceTree = "<group>"; };
+		EBB397F6228D703900723640 /* TrackerChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerChart.swift; sourceTree = "<group>"; };
 		EBBC31F7228B99310064451F /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		EBBC31F9228B995C0064451F /* RoundedTextFieldIBDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldIBDesign.swift; sourceTree = "<group>"; };
 		EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBottonIBDesign.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				EB026CA3228CE2FD0081690A /* Clock.swift */,
 				EB026CA4228CE2FD0081690A /* Trackertask.swift */,
 				EB026CA7228CE4A50081690A /* Timer.swift */,
+				EBB397F6228D703900723640 /* TrackerChart.swift */,
 			);
 			path = PaintCode_Framework;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */,
 				EB04DB7F228ABAE600703614 /* NewCategory_Name_ViewController.swift in Sources */,
 				EB482ED72289C671001F1F3F /* ViewController.swift in Sources */,
+				EBB397F7228D703900723640 /* TrackerChart.swift in Sources */,
 				EBCA2F88228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift in Sources */,
 				EBD1A826228C312C0007B38A /* Stopwatch.swift in Sources */,
 				EB04DB7A228ABAB900703614 /* NewActivity_TimeDuration_ViewController.swift in Sources */,

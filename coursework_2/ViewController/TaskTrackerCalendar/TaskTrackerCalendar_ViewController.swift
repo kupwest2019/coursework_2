@@ -189,15 +189,25 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func clearArrey(){
+        self.arrey_scheduled_activities.removeAll()
+        self.arreyButton.removeAll()
+        self.arrey_scheduled_activities.removeAll()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        clearArrey()
         populateArreyButton()
         populateArreyScheduledActivities()
         updateDays(counter)
         setButtonSelectable()
-        
-        
-
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
@@ -510,7 +520,10 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             let date_to_be_executed = date_helper.returnCalendarDayMonthYear(inputDate: day)
             
             if (arrey_scheduled_activities[index].day_number == date_to_be_executed.day){
-                print("Acitivity will be executed in \(arrey_scheduled_activities[index].day_number)")
+                
+                
+                
+                print("Acitivity \(activity) will be executed in \(arrey_scheduled_activities[index].day_number)")
                 arrey_scheduled_activities[index].activities_finished.append(activity)
                 
                 //i.activities_scheduled.append(activity)

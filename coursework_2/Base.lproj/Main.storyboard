@@ -1003,24 +1003,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-7D-NTn">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="v6g-7D-NTn">
                                 <rect key="frame" x="16" y="64" width="288" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0P6-iV-FdO">
-                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
                                         <state key="normal" title="Prev"/>
                                         <connections>
                                             <action selector="prev:" destination="ssb-7E-YKK" eventType="touchUpInside" id="enP-SV-OaW"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="month - year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur2-xv-cge">
-                                        <rect key="frame" x="55.5" y="0.0" width="175.5" height="30"/>
+                                        <rect key="frame" x="96" y="0.0" width="96" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1a-L1-FA8">
-                                        <rect key="frame" x="231" y="0.0" width="57" height="30"/>
+                                        <rect key="frame" x="192" y="0.0" width="96" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="next:" destination="ssb-7E-YKK" eventType="touchUpInside" id="W7f-xc-dgu"/>
@@ -1754,7 +1754,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-X0-glq">
                                 <rect key="frame" x="16" y="64" width="288" height="444"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-0R-svK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduled Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-0R-svK">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1767,7 +1767,7 @@
                                             <constraint firstAttribute="height" constant="104" id="Vrn-O5-7MA"/>
                                         </constraints>
                                     </tableView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Do Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-FZ-4ed">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-FZ-4ed">
                                         <rect key="frame" x="0.0" y="124.5" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1780,7 +1780,7 @@
                                             <constraint firstAttribute="height" constant="116" id="yDH-Lh-6bW"/>
                                         </constraints>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-2W-lSk" customClass="Stopwatch" customModule="coursework_2" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hU-2W-lSk" customClass="TrackerChart" customModule="coursework_2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="261" width="288" height="183"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -1797,8 +1797,9 @@
                         <viewLayoutGuide key="safeArea" id="Dhk-Iy-wjc"/>
                     </view>
                     <connections>
-                        <outlet property="animation" destination="2hU-2W-lSk" id="U9c-ij-wzU"/>
-                        <outlet property="tabView" destination="DbI-Db-txT" id="GZK-IU-mDm"/>
+                        <outlet property="animation" destination="2hU-2W-lSk" id="Mbf-hl-Eyt"/>
+                        <outlet property="tabView_All" destination="NOv-rn-S0W" id="z8l-gD-GOk"/>
+                        <outlet property="tabView_completed" destination="DbI-Db-txT" id="ZXB-Mh-cAT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubz-xE-4ZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
