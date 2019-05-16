@@ -243,7 +243,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
 
                 while (i<totalNumberOfDaysInAMonth){
                     arreyButton[i].borderColor = myColor.light_orange
-                    sender.shadowColor = myColor.light_orange
+                    arreyButton[i].shadowColor = myColor.light_orange
                     arreyButton[i].isSelected = false
                     i = i+1
                 }

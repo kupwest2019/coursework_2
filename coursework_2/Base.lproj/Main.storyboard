@@ -756,7 +756,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Type of Recurrency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ll-Gi-SWJ">
-                                <rect key="frame" x="20" y="128" width="280" height="50"/>
+                                <rect key="frame" x="20" y="160" width="280" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="uYV-fs-TVJ"/>
                                 </constraints>
@@ -764,26 +764,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZSe-Mu-rvc">
-                                <rect key="frame" x="20" y="70" width="280" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZSe-Mu-rvc">
+                                <rect key="frame" x="20" y="90" width="280" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlE-p1-yuo">
-                                        <rect key="frame" x="0.0" y="10" width="93.5" height="30"/>
-                                        <state key="normal" title="Month"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlE-p1-yuo" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="10" width="86.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Month">
+                                            <color key="titleColor" red="0.19607843137254902" green="0.25098039215686274" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_month:" destination="HWG-cN-Mde" eventType="touchUpInside" id="Smb-aJ-QY1"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhl-Qu-X07">
-                                        <rect key="frame" x="93.5" y="10" width="93" height="30"/>
-                                        <state key="normal" title="Weekl"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhl-Qu-X07" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="96.5" y="10" width="87" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Week">
+                                            <color key="titleColor" red="0.19607843137254902" green="0.25098039215686274" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_week:" destination="HWG-cN-Mde" eventType="touchUpInside" id="87k-yY-cri"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-jb-iv5">
-                                        <rect key="frame" x="186.5" y="10" width="93.5" height="30"/>
-                                        <state key="normal" title="Daily"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QV-jb-iv5" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="193.5" y="10" width="86.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Day">
+                                            <color key="titleColor" red="0.19607843137254902" green="0.25098039215686274" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_day:" destination="HWG-cN-Mde" eventType="touchUpInside" id="7dF-5B-q8c"/>
                                         </connections>
@@ -793,71 +829,145 @@
                                     <constraint firstAttribute="height" constant="50" id="YRC-Bn-KlU"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-gI-Ahz">
-                                <rect key="frame" x="20" y="185.5" width="280" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-gI-Ahz">
+                                <rect key="frame" x="20" y="230" width="280" height="282"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM7-fk-bJY">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="M"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM7-fk-bJY" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                        <state key="normal" title="monday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_mon:" destination="HWG-cN-Mde" eventType="touchUpInside" id="G9A-E9-CQZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV0-fj-fjD">
-                                        <rect key="frame" x="40" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="T"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JV0-fj-fjD" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="42" width="280" height="30"/>
+                                        <state key="normal" title="tuesday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_tue:" destination="HWG-cN-Mde" eventType="touchUpInside" id="tdK-x4-spk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm1-EC-nWN">
-                                        <rect key="frame" x="80" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="W"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vm1-EC-nWN" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="84" width="280" height="30"/>
+                                        <state key="normal" title="wednesday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_wed:" destination="HWG-cN-Mde" eventType="touchUpInside" id="dFj-bp-fCp"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsg-Qt-BX7">
-                                        <rect key="frame" x="120" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="T"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsg-Qt-BX7" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="126" width="280" height="30"/>
+                                        <state key="normal" title="thursday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_thr:" destination="HWG-cN-Mde" eventType="touchUpInside" id="VvL-e2-9Gv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jET-d6-lRb">
-                                        <rect key="frame" x="160" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="F"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jET-d6-lRb" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168" width="280" height="30"/>
+                                        <state key="normal" title="friday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_fri:" destination="HWG-cN-Mde" eventType="touchUpInside" id="pdx-Cx-hHj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgC-3A-JxM">
-                                        <rect key="frame" x="200" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="S"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgC-3A-JxM" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="210" width="280" height="30"/>
+                                        <state key="normal" title="saturday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_sat:" destination="HWG-cN-Mde" eventType="touchUpInside" id="RG0-pZ-8mr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-1v-T3W">
-                                        <rect key="frame" x="240" y="0.0" width="40" height="50"/>
-                                        <state key="normal" title="S"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJT-1v-T3W" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="252" width="280" height="30"/>
+                                        <state key="normal" title="sunday">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="button_sun:" destination="HWG-cN-Mde" eventType="touchUpInside" id="4Es-B8-WvM"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bdX-i7-1jb"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xYV-Hz-JKr" firstAttribute="leading" secondItem="gWg-Pj-SVm" secondAttribute="leading" id="5yB-rq-jey"/>
                             <constraint firstItem="xYV-Hz-JKr" firstAttribute="top" secondItem="gWg-Pj-SVm" secondAttribute="top" id="80C-wn-i0S"/>
-                            <constraint firstItem="ZSe-Mu-rvc" firstAttribute="top" secondItem="gWg-Pj-SVm" secondAttribute="top" constant="50" id="8b1-TL-fb9"/>
-                            <constraint firstItem="6ad-gI-Ahz" firstAttribute="top" secondItem="1Ll-Gi-SWJ" secondAttribute="bottom" constant="7.5" id="FFk-yV-fL9"/>
-                            <constraint firstItem="1Ll-Gi-SWJ" firstAttribute="top" secondItem="ZSe-Mu-rvc" secondAttribute="bottom" constant="8" id="KSm-vX-PUi"/>
+                            <constraint firstItem="ZSe-Mu-rvc" firstAttribute="top" secondItem="gWg-Pj-SVm" secondAttribute="top" constant="70" id="8b1-TL-fb9"/>
+                            <constraint firstItem="6ad-gI-Ahz" firstAttribute="top" secondItem="1Ll-Gi-SWJ" secondAttribute="bottom" constant="20" id="FFk-yV-fL9"/>
+                            <constraint firstItem="1Ll-Gi-SWJ" firstAttribute="top" secondItem="ZSe-Mu-rvc" secondAttribute="bottom" constant="20" id="KSm-vX-PUi"/>
                             <constraint firstItem="gWg-Pj-SVm" firstAttribute="trailing" secondItem="ZSe-Mu-rvc" secondAttribute="trailing" constant="20" id="P2a-lh-Dgb"/>
                             <constraint firstItem="ZSe-Mu-rvc" firstAttribute="leading" secondItem="gWg-Pj-SVm" secondAttribute="leading" constant="20" id="RBC-NZ-6ek"/>
                             <constraint firstItem="gWg-Pj-SVm" firstAttribute="trailing" secondItem="1Ll-Gi-SWJ" secondAttribute="trailing" constant="20" id="UYA-O6-tFw"/>
@@ -869,16 +979,16 @@
                         <viewLayoutGuide key="safeArea" id="gWg-Pj-SVm"/>
                     </view>
                     <connections>
-                        <outlet property="day" destination="4QV-jb-iv5" id="MlH-sw-i8W"/>
-                        <outlet property="fri" destination="jET-d6-lRb" id="Whj-mn-458"/>
-                        <outlet property="mon" destination="nM7-fk-bJY" id="lJf-n4-a9j"/>
-                        <outlet property="month" destination="ZlE-p1-yuo" id="nvb-AT-tRs"/>
-                        <outlet property="sat" destination="vgC-3A-JxM" id="Slb-Bx-RDD"/>
-                        <outlet property="sun" destination="aJT-1v-T3W" id="AHf-Ch-bMi"/>
-                        <outlet property="thr" destination="bsg-Qt-BX7" id="6hf-Sk-dzV"/>
-                        <outlet property="tue" destination="JV0-fj-fjD" id="pfb-1d-4ga"/>
-                        <outlet property="wed" destination="vm1-EC-nWN" id="vSe-9F-jQ1"/>
-                        <outlet property="week" destination="nhl-Qu-X07" id="eal-qh-kSv"/>
+                        <outlet property="day" destination="4QV-jb-iv5" id="Ie2-QB-3sB"/>
+                        <outlet property="fri" destination="jET-d6-lRb" id="deq-v4-t8P"/>
+                        <outlet property="mon" destination="nM7-fk-bJY" id="KKt-PD-BD4"/>
+                        <outlet property="month" destination="ZlE-p1-yuo" id="Iqb-nE-wh4"/>
+                        <outlet property="sat" destination="vgC-3A-JxM" id="QF6-Kf-2RA"/>
+                        <outlet property="sun" destination="aJT-1v-T3W" id="Ioh-Fb-nTK"/>
+                        <outlet property="thr" destination="bsg-Qt-BX7" id="ae8-KO-9tV"/>
+                        <outlet property="tue" destination="JV0-fj-fjD" id="y8G-4o-2rl"/>
+                        <outlet property="wed" destination="vm1-EC-nWN" id="00q-49-vcH"/>
+                        <outlet property="week" destination="nhl-Qu-X07" id="MOm-GE-C6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2w-Ur-X43" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2450,9 +2560,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jbl-BP-g7S"/>
-        <segue reference="y4k-1l-3L0"/>
+        <segue reference="ih7-lP-9Cl"/>
         <segue reference="LE4-zX-N6d"/>
-        <segue reference="hlN-gz-raK"/>
+        <segue reference="429-Fl-KeZ"/>
         <segue reference="ilv-rl-wia"/>
         <segue reference="Qgy-5t-Jdo"/>
         <segue reference="oPy-3t-WBJ"/>

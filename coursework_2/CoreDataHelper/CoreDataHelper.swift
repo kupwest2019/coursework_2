@@ -16,6 +16,14 @@ struct Category_obj{
 }
     
 
+struct CategoryColor {
+    let blue : String = "Blue"
+    let green : String = "Green"
+    let yellow : String = "Yellow"
+    let red : String = "Red"
+}
+
+
 struct Calendar_Day_Activity{
     var activities_scheduled : [Activity] = []
     var activities_finished : [CompletedActivity] = []

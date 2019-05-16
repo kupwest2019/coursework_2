@@ -14,6 +14,7 @@ class NewCategory_Color_ViewController: UIViewController,UIPickerViewDelegate, U
     var new_category: Category_obj = Category_obj()
     var new_activity : Activity_obj?
 
+    
     let colors = ["Red","Yellow","Green","Blue"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

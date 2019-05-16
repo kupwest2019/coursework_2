@@ -55,6 +55,21 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
         if selectedRowPicker == false {
             selectedRowPicker = true
         }
+        
+        let myColor : MyCustomColors = MyCustomColors()
+        let choosenCategory = item[picker_category.selectedRow(inComponent: 0)]
+        if choosenCategory.colour == "Red"{
+            view.backgroundColor = myColor.orange
+        }
+        if choosenCategory.colour == "Blue"{
+            view.backgroundColor = myColor.blue
+        }
+        if choosenCategory.colour == "Yellow"{
+            view.backgroundColor = myColor.light_yellow
+        }
+        if choosenCategory.colour == "Green"{
+            view.backgroundColor = myColor.green
+        }
     }
     
     // to refresh in case of add new category
