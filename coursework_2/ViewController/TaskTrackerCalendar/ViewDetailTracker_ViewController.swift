@@ -65,7 +65,7 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        print("HEllo")
         scheduled_activities = selectedDAyInfo!.activities_scheduled
         completed_activities = selectedDAyInfo!.activities_finished
         
