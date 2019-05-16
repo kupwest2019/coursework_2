@@ -313,6 +313,11 @@ class NewActivity_Recurrency_ViewController: UIViewController {
         
         var check : Bool = false
         // check on the SEGUE ~~
+        if identifier == "back"
+        {
+            check = true
+        }
+        
         if identifier == "segue_createRecurrency"
         {
 
@@ -332,6 +337,18 @@ class NewActivity_Recurrency_ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "back"){
+            let passingArgument = segue.destination as? NewActivity_Dates_ViewController
+            
+            passingArgument?.new_activity = new_activity
+            
+            if (self.editing_mode_on){
+                passingArgument?.oldActivity = oldActivity
+                passingArgument?.editing_mode_on = true
+            }
+        }
+        
         
         if(segue.identifier == "segue_createRecurrency"){
             let passingArgument = segue.destination as? NewActivity_TimeDuration_ViewController

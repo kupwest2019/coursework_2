@@ -45,22 +45,12 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
         moveTheAnimation()
     }
     var index : CGFloat = 0.0
-    
-    
-    
     var timer : Timer?
-    
-    
-    
     func moveTheAnimation(){
         
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
         timer!.fire()
-        
-        
-        
-        
     }
 
     
@@ -79,7 +69,6 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
             timer!.invalidate()
             print("Timer Stop")
         }
-
     }
     
     var selectedDAyInfo : Calendar_Day_Activity?

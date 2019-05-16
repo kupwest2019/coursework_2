@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB026C9E228CD1DC0081690A /* ToDoToday_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026C9D228CD1DC0081690A /* ToDoToday_ViewController.swift */; };
+		EB026CA0228CD1EB0081690A /* CompleteActivity_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */; };
+		EB026CA2228CD1F40081690A /* Timer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA1228CD1F40081690A /* Timer_ViewController.swift */; };
+		EB026CA5228CE2FE0081690A /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA3228CE2FD0081690A /* Clock.swift */; };
+		EB026CA6228CE2FE0081690A /* Trackertask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA4228CE2FD0081690A /* Trackertask.swift */; };
+		EB026CA8228CE4A50081690A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA7228CE4A50081690A /* Timer.swift */; };
 		EB04DB72228ABA4100703614 /* NewActivity_Name_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */; };
 		EB04DB74228ABA5400703614 /* NewActivity_Category_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */; };
 		EB04DB76228ABA9400703614 /* NewActivity_Dates_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB75228ABA9400703614 /* NewActivity_Dates_ViewController.swift */; };
@@ -54,6 +60,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB026C9D228CD1DC0081690A /* ToDoToday_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoToday_ViewController.swift; sourceTree = "<group>"; };
+		EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteActivity_ViewController.swift; sourceTree = "<group>"; };
+		EB026CA1228CD1F40081690A /* Timer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer_ViewController.swift; sourceTree = "<group>"; };
+		EB026CA3228CE2FD0081690A /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		EB026CA4228CE2FD0081690A /* Trackertask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trackertask.swift; sourceTree = "<group>"; };
+		EB026CA7228CE4A50081690A /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Name_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Category_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB75228ABA9400703614 /* NewActivity_Dates_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Dates_ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +122,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB026C9C228CD1BB0081690A /* ToDoToday */ = {
+			isa = PBXGroup;
+			children = (
+				EB026C9D228CD1DC0081690A /* ToDoToday_ViewController.swift */,
+				EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */,
+				EB026CA1228CD1F40081690A /* Timer_ViewController.swift */,
+			);
+			path = ToDoToday;
+			sourceTree = "<group>";
+		};
 		EB04DB6F228ABA1400703614 /* NewActivity_ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +148,8 @@
 		EB04DB70228ABA2B00703614 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EB026C9C228CD1BB0081690A /* ToDoToday */,
+				EBBC31FF228B9B5A0064451F /* TaskTrackerCalendar */,
 				EBA57E60228C66590021F18A /* Category_Management */,
 				EB04DB87228B1AF300703614 /* MainViews_ViewController */,
 				EB04DB7D228ABAC800703614 /* NewCategory_ViewController */,
@@ -183,7 +207,6 @@
 			children = (
 				EBD1A821228C2FC90007B38A /* PaintCode_Framework */,
 				EBD1A818228C05D90007B38A /* Helper */,
-				EBBC31FF228B9B5A0064451F /* TaskTrackerCalendar */,
 				EBBC31F6228B990F0064451F /* GraphicElements */,
 				EB04DB84228AD16400703614 /* CoreDataHelper */,
 				EB04DB70228ABA2B00703614 /* ViewController */,
@@ -252,6 +275,9 @@
 			children = (
 				EBD1A822228C2FFF0007B38A /* Test1.swift */,
 				EBD1A825228C312C0007B38A /* Stopwatch.swift */,
+				EB026CA3228CE2FD0081690A /* Clock.swift */,
+				EB026CA4228CE2FD0081690A /* Trackertask.swift */,
+				EB026CA7228CE4A50081690A /* Timer.swift */,
 			);
 			path = PaintCode_Framework;
 			sourceTree = "<group>";
@@ -359,6 +385,8 @@
 			files = (
 				EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */,
 				EBA57E68228C66C40021F18A /* GoalCategory_ViewController.swift in Sources */,
+				EB026CA0228CD1EB0081690A /* CompleteActivity_ViewController.swift in Sources */,
+				EB026CA6228CE2FE0081690A /* Trackertask.swift in Sources */,
 				EBBC31FE228B998A0064451F /* RoundLabel.swift in Sources */,
 				EBD1A820228C22310007B38A /* CustomTableViewCell.swift in Sources */,
 				EB04DB81228ABB4700703614 /* NewCategory_Color_ViewController.swift in Sources */,
@@ -374,7 +402,10 @@
 				EBD1A81C228C1A460007B38A /* ViewDetailTracker_ViewController.swift in Sources */,
 				EB04DB89228B1B1000703614 /* Activity_TableViewController.swift in Sources */,
 				EBD1A81A228C05EE0007B38A /* Helper_Methods.swift in Sources */,
+				EB026CA5228CE2FE0081690A /* Clock.swift in Sources */,
 				EB04DB76228ABA9400703614 /* NewActivity_Dates_ViewController.swift in Sources */,
+				EB026C9E228CD1DC0081690A /* ToDoToday_ViewController.swift in Sources */,
+				EB026CA2228CD1F40081690A /* Timer_ViewController.swift in Sources */,
 				EBBC31FA228B995C0064451F /* RoundedTextFieldIBDesign.swift in Sources */,
 				EBCA2F86228C7FEC005FF9BE /* CategoryManage_ViewController.swift in Sources */,
 				EBBC31F8228B99310064451F /* CustomColor.swift in Sources */,
@@ -385,6 +416,7 @@
 				EB04DB78228ABAA900703614 /* NewActivity_Recurrency_ViewController.swift in Sources */,
 				EB482EDD2289C671001F1F3F /* coursework_2.xcdatamodeld in Sources */,
 				EB04DB7C228ABAC400703614 /* NewActivity_Partner_ViewController.swift in Sources */,
+				EB026CA8228CE4A50081690A /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

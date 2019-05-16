@@ -144,6 +144,20 @@ class NewActivity_TimeDuration_ViewController: UIViewController,UIPickerViewDele
    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "back"){
+            let passingArgument = segue.destination as? NewActivity_Recurrency_ViewController
+            
+            passingArgument?.new_activity = new_activity
+            
+            if (self.editing_mode_on){
+                passingArgument?.oldActivity = oldActivity
+                passingArgument?.editing_mode_on = true
+            }
+        }
+        
+        
+        
         if(segue.identifier == "segue_createTime"){
             let passingArgument = segue.destination as? NewActivity_Partner_ViewController
             let choosenTime = minutesInt[picker_duration.selectedRow(inComponent: 0)]

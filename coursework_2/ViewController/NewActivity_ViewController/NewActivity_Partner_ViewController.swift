@@ -189,6 +189,10 @@ class NewActivity_Partner_ViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
+        
+        
+        
+        
         // create a new entity
         let entity = NSEntityDescription.entity(forEntityName: "Activity", in: context)
         let newElement = NSManagedObject(entity: entity!, insertInto: context)
@@ -341,6 +345,22 @@ class NewActivity_Partner_ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "back"){
+            let passingArgument = segue.destination as? NewActivity_TimeDuration_ViewController
+            
+            passingArgument?.new_activity = new_activity
+            
+            if (self.editing_mode_on){
+                passingArgument?.oldActivity = oldActivity
+                passingArgument?.editing_mode_on = true
+            }
+        }
+    }
+        
     
 
   

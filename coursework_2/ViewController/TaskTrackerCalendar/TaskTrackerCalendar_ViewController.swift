@@ -357,9 +357,83 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         }
         else if (activity.daily == true){
             
+            var newValue = Calendar.current.date(byAdding: .day, value: 0, to: startdate_activity)
+            
+            // < end_date of activity (2099 if infinite) && end_date month
+            while(newValue! <= enddate_activity && newValue! <= endDate){
+                
+                
+                print("Evaluation Date --> \(newValue!)")
+                print("Activity Start --> \(startdate_activity)")
+                print("Activity End --> \(enddate_activity)")
+                
+                // check if consider the activity
+                if (newValue! >= startdate_activity && newValue! <= enddate_activity
+                    && newValue! >= startDate && newValue! <= endDate){
+                    
+                    addToScheduledActivities(activity: activity, day: newValue!)
+                    existsActivityScheduledForTheMonth = true
+                }
+                
+                newValue = Calendar.current.date(byAdding: .day, value: 1, to: newValue!)
+                
+            }
+            
+            
         }
         else if (activity.weekly == true){
+            var newValue = Calendar.current.date(byAdding: .day, value: 0, to: startdate_activity)
             
+            // < end_date of activity (2099 if infinite) && end_date month
+            while(newValue! <= enddate_activity && newValue! <= endDate){
+                
+                
+                print("Evaluation Date --> \(newValue!)")
+                print("Activity Start --> \(startdate_activity)")
+                print("Activity End --> \(enddate_activity)")
+                
+                // check if consider the activity
+                if (newValue! >= startdate_activity && newValue! <= enddate_activity
+                    && newValue! >= startDate && newValue! <= endDate){
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "EEEE"
+                    let dayInWeek = dateFormatter.string(from: newValue!)
+                    
+                    if(dayInWeek == "Sunday" && activity.sunday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+                    else if(dayInWeek == "Monday" && activity.monday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+                    else if(dayInWeek == "Tuesday" && activity.tuesday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+                    else if(dayInWeek == "Wednesday" && activity.wednseday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+                    else if(dayInWeek == "Thursday" && activity.thursday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+                    else if(dayInWeek == "Friday" && activity.friday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+                    else if(dayInWeek == "Saturday" && activity.saturday == true){
+                        addToScheduledActivities(activity: activity, day: newValue!)
+                        existsActivityScheduledForTheMonth = true
+                    }
+  
+                }
+                
+                newValue = Calendar.current.date(byAdding: .day, value: 1, to: newValue!)
+                
+            }
         }
         
     }

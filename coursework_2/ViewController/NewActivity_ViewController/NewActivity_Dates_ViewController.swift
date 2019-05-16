@@ -82,12 +82,33 @@ class NewActivity_Dates_ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if(segue.identifier == "back"){
+             let passingArgument = segue.destination as? NewActivity_Category_ViewController
+            
+            passingArgument?.new_activity = new_activity
+            
+            if (self.editing_mode_on){
+                passingArgument?.oldActivity = oldActivity
+                passingArgument?.editing_mode_on = true
+            }
+        }
+        
+        
+        
         if(segue.identifier == "segue_createPeriod"){
             let passingArgument = segue.destination as? NewActivity_Recurrency_ViewController
             
             new_activity?.not_infinite = switch_EndDay.isOn
             new_activity?.start_date = picker_startDate.date
             new_activity?.end_date = picker_EndDate.date
+            
+            // if the user selects infinite --> 2099/12/31 /// <---------------
+            if switch_EndDay.isOn == false {
+                picker_EndDate.isHidden = true
+                let date_helper : DealWithDate = DealWithDate()
+                let infinite : Date = date_helper.returnInfiniteDate()
+                new_activity?.end_date = infinite
+            }
             
             passingArgument?.new_activity = new_activity
             

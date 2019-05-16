@@ -43,6 +43,20 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
+        // manage the go back request
+        if(segue.identifier == "back"){
+            
+            let passingArgument = segue.destination as? ColorCategory_ViewController
+            passingArgument?.new_category = new_category
+            passingArgument?.editingRequest = self.editingRequest
+            
+            if(editingRequest){
+                passingArgument?.edit_category = self.edit_category!
+            }
+        }
+        
+        
         if(segue.identifier == "segue_categoryCreated"){
             
             // saving in Core Data

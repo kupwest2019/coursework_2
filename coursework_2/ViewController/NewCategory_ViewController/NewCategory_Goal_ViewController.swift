@@ -28,6 +28,14 @@ class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UI
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if(segue.identifier == "back"){
+            let passingArgument = segue.destination as? NewCategory_Color_ViewController
+                        
+            passingArgument?.new_category = new_category
+            passingArgument?.new_activity = new_activity
+        }
+        
+        
         if(segue.identifier == "segue_categoryCreated"){
             
             // saving in Core Data
