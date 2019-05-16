@@ -27,8 +27,13 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="cateogry" inverseEntity="Activity" syncable="YES"/>
     </entity>
+    <entity name="CompletedActivity" representedClassName="CompletedActivity" syncable="YES" codeGenerationType="class">
+        <attribute name="activity_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Activity" positionX="-18" positionY="54" width="128" height="330"/>
         <element name="Category" positionX="-45" positionY="0" width="128" height="105"/>
+        <element name="CompletedActivity" positionX="-27" positionY="153" width="128" height="75"/>
     </elements>
 </model>

@@ -21,9 +21,6 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     var arreyButton : [RoundButtonDesignable] = []
     var arrey_scheduled_activities : [Calendar_Day_Activity] = []
     var actualButton : RoundButtonDesignable?
-
-
-    
     
     @IBOutlet weak var label_yearmonth: UILabel!
     
@@ -171,6 +168,8 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     func clear_arrey_scheduled_activities(){
         for index in 0...arrey_scheduled_activities.count-1{
             arrey_scheduled_activities[index].activities_scheduled.removeAll()
+            arrey_scheduled_activities[index].activities_finished.removeAll()
+
         }
     }
     
@@ -263,8 +262,9 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         let calanderDate = Calendar.current.dateComponents([.year, .month], from: newMonth!)
         label_yearmonth.text = "\(calanderDate.month!) - \(calanderDate.year!)"
         
-        // query activities -> populate activities to be executed arrey
+        // query activities -> populate activities to be executed arrey + activity completed
         queryActivitis(newMonth!, numDays!)
+        queryActivityCompleted(newMonth!, numDays!)
         
         
         var day : Int = 0
@@ -289,6 +289,48 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         refreshCalendarView()
         
     }
+    
+    
+    
+    func queryActivityCompleted(_ newDate : Date, _ days:Int){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
+        
+        
+        let date_helper : DealWithDate = DealWithDate()
+        let startDate = date_helper.returnOnlyDayMonthYear_customDay(inputDate: newDate, day: 1)
+        let endDate = date_helper.returnOnlyDayMonthYear_customDay_endDate(inputDate: newDate, day: days)
+    
+        
+        // NB PAY ATTENTION TO DATE
+        let fromPredicate = NSPredicate(format: "date >= %@", startDate as NSDate)
+        let toPredicate = NSPredicate(format: "date =< %@", endDate as NSDate)
+        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        fetchRequest2.predicate = datePredicate
+        
+        // doing the request -- fetching the request
+        
+        
+        
+        fetchRequest2.returnsObjectsAsFaults = false
+        do {
+            print("//---COMPLETED--//")
+            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
+            for data in result {
+                print(data)
+                addToCompletedActivities(activity: data, day: data.date!)
+            }
+            
+        } catch {
+            
+            print("Failed")
+        }
+        
+        
+    
+    }
+    
     
     
     func queryActivitis(_ newDate : Date, _ days:Int){
@@ -457,6 +499,27 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         }
 
     }
+    
+    
+    func addToCompletedActivities(activity : CompletedActivity, day: Date){
+        print("Activity must be executed in \(day)")
+        
+        for index in 0...arrey_scheduled_activities.count-1{
+            
+            let date_helper : DealWithDate = DealWithDate()
+            let date_to_be_executed = date_helper.returnCalendarDayMonthYear(inputDate: day)
+            
+            if (arrey_scheduled_activities[index].day_number == date_to_be_executed.day){
+                print("Acitivity will be executed in \(arrey_scheduled_activities[index].day_number)")
+                arrey_scheduled_activities[index].activities_finished.append(activity)
+                
+                //i.activities_scheduled.append(activity)
+            }
+        }
+        
+    }
+    
+    
     
     func refreshCalendarView(){
         

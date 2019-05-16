@@ -18,6 +18,7 @@ struct Category_obj{
 
 struct Calendar_Day_Activity{
     var activities_scheduled : [Activity] = []
+    var activities_finished : [CompletedActivity] = []
     var day_number : Int = 0
     init(day : Int) {
         day_number = day

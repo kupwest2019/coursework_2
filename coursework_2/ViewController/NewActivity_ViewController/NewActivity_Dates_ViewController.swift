@@ -12,7 +12,7 @@ class NewActivity_Dates_ViewController: UIViewController {
 
     
     var new_activity : Activity_obj?
-    
+    let date_helper : DealWithDate = DealWithDate()
     var oldActivity : Activity?
     var editing_mode_on: Bool = false
     
@@ -99,13 +99,17 @@ class NewActivity_Dates_ViewController: UIViewController {
             let passingArgument = segue.destination as? NewActivity_Recurrency_ViewController
             
             new_activity?.not_infinite = switch_EndDay.isOn
-            new_activity?.start_date = picker_startDate.date
-            new_activity?.end_date = picker_EndDate.date
+            
+            new_activity?.start_date = date_helper.returnOnlyDayMonthYear(inputDate: picker_startDate.date)
+            new_activity?.end_date = date_helper.returnOnlyDayMonthYear(inputDate: picker_EndDate.date)
+            
+//
+//            new_activity?.start_date = picker_startDate.date
+//            new_activity?.end_date = picker_EndDate.date
             
             // if the user selects infinite --> 2099/12/31 /// <---------------
             if switch_EndDay.isOn == false {
                 picker_EndDate.isHidden = true
-                let date_helper : DealWithDate = DealWithDate()
                 let infinite : Date = date_helper.returnInfiniteDate()
                 new_activity?.end_date = infinite
             }

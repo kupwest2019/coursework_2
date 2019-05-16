@@ -7,19 +7,81 @@
 //
 
 import UIKit
+import CoreData
 
 class CompleteActivity_ViewController: UIViewController {
 
     @IBOutlet weak var label_recurrency: UILabel!
+    
+    @IBOutlet weak var activity_date: UILabel!
+    @IBOutlet weak var button_complete: RoundButtonDesignable!
     
     @IBOutlet weak var start_button: UIButton!
     @IBOutlet weak var label_partner: UILabel!
     
     @IBOutlet weak var label_timer: UILabel!
     var activityToBeExecuted : Activity?
+    var dateOfActivity:Date?
     
+    
+    @IBAction func complete_button(_ sender: Any) {
+        let alertController = UIAlertController(title: "Warning", message: "🐵 Have you really completed the activity? 🐵", preferredStyle: .alert)
+        
+        let complete = UIAlertAction(title: "Yes Sure!", style: .destructive, handler: { (action) in
+            self.insertActivityInCoreDataCompleted()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(complete)
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func insertActivityInCoreDataCompleted(){
+        print("completed Actvity")
+        updateCoreData()
+        self.button_complete.isEnabled = false
+        
+    }
+    
+    
+    func updateCoreData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+                
+        // manage Update
+        // create a new entity
+        let entity = NSEntityDescription.entity(forEntityName: "CompletedActivity", in: context)
+        let newElement = NSManagedObject(entity: entity!, insertInto: context)
+        newElement.setValue(self.activityToBeExecuted!.name, forKey: "activity_name")
+        newElement.setValue(self.dateOfActivity!, forKey: "date")
+    
+        
+        
+        // saving a entity
+        do {
+            try context.save()
+        }catch {print("failed save!")}
+        
+        
+    }
+    
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let date_helper : DealWithDate = DealWithDate()
+        let day_description = date_helper.returnCalendarDayMonthYear(inputDate: dateOfActivity!)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let dayInWeek = dateFormatter.string(from: dateOfActivity!)
+        
+        self.activity_date.text = "\(dayInWeek) : \(day_description.day ?? 0) - \(day_description.month ?? 0) "
+        
+        
         
         
         if(activityToBeExecuted?.duration_choice == false){
@@ -73,5 +135,8 @@ class CompleteActivity_ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
 
 }

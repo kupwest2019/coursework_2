@@ -29,17 +29,12 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     }
     
     
-    
-    
-    
-   
-    
     @IBOutlet weak var tabView: UITableView!
-    
     @IBOutlet weak var animation: Stopwatch!
     
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.animation.prgress = 0.0
         moveTheAnimation()
@@ -56,23 +51,24 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     
     // using the timer to re-draw
     @objc func fireTimer() {
-        print("Timer fired!")
+     //   print("Timer fired!")
 
         if(index<1){
             index = index+0.001
-            print(index)
+         //   print(index)
             self.animation.prgress = index
         }
         else{
-            print(index)
+      //      print(index)
             index = index+1
             timer!.invalidate()
-            print("Timer Stop")
+        //    print("Timer Stop")
         }
     }
     
     var selectedDAyInfo : Calendar_Day_Activity?
     var activities : [Activity] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedDAyInfo)
