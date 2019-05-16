@@ -13,7 +13,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
 
     var today : Date = Date()
     var calendar = Calendar.current
-    var counter : Int = 0
+    var counter_monthSelected : Int = 0
     
     var totalNumberOfDaysInAMonth : Int = 0
     var existsActivityScheduledForTheMonth : Bool = false
@@ -169,23 +169,22 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         for index in 0...arrey_scheduled_activities.count-1{
             arrey_scheduled_activities[index].activities_scheduled.removeAll()
             arrey_scheduled_activities[index].activities_finished.removeAll()
-
         }
     }
     
     // days func
     @IBAction func next(_ sender: UIButton) {
-        counter = counter+1
+        counter_monthSelected = counter_monthSelected+1
         clear_arrey_scheduled_activities()
-        updateDays(counter)
+        updateDays(counter_monthSelected)
     }
     
     
     
     @IBAction func prev(_ sender: UIButton) {
-        counter = counter-1
+        counter_monthSelected = counter_monthSelected-1
         clear_arrey_scheduled_activities()
-        updateDays(counter)
+        updateDays(counter_monthSelected)
     
     }
     
@@ -197,11 +196,10 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         clearArrey()
         populateArreyButton()
         populateArreyScheduledActivities()
-        updateDays(counter)
+        updateDays(counter_monthSelected)
         setButtonSelectable()
     }
     
@@ -520,9 +518,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             let date_to_be_executed = date_helper.returnCalendarDayMonthYear(inputDate: day)
             
             if (arrey_scheduled_activities[index].day_number == date_to_be_executed.day){
-                
-                
-                
+                print("I WILL ADD A COMPLETED ACTIVITY FOR THE DAY \(index+1)")
                 print("Acitivity \(activity) will be executed in \(arrey_scheduled_activities[index].day_number)")
                 arrey_scheduled_activities[index].activities_finished.append(activity)
                 
