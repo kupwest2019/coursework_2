@@ -11,6 +11,12 @@ import CoreData
 
 class Activity_TableViewController: UITableViewController {
 
+    
+    
+    
+    
+    
+    
     var item : [Activity] = []
     var selected_item : Int = 0
     var editingAvailable = false
@@ -33,6 +39,18 @@ class Activity_TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Section \(section)"
+//    }
+//    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let vw = UIView()
+//        vw.backgroundColor = UIColor.red
+//        return vw
+//    }
+//    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

@@ -39,6 +39,8 @@
 		EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */; };
 		EBBC31FE228B998A0064451F /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC31FD228B998A0064451F /* RoundLabel.swift */; };
 		EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */; };
+		EBBD8BBF228DB7CA000C62D8 /* SendFeedBack_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBD8BBE228DB7CA000C62D8 /* SendFeedBack_ViewController.swift */; };
+		EBBD8BC1228DB7D7000C62D8 /* PersonalInformation_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBD8BC0228DB7D7000C62D8 /* PersonalInformation_ViewController.swift */; };
 		EBCA2F86228C7FEC005FF9BE /* CategoryManage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA2F85228C7FEC005FF9BE /* CategoryManage_ViewController.swift */; };
 		EBCA2F88228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA2F87228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift */; };
 		EBD1A81A228C05EE0007B38A /* Helper_Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A819228C05EE0007B38A /* Helper_Methods.swift */; };
@@ -97,6 +99,8 @@
 		EBBC31FB228B99750064451F /* RoundBottonIBDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBottonIBDesign.swift; sourceTree = "<group>"; };
 		EBBC31FD228B998A0064451F /* RoundLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTrackerCalendar_ViewController.swift; sourceTree = "<group>"; };
+		EBBD8BBE228DB7CA000C62D8 /* SendFeedBack_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedBack_ViewController.swift; sourceTree = "<group>"; };
+		EBBD8BC0228DB7D7000C62D8 /* PersonalInformation_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformation_ViewController.swift; sourceTree = "<group>"; };
 		EBCA2F85228C7FEC005FF9BE /* CategoryManage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManage_ViewController.swift; sourceTree = "<group>"; };
 		EBCA2F87228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManage_Name_ViewController.swift; sourceTree = "<group>"; };
 		EBD1A819228C05EE0007B38A /* Helper_Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper_Methods.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		EB04DB70228ABA2B00703614 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EBBD8BBD228DB7B3000C62D8 /* Personal Settings */,
 				EB026C9C228CD1BB0081690A /* ToDoToday */,
 				EBBC31FF228B9B5A0064451F /* TaskTrackerCalendar */,
 				EBA57E60228C66590021F18A /* Category_Management */,
@@ -262,6 +267,15 @@
 				EBD1A81B228C1A460007B38A /* ViewDetailTracker_ViewController.swift */,
 			);
 			path = TaskTrackerCalendar;
+			sourceTree = "<group>";
+		};
+		EBBD8BBD228DB7B3000C62D8 /* Personal Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EBBD8BBE228DB7CA000C62D8 /* SendFeedBack_ViewController.swift */,
+				EBBD8BC0228DB7D7000C62D8 /* PersonalInformation_ViewController.swift */,
+			);
+			path = "Personal Settings";
 			sourceTree = "<group>";
 		};
 		EBD1A818228C05D90007B38A /* Helper */ = {
@@ -417,6 +431,8 @@
 				EB04DB86228AD1B100703614 /* CoreDataHelper.swift in Sources */,
 				EBA57E66228C66B40021F18A /* ColorCategory_ViewController.swift in Sources */,
 				EB482ED52289C671001F1F3F /* AppDelegate.swift in Sources */,
+				EBBD8BBF228DB7CA000C62D8 /* SendFeedBack_ViewController.swift in Sources */,
+				EBBD8BC1228DB7D7000C62D8 /* PersonalInformation_ViewController.swift in Sources */,
 				EB04DB78228ABAA900703614 /* NewActivity_Recurrency_ViewController.swift in Sources */,
 				EB482EDD2289C671001F1F3F /* coursework_2.xcdatamodeld in Sources */,
 				EB04DB7C228ABAC400703614 /* NewActivity_Partner_ViewController.swift in Sources */,
