@@ -15,7 +15,8 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
 
     @IBOutlet weak var buttoncreate: UIButton!
     @IBOutlet weak var picker_goal: UIPickerView!
-    
+    let date_helper : DealWithDate = DealWithDate()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         picker_goal.delegate = self
@@ -65,6 +66,11 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
             let choosenGoal : NSNumber = Int32(number[picker_goal.selectedRow(inComponent: 0)])! as NSNumber
             
             
+            
+            let today : Date = Date()
+            let newDate = date_helper.returnOnlyDayMonthYear(inputDate: today)
+            //newElement.setValue(newDate, forKey: "startDate")
+            
             // manage Update
             if(self.editingRequest){
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
@@ -82,6 +88,7 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
                     for i in resultdata{
                         i.setValue(new_category.color, forKey: "colour")
                         i.setValue(choosenGoal, forKey: "goal")
+                        i.setValue(newDate, forKey: "startDate")
                     }
                     try context.save()
                     
@@ -101,6 +108,7 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
                 newElement.setValue(new_category.name, forKey: "name")
                 newElement.setValue(new_category.color, forKey: "colour")
                 newElement.setValue(choosenGoal, forKey: "goal")
+                newElement.setValue(newDate, forKey: "startDate")
                 
                 
                 // saving a entity

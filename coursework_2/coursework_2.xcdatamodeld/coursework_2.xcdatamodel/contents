@@ -25,6 +25,7 @@
         <attribute name="colour" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="goal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="cateogry" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <entity name="CompletedActivity" representedClassName="CompletedActivity" syncable="YES" codeGenerationType="class">
@@ -33,8 +34,8 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-18" positionY="54" width="128" height="330"/>
-        <element name="Category" positionX="-45" positionY="0" width="128" height="105"/>
-        <element name="CompletedActivity" positionX="-27" positionY="153" width="128" height="90"/>
+        <element name="Activity" positionX="-15.44921875" positionY="112.30859375" width="128" height="330"/>
+        <element name="Category" positionX="-560.171875" positionY="335.375" width="128" height="118"/>
+        <element name="CompletedActivity" positionX="-517.328125" positionY="96.0390625" width="128" height="90"/>
     </elements>
 </model>

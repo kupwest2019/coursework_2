@@ -66,6 +66,28 @@ class DealWithDate{
         
     }
     
+    func returnDateForCategoryPopulation() -> Date{
+        
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = 2019
+        dateComponents.month = 1
+        dateComponents.day = 30
+        dateComponents.timeZone = TimeZone(abbreviation: "UTC") // Japan Standard Time
+        dateComponents.hour = 0
+        dateComponents.minute = 00
+        
+        // Create date from components
+        let userCalendar = Calendar.current // user calendar
+        let cleaned_date = userCalendar.date(from: dateComponents)
+        
+        print (cleaned_date!)
+        
+        return cleaned_date!
+    }
+    
+    
+    
     func returnOnlyDayMonthYear_customDay(inputDate : Date, day: Int) -> Date{
         
         let calanderDate = Calendar.current.dateComponents([.year, .month, .day], from: inputDate)

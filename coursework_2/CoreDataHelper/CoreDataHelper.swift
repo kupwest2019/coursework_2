@@ -13,6 +13,7 @@ struct Category_obj{
     var color : String = ""
     var name : String = ""
     var goal : Int = 0
+    
 }
     
 

@@ -11,6 +11,7 @@ import CoreData
 
 class LoginView_ViewController: UIViewController {
     let defaults = UserDefaults.standard
+    let date_helper : DealWithDate = DealWithDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,22 +40,31 @@ class LoginView_ViewController: UIViewController {
 
             let predifinedGoal : Int32 = 0
             
+            let today : Date = date_helper.returnDateForCategoryPopulation()
+            let newDate = date_helper.returnOnlyDayMonthYear(inputDate: today)
+            
+            
+            
             newElement.setValue("exercise", forKey: "name")
             newElement.setValue(color_category.red, forKey: "colour")
             newElement.setValue(predifinedGoal, forKey: "goal")
-            
+            newElement.setValue(newDate, forKey: "startDate")
+
             newElement2.setValue("study", forKey: "name")
             newElement2.setValue(color_category.green, forKey: "colour")
             newElement2.setValue(predifinedGoal, forKey: "goal")
-            
+            newElement2.setValue(newDate, forKey: "startDate")
+
             newElement3.setValue("health", forKey: "name")
             newElement3.setValue(color_category.yellow, forKey: "colour")
             newElement3.setValue(predifinedGoal, forKey: "goal")
-            
+            newElement3.setValue(newDate, forKey: "startDate")
+
             newElement4.setValue("amuse", forKey: "name")
             newElement4.setValue(color_category.blue, forKey: "colour")
             newElement4.setValue(predifinedGoal, forKey: "goal")
-            
+            newElement4.setValue(newDate, forKey: "startDate")
+
             
             
             

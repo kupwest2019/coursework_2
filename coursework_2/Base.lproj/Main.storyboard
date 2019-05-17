@@ -2240,7 +2240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSI-Pf-uSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5529.375" y="1101.7605633802816"/>
+            <point key="canvasLocation" x="5531" y="1137"/>
         </scene>
         <!--Send Feed Back View Controller-->
         <scene sceneID="ikO-xu-BzA">
@@ -2310,7 +2310,7 @@
             </objects>
             <point key="canvasLocation" x="2326" y="1019"/>
         </scene>
-        <!--View Controller-->
+        <!--Coaching Mentor-->
         <scene sceneID="tgY-pE-55s">
             <objects>
                 <viewController id="1fQ-Xy-NUd" sceneMemberID="viewController">
@@ -2320,11 +2320,206 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wVa-ee-Pw9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XgH-Wt-pkO"/>
+                    <navigationItem key="navigationItem" title="Coaching Mentor" id="XgH-Wt-pkO">
+                        <barButtonItem key="rightBarButtonItem" title="Goal" id="TMV-TN-Y5h">
+                            <connections>
+                                <segue destination="ac2-fS-o5j" kind="show" id="BId-fy-atN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRj-jd-lZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3261" y="1016"/>
+            <point key="canvasLocation" x="6804" y="1018"/>
+        </scene>
+        <!--Goals-->
+        <scene sceneID="CAc-zg-Qga">
+            <objects>
+                <viewController title="Goals" id="ac2-fS-o5j" customClass="ShowCategory_ViewController" customModule="coursework_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BcJ-8N-5Xm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtG-UK-9kN">
+                                <rect key="frame" x="16" y="64" width="288" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gtG-UK-9kN" firstAttribute="leading" secondItem="Aan-jJ-sPh" secondAttribute="leading" constant="16" id="N44-lb-RXd"/>
+                            <constraint firstItem="gtG-UK-9kN" firstAttribute="top" secondItem="Aan-jJ-sPh" secondAttribute="top" id="OGi-rW-7uv"/>
+                            <constraint firstItem="Aan-jJ-sPh" firstAttribute="bottom" secondItem="gtG-UK-9kN" secondAttribute="bottom" id="PCe-mc-1XX"/>
+                            <constraint firstItem="Aan-jJ-sPh" firstAttribute="trailing" secondItem="gtG-UK-9kN" secondAttribute="trailing" constant="16" id="v6f-bh-KvV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Aan-jJ-sPh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Goals Tracking" id="Zse-LN-gJZ">
+                        <barButtonItem key="rightBarButtonItem" title="Goal" id="Qy5-PH-tpi">
+                            <connections>
+                                <segue destination="mMD-W4-3g3" kind="show" identifier="goalDetail" id="x6D-iN-b06"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editingButton" destination="Qy5-PH-tpi" id="fhX-Xw-x40"/>
+                        <outlet property="tableView" destination="gtG-UK-9kN" id="Qy0-ST-Qoj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s5V-fm-Cl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7703" y="1018"/>
+        </scene>
+        <!--Show Goal Category View Controller-->
+        <scene sceneID="RAT-5A-F1W">
+            <objects>
+                <viewController id="dfV-Yw-JmC" customClass="ShowGoalCategory_ViewController" customModule="coursework_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hnT-7F-bee">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-IM-CVf">
+                                <rect key="frame" x="16" y="74" width="288" height="246"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mrU-kW-14e">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-OM-kdc">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.5" height="30"/>
+                                                <state key="normal" title="Restart"/>
+                                                <connections>
+                                                    <action selector="button_restart:" destination="dfV-Yw-JmC" eventType="touchUpInside" id="iJ5-Wh-NDy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PJ-3C-qDc">
+                                                <rect key="frame" x="142.5" y="0.0" width="145.5" height="30"/>
+                                                <state key="normal" title="Update"/>
+                                                <connections>
+                                                    <action selector="button_update:" destination="dfV-Yw-JmC" eventType="touchUpInside" id="KxY-vE-sGO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQl-T2-Fs2">
+                                        <rect key="frame" x="0.0" y="30" width="288" height="216"/>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Eaw-IM-CVf" firstAttribute="top" secondItem="JXc-0w-ptP" secondAttribute="top" constant="10" id="4b7-9a-0Dk"/>
+                            <constraint firstItem="JXc-0w-ptP" firstAttribute="bottom" secondItem="iQl-T2-Fs2" secondAttribute="bottom" constant="199" id="KCu-gV-jKf"/>
+                            <constraint firstItem="Eaw-IM-CVf" firstAttribute="leading" secondItem="JXc-0w-ptP" secondAttribute="leading" constant="16" id="NWM-AQ-U0z"/>
+                            <constraint firstItem="JXc-0w-ptP" firstAttribute="trailing" secondItem="Eaw-IM-CVf" secondAttribute="trailing" constant="16" id="rbJ-sT-Hbw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JXc-0w-ptP"/>
+                    </view>
+                    <connections>
+                        <outlet property="button_restart" destination="kdo-OM-kdc" id="INi-fN-qCD"/>
+                        <outlet property="button_update" destination="1PJ-3C-qDc" id="UMB-yM-vFi"/>
+                        <outlet property="goal_picker" destination="iQl-T2-Fs2" id="CYY-FH-S7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JL2-sw-4iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9737" y="1018"/>
+        </scene>
+        <!--Goal Track-->
+        <scene sceneID="4U1-Jx-siJ">
+            <objects>
+                <viewController id="mMD-W4-3g3" customClass="ShowGoalDeail_ViewController" customModule="coursework_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GJ6-73-gF8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CGo-is-Jmz">
+                                <rect key="frame" x="16" y="74" width="288" height="234"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-Pe-P3L">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx_date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp0-TT-xv9">
+                                        <rect key="frame" x="0.0" y="30.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPB-Dt-6yc">
+                                        <rect key="frame" x="0.0" y="61" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx_goal of the category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iN-9A-Pj1">
+                                        <rect key="frame" x="0.0" y="91.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-Ot-5J2">
+                                        <rect key="frame" x="0.0" y="122" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx_completed_activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft3-8c-27p">
+                                        <rect key="frame" x="0.0" y="152.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities not completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-oO-ivO">
+                                        <rect key="frame" x="0.0" y="183" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx_not_completed_activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg0-vG-Co2">
+                                        <rect key="frame" x="0.0" y="213.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwv-rS-RRT">
+                                <rect key="frame" x="16" y="316" width="288" height="203"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vwv-rS-RRT" firstAttribute="top" secondItem="CGo-is-Jmz" secondAttribute="bottom" constant="8" id="3PL-AH-n7C"/>
+                            <constraint firstItem="CGo-is-Jmz" firstAttribute="top" secondItem="P7U-bT-j83" secondAttribute="top" constant="10" id="6MF-55-icN"/>
+                            <constraint firstItem="P7U-bT-j83" firstAttribute="trailing" secondItem="CGo-is-Jmz" secondAttribute="trailing" constant="16" id="CX5-j5-Udg"/>
+                            <constraint firstItem="P7U-bT-j83" firstAttribute="trailing" secondItem="vwv-rS-RRT" secondAttribute="trailing" constant="16" id="Iiu-P8-fHW"/>
+                            <constraint firstItem="vwv-rS-RRT" firstAttribute="leading" secondItem="P7U-bT-j83" secondAttribute="leading" constant="16" id="Xmp-ii-fJY"/>
+                            <constraint firstItem="CGo-is-Jmz" firstAttribute="leading" secondItem="P7U-bT-j83" secondAttribute="leading" constant="16" id="nWN-zP-sqQ"/>
+                            <constraint firstItem="P7U-bT-j83" firstAttribute="bottom" secondItem="vwv-rS-RRT" secondAttribute="bottom" id="o52-VR-AcT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P7U-bT-j83"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Goal Track" id="obX-R3-vj5">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Goal" id="CQ6-eE-T96">
+                            <connections>
+                                <segue destination="dfV-Yw-JmC" kind="show" identifier="goalDetail" id="1X9-Ns-6nC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="label_categoryGoal" destination="5iN-9A-Pj1" id="sxK-pQ-r4R"/>
+                        <outlet property="label_completed_act" destination="5iN-9A-Pj1" id="Qs7-nM-lf6"/>
+                        <outlet property="label_not_completed_act" destination="sg0-vG-Co2" id="Dit-fI-oLj"/>
+                        <outlet property="start_date" destination="Xp0-TT-xv9" id="Ldt-m5-iD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTr-B5-iAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8760" y="1017.2535211267606"/>
         </scene>
         <!--Today-->
         <scene sceneID="6N4-TK-aDL">

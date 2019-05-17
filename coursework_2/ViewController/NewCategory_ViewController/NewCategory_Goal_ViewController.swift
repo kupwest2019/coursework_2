@@ -15,10 +15,9 @@ class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UI
     var new_activity : Activity_obj?
     var oldActivity : Activity?
     var editing_mode_on: Bool = false
-    
-    
-    
-    
+    let date_helper : DealWithDate = DealWithDate()
+
+
     
     let number = ["0","5","6","7","8","9","10","15"]
 
@@ -57,10 +56,14 @@ class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UI
             let choosenGoal : NSNumber = Int32(number[picker_goal.selectedRow(inComponent: 0)])! as NSNumber
             
             
+            let today : Date = Date()
+
+            let newDate = date_helper.returnOnlyDayMonthYear(inputDate: today)
             
             newElement.setValue(new_category.color, forKey: "colour")
             newElement.setValue(choosenGoal, forKey: "goal")
             newElement.setValue(new_category.name, forKey: "name")
+            newElement.setValue(newDate, forKey: "startDate")
 
 
             // saving a entity

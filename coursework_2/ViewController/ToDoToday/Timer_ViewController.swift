@@ -113,7 +113,11 @@ class Timer_ViewController: UIViewController {
             self.animation.prgress = index
         }
         else if index == 1{
+            
+            let myColor : MyCustomColors = MyCustomColors()
+            
             self.button_complete.isHidden = false
+            self.button_complete.borderColor = myColor.green
             timer!.invalidate()
 
         }
