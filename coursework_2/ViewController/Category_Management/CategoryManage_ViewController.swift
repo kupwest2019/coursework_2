@@ -104,12 +104,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
             let alertController = UIAlertController(title: "Warning", message: "Are you sure?", preferredStyle: .alert)
             
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-                self.delete_CoreData(indexPath: indexPath)
-                
-                self.activities.remove(at: indexPath.row)
-                self.tabView.beginUpdates()
-                self.tabView.deleteRows(at: [indexPath], with: .automatic)
-                self.tabView.endUpdates()
+                self.deleteRequest(indexPath: indexPath)
                 
             })
             
@@ -118,32 +113,41 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
             alertController.addAction(cancelAction)
             present(alertController, animated: true, completion: nil)
         }
+
     }
     
-    
-    func delete_CoreData(indexPath: IndexPath){
-        print("YOO DELETING")
-        
+    func deleteRequest(indexPath: IndexPath){
         
         let temp = self.activities[indexPath.row]
         let name : String = temp.value(forKey: "name") as! String
         
-        print (name)
-        
-        
         if(checkActivitiesRelated(name)){
             print("ERROR! Category is used!")
             let alertController = UIAlertController(title: "Warning", message: "Category is associated by an Activity", preferredStyle: .alert)
-             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
             alertController.addAction(cancelAction)
             present(alertController, animated: true, completion: nil)
         }
         else{
+            self.delete_CoreData(indexPath: indexPath, name: name)
+            self.activities.remove(at: indexPath.row)
+            self.tabView.beginUpdates()
+            self.tabView.deleteRows(at: [indexPath], with: .automatic)
+            self.tabView.endUpdates()
+        }
+
+    }
+    
+    
+    
+    func delete_CoreData(indexPath: IndexPath, name : String) {
+        print("YOO DELETING")
+        
+        
+        
+       
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let context = appDelegate.persistentContainer.viewContext
-            
-            
-            
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
             
             // filtering
@@ -175,10 +179,10 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
             }
             
            
-        }
-        
-        
     }
+        
+        
+    
     
     func checkActivitiesRelated(_ nameCategory: String) -> Bool{
         
@@ -232,9 +236,11 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
         
         
     }
+}
+
     
     
 
    
 
-}
+

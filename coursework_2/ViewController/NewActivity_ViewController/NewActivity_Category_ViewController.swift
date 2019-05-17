@@ -47,6 +47,8 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
         
       
     }
+    let myColor : MyCustomColors = MyCustomColors()
+
         
         // Do any additional setup after loading the view.
     
@@ -56,7 +58,6 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
             selectedRowPicker = true
         }
         
-        let myColor : MyCustomColors = MyCustomColors()
         let choosenCategory = item[picker_category.selectedRow(inComponent: 0)]
         if choosenCategory.colour == "Red"{
             view.backgroundColor = myColor.orange
@@ -84,7 +85,24 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
         }
         picker_category.delegate = self
         picker_category.dataSource = self
-        
+        if self.item.count > 0{
+            self.picker_category.selectRow(0, inComponent: 0, animated: false)
+            
+            // set color of category 0 ~> the selected
+            let choosenCategory = item[picker_category.selectedRow(inComponent: 0)]
+            if choosenCategory.colour == "Red"{
+                view.backgroundColor = myColor.orange
+            }
+            if choosenCategory.colour == "Blue"{
+                view.backgroundColor = myColor.blue
+            }
+            if choosenCategory.colour == "Yellow"{
+                view.backgroundColor = myColor.light_yellow
+            }
+            if choosenCategory.colour == "Green"{
+                view.backgroundColor = myColor.green
+            }
+        }
         
         if(editing_mode_on==true){
             print("editing mood")

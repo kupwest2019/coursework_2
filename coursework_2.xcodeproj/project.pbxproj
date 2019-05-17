@@ -11,7 +11,6 @@
 		EB026CA0228CD1EB0081690A /* CompleteActivity_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */; };
 		EB026CA2228CD1F40081690A /* Timer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA1228CD1F40081690A /* Timer_ViewController.swift */; };
 		EB026CA5228CE2FE0081690A /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA3228CE2FD0081690A /* Clock.swift */; };
-		EB026CA6228CE2FE0081690A /* Trackertask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA4228CE2FD0081690A /* Trackertask.swift */; };
 		EB026CA8228CE4A50081690A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA7228CE4A50081690A /* Timer.swift */; };
 		EB04DB72228ABA4100703614 /* NewActivity_Name_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */; };
 		EB04DB74228ABA5400703614 /* NewActivity_Category_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */; };
@@ -50,6 +49,7 @@
 		EBD1A824228C2FFF0007B38A /* Test1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A822228C2FFF0007B38A /* Test1.swift */; };
 		EBD1A826228C312C0007B38A /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A825228C312C0007B38A /* Stopwatch.swift */; };
 		EBD1A827228C312C0007B38A /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A825228C312C0007B38A /* Stopwatch.swift */; };
+		EBEC0836228E4EC900665420 /* Trackertask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC0835228E4EC900665420 /* Trackertask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteActivity_ViewController.swift; sourceTree = "<group>"; };
 		EB026CA1228CD1F40081690A /* Timer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer_ViewController.swift; sourceTree = "<group>"; };
 		EB026CA3228CE2FD0081690A /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
-		EB026CA4228CE2FD0081690A /* Trackertask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trackertask.swift; sourceTree = "<group>"; };
 		EB026CA7228CE4A50081690A /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Name_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Category_ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		EBD1A81F228C22310007B38A /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		EBD1A822228C2FFF0007B38A /* Test1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test1.swift; sourceTree = "<group>"; };
 		EBD1A825228C312C0007B38A /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		EBEC0835228E4EC900665420 /* Trackertask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trackertask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,10 +289,10 @@
 		EBD1A821228C2FC90007B38A /* PaintCode_Framework */ = {
 			isa = PBXGroup;
 			children = (
+				EBEC0835228E4EC900665420 /* Trackertask.swift */,
 				EBD1A822228C2FFF0007B38A /* Test1.swift */,
 				EBD1A825228C312C0007B38A /* Stopwatch.swift */,
 				EB026CA3228CE2FD0081690A /* Clock.swift */,
-				EB026CA4228CE2FD0081690A /* Trackertask.swift */,
 				EB026CA7228CE4A50081690A /* Timer.swift */,
 				EBB397F6228D703900723640 /* TrackerChart.swift */,
 			);
@@ -403,10 +403,10 @@
 				EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */,
 				EBA57E68228C66C40021F18A /* GoalCategory_ViewController.swift in Sources */,
 				EB026CA0228CD1EB0081690A /* CompleteActivity_ViewController.swift in Sources */,
-				EB026CA6228CE2FE0081690A /* Trackertask.swift in Sources */,
 				EBBC31FE228B998A0064451F /* RoundLabel.swift in Sources */,
 				EBD1A820228C22310007B38A /* CustomTableViewCell.swift in Sources */,
 				EB04DB81228ABB4700703614 /* NewCategory_Color_ViewController.swift in Sources */,
+				EBEC0836228E4EC900665420 /* Trackertask.swift in Sources */,
 				EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */,
 				EB04DB7F228ABAE600703614 /* NewCategory_Name_ViewController.swift in Sources */,
 				EB482ED72289C671001F1F3F /* ViewController.swift in Sources */,

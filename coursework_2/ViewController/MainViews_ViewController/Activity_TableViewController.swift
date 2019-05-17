@@ -25,6 +25,8 @@ class Activity_TableViewController: UITableViewController {
     var item : [Activity] = []
     var name_category : [String] = []
     
+    var selected_activity : Activity?
+    
     var dictionary_category_activities : [String : [String]] = [:]
     var dictionary_cat_act : [tableViewCustom] = []
     
@@ -55,8 +57,16 @@ class Activity_TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
        // return self.item.count
-       let categories = dictionary_cat_act[section]
-       return categories.activities.count
+       
+        if dictionary_cat_act.count > 0{
+            let categories = dictionary_cat_act[section]
+            
+            return categories.activities.count
+        }
+        else{
+            return 0
+        }
+        
         
     }
     
@@ -185,19 +195,62 @@ class Activity_TableViewController: UITableViewController {
     
 
     // DELETE A ROW IN THE TABVIEW
-    // DELETE CELL
+    // DELETE CELL - SECTIONS
+    
+    
+    // variable to keep track if a section needs to be deleted
+    var sectionDeleted : Bool = false
+    
+    func updateCoreData_updateTable(indexPath : IndexPath){
+        // REMOVE FROM CORE DATA
+        self.delete_CoreData(indexPath: indexPath)
+        
+        sectionDeleted = false
+        // remove from data structure.
+        self.item.remove(at: indexPath.row)
+        
+        // identification of the element from the structure and delete.
+        let z = self.dictionary_cat_act[indexPath.section].activities[indexPath.row]
+        var index_to_be_deleted:Int?
+        for i in self.dictionary_cat_act{
+            for a in i.activities{
+                if a == z{
+                    index_to_be_deleted = i.activities.firstIndex(of: z)
+                }
+            }
+        }
+        
+        
+        // delete by index of string in arrey of string.
+        self.dictionary_cat_act[indexPath.section].activities.remove(at: index_to_be_deleted!)
+        if self.dictionary_cat_act[indexPath.section].activities.count == 0{
+            let index_of_category = self.dictionary_cat_act.firstIndex(where: {$0.category == self.dictionary_cat_act[indexPath.section].category})
+            self.dictionary_cat_act.remove(at: index_of_category!)
+            self.sectionDeleted = true
+            
+        }
+        
+        self.tableView.beginUpdates()
+        if self.sectionDeleted == true{
+            print("a section was deleted")
+            self.tableView.deleteSections([indexPath.section], with: .fade)
+        }
+        if self.sectionDeleted == false{
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        self.tableView.endUpdates()
+    }
+    
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alertController = UIAlertController(title: "Warning", message: "Are you sure?", preferredStyle: .alert)
             
+            
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-                self.delete_CoreData(indexPath: indexPath)
-                
-                self.item.remove(at: indexPath.row)
-                
-                self.tableView.beginUpdates()
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.tableView.endUpdates()
+                    
+                self.updateCoreData_updateTable(indexPath: indexPath)
+                    
                 
             })
             
@@ -215,15 +268,20 @@ class Activity_TableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        let temp = self.item[indexPath.row]
-        let name : String = temp.value(forKey: "name") as! String
-        print (name)
+//        let temp = self.item[indexPath.row]
+//
+//        let name : String = temp.value(forKey: "name") as! String
+        
+        let name_activity : String = self.dictionary_cat_act[indexPath.section].activities[indexPath.row]
+
+        
+        print (name_activity)
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
         
         // filtering
         // DELETE ACTIVITIES
-        let filter = NSPredicate(format: "name == %@", name)
+        let filter = NSPredicate(format: "name == %@", name_activity)
         request.predicate = filter
         
         // doing the request -- fetching the request
@@ -247,7 +305,7 @@ class Activity_TableViewController: UITableViewController {
         let request2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
         
         // filtering
-        let filter2 = NSPredicate(format: "activity_name == %@", name)
+        let filter2 = NSPredicate(format: "activity_name == %@", name_activity)
         request2.predicate = filter2
         
         
@@ -281,8 +339,15 @@ class Activity_TableViewController: UITableViewController {
     
     // check select item to modify
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected index \(indexPath.row)")
+        print("selected index : row \(indexPath.row) :section \(indexPath.section)")
         self.selected_item = indexPath.row
+        let name_activity : String = self.dictionary_cat_act[indexPath.section].activities[indexPath.row]
+        for index in item{
+            if index.name == name_activity{
+                self.selected_activity = index
+            }
+        }
+
         if editingAvailable == false{
             self.button_edit.isEnabled = true
         }
@@ -291,7 +356,7 @@ class Activity_TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "segue_editActivity"){       
             let passingArgument = segue.destination as? NewActivity_Category_ViewController
-            passingArgument?.oldActivity = item[self.selected_item]
+            passingArgument?.oldActivity = self.selected_activity!
             passingArgument?.editing_mode_on = true
         }
     }
