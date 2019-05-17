@@ -20,7 +20,7 @@ class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UI
     
     
     
-    let number = ["5","6","7","8","9","10","15"]
+    let number = ["0","5","6","7","8","9","10","15"]
 
     @IBOutlet weak var picker_goal: UIPickerView!
     

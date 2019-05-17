@@ -34,7 +34,7 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
     }
     
     var new_category: Category_obj = Category_obj()
-    let number = ["5","6","7","8","9","10","15"]
+    let number = ["0","5","6","7","8","9","10","15"]
     var edit_category:Category?
     var editingRequest: Bool = false
     
