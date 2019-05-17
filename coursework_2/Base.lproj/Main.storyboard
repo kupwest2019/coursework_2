@@ -1976,7 +1976,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-rn-S0W">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-rn-S0W">
                                         <rect key="frame" x="0.0" y="30.5" width="288" height="104"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1989,7 +1989,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-Db-txT">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DbI-Db-txT">
                                         <rect key="frame" x="0.0" y="175" width="288" height="116"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -2340,17 +2340,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtG-UK-9kN">
-                                <rect key="frame" x="16" y="64" width="288" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0oJ-ub-JlJ">
+                                <rect key="frame" x="16" y="64" width="288" height="441.5"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gtG-UK-9kN">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="249"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="249" id="LBV-ZP-pYc"/>
+                                        </constraints>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate of the 4 main categories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYy-5l-nMY">
+                                        <rect key="frame" x="0.0" y="255" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-tb-gVJ" customClass="FourCategories" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="281.5" width="288" height="160"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gtG-UK-9kN" firstAttribute="leading" secondItem="Aan-jJ-sPh" secondAttribute="leading" constant="16" id="N44-lb-RXd"/>
-                            <constraint firstItem="gtG-UK-9kN" firstAttribute="top" secondItem="Aan-jJ-sPh" secondAttribute="top" id="OGi-rW-7uv"/>
-                            <constraint firstItem="Aan-jJ-sPh" firstAttribute="bottom" secondItem="gtG-UK-9kN" secondAttribute="bottom" id="PCe-mc-1XX"/>
-                            <constraint firstItem="Aan-jJ-sPh" firstAttribute="trailing" secondItem="gtG-UK-9kN" secondAttribute="trailing" constant="16" id="v6f-bh-KvV"/>
+                            <constraint firstItem="0oJ-ub-JlJ" firstAttribute="leading" secondItem="Aan-jJ-sPh" secondAttribute="leading" constant="16" id="CEe-3k-VYQ"/>
+                            <constraint firstItem="0oJ-ub-JlJ" firstAttribute="top" secondItem="Aan-jJ-sPh" secondAttribute="top" id="UZb-3x-IpR"/>
+                            <constraint firstItem="Aan-jJ-sPh" firstAttribute="trailing" secondItem="0oJ-ub-JlJ" secondAttribute="trailing" constant="16" id="fQN-cY-OSb"/>
+                            <constraint firstItem="Aan-jJ-sPh" firstAttribute="bottom" secondItem="0oJ-ub-JlJ" secondAttribute="bottom" constant="13.5" id="jwa-k8-29Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Aan-jJ-sPh"/>
                     </view>
@@ -2362,13 +2380,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="animation" destination="OVU-tb-gVJ" id="zCJ-OQ-C8P"/>
                         <outlet property="editingButton" destination="Qy5-PH-tpi" id="fhX-Xw-x40"/>
                         <outlet property="tableView" destination="gtG-UK-9kN" id="Qy0-ST-Qoj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5V-fm-Cl2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7703" y="1018"/>
+            <point key="canvasLocation" x="7702.5" y="1017.2535211267606"/>
         </scene>
         <!--Show Goal Category View Controller-->
         <scene sceneID="RAT-5A-F1W">
