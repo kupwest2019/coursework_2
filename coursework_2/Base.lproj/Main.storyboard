@@ -2463,11 +2463,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-DI-SWA">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-DI-SWA">
                                 <rect key="frame" x="16" y="444" width="288" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXL-lk-Ec5" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="70" id="Csg-mC-Ikg"/>
                                         </constraints>
@@ -2486,7 +2486,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPw-CY-FUX" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="0.0" width="144" height="70"/>
+                                        <rect key="frame" x="149" y="0.0" width="139" height="70"/>
                                         <state key="normal" title="Complete"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
@@ -2536,31 +2536,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-Tt-8dp" customClass="TimerClock" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="16" y="103" width="288" height="368"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjD-ao-ECT">
                                 <rect key="frame" x="16" y="74" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pe-Tt-8dp" customClass="TimerClock" customModule="coursework_2" customModuleProvider="target">
-                                <rect key="frame" x="16" y="103" width="288" height="377"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbN-vo-GgP" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="16" y="479" width="288" height="30"/>
+                                <state key="normal" title="Complete Activity"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="completeActivity:" destination="5M6-UQ-Hgj" eventType="touchUpInside" id="aEc-YV-VHs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6aw-sG-EgO" firstAttribute="trailing" secondItem="pjD-ao-ECT" secondAttribute="trailing" constant="16" id="9tQ-1P-uxd"/>
-                            <constraint firstItem="6aw-sG-EgO" firstAttribute="trailing" secondItem="2pe-Tt-8dp" secondAttribute="trailing" constant="16" id="IrS-R5-aNa"/>
-                            <constraint firstItem="6aw-sG-EgO" firstAttribute="bottom" secondItem="2pe-Tt-8dp" secondAttribute="bottom" constant="39" id="NYa-Mg-NWM"/>
-                            <constraint firstItem="2pe-Tt-8dp" firstAttribute="leading" secondItem="6aw-sG-EgO" secondAttribute="leading" constant="16" id="OXZ-8h-pC3"/>
-                            <constraint firstItem="2pe-Tt-8dp" firstAttribute="top" secondItem="pjD-ao-ECT" secondAttribute="bottom" constant="8" id="ZX1-V8-Aci"/>
-                            <constraint firstItem="pjD-ao-ECT" firstAttribute="top" secondItem="6aw-sG-EgO" secondAttribute="top" constant="10" id="kPx-KS-EEo"/>
-                            <constraint firstItem="pjD-ao-ECT" firstAttribute="leading" secondItem="6aw-sG-EgO" secondAttribute="leading" constant="16" id="rzI-Ut-iC0"/>
+                            <constraint firstItem="2pe-Tt-8dp" firstAttribute="top" secondItem="pjD-ao-ECT" secondAttribute="bottom" constant="8" id="4jR-Td-Ho7"/>
+                            <constraint firstItem="6aw-sG-EgO" firstAttribute="bottom" secondItem="jbN-vo-GgP" secondAttribute="bottom" constant="10" id="Rcd-8O-hRe"/>
+                            <constraint firstItem="2pe-Tt-8dp" firstAttribute="leading" secondItem="6aw-sG-EgO" secondAttribute="leading" constant="16" id="YHs-rY-NPT"/>
+                            <constraint firstItem="6aw-sG-EgO" firstAttribute="trailing" secondItem="jbN-vo-GgP" secondAttribute="trailing" constant="16" id="c59-OM-Lv8"/>
+                            <constraint firstItem="6aw-sG-EgO" firstAttribute="trailing" secondItem="pjD-ao-ECT" secondAttribute="trailing" constant="16" id="dJR-FO-tb1"/>
+                            <constraint firstItem="jbN-vo-GgP" firstAttribute="top" secondItem="2pe-Tt-8dp" secondAttribute="bottom" constant="8" id="kA4-wH-yVK"/>
+                            <constraint firstItem="jbN-vo-GgP" firstAttribute="leading" secondItem="6aw-sG-EgO" secondAttribute="leading" constant="16" id="mYd-Lm-Ivy"/>
+                            <constraint firstItem="pjD-ao-ECT" firstAttribute="top" secondItem="6aw-sG-EgO" secondAttribute="top" constant="10" id="shM-1T-FA1"/>
+                            <constraint firstItem="6aw-sG-EgO" firstAttribute="trailing" secondItem="2pe-Tt-8dp" secondAttribute="trailing" constant="16" id="uyA-Tm-S61"/>
+                            <constraint firstItem="pjD-ao-ECT" firstAttribute="leading" secondItem="6aw-sG-EgO" secondAttribute="leading" constant="16" id="zHU-rs-ZRs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6aw-sG-EgO"/>
                     </view>
                     <connections>
                         <outlet property="animation" destination="2pe-Tt-8dp" id="0FS-7F-fuc"/>
+                        <outlet property="button_complete" destination="jbN-vo-GgP" id="LYc-0q-uuW"/>
                         <outlet property="label_timer" destination="pjD-ao-ECT" id="WRG-cI-7UK"/>
                     </connections>
                 </viewController>

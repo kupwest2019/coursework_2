@@ -29,6 +29,8 @@ class CompleteActivity_ViewController: UIViewController {
         
         let complete = UIAlertAction(title: "Yes Sure!", style: .destructive, handler: { (action) in
             self.insertActivityInCoreDataCompleted()
+            self.navigationController?.popViewController(animated: true)
+
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         
@@ -129,6 +131,7 @@ class CompleteActivity_ViewController: UIViewController {
         if(segue.identifier == "next"){
             let passingArgument = segue.destination as? Timer_ViewController
             passingArgument?.activityToBeExecuted = self.activityToBeExecuted
+            passingArgument?.dateOfActivity = self.dateOfActivity
         }
     }
     
