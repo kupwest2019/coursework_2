@@ -71,7 +71,6 @@ class CompleteActivity_ViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let date_helper : DealWithDate = DealWithDate()
         let day_description = date_helper.returnCalendarDayMonthYear(inputDate: dateOfActivity!)
         let dateFormatter = DateFormatter()
@@ -80,6 +79,7 @@ class CompleteActivity_ViewController: UIViewController {
         
         self.activity_date.text = "\(dayInWeek) : \(day_description.day ?? 0) - \(day_description.month ?? 0) "
         
+        print(activityToBeExecuted)
         
         
         
@@ -89,29 +89,37 @@ class CompleteActivity_ViewController: UIViewController {
         }
         else{
             let duration = activityToBeExecuted!.duration
+            print(activityToBeExecuted?.duration)
             let duration_string : String = String(duration)
             label_timer.text = "\(duration_string) minutes"
         }
         
         
-
+        
         
         if (activityToBeExecuted!.monthly){
             label_recurrency.text = "Monthly"
-
+            
         }
         if(activityToBeExecuted!.daily){
             label_recurrency.text = "Daily"
-
+            
         }
         if(activityToBeExecuted!.weekly){
             label_recurrency.text = "Weekly"
         }
-
+        
         label_partner.text = "Not Provided YET"
         
         
-
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

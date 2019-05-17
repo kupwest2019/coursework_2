@@ -12,6 +12,8 @@ class Timer_ViewController: UIViewController {
 
     var activityToBeExecuted:Activity?
     var animationValue : Int = 0
+    var seconds:Int = 0
+    @IBOutlet weak var label_timer: UILabel!
     
     @IBAction func start_button(_ sender: UIButton) {
          timer!.fire()
@@ -21,10 +23,11 @@ class Timer_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let min = Int(activityToBeExecuted!.duration)
-        let seconds = min*60
         
+        seconds = min*60
+        self.label_timer.text = "\(seconds)"
+
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +41,12 @@ class Timer_ViewController: UIViewController {
     var timer : Timer?
     func moveTheAnimation(){
         
+        movement_tick = 1/CGFloat(seconds)
+        //activity_time_in_seconds = seconds
+        //movement_tick_per_second = 1/activity_time_in_seconds
+        //movement_tick = counter_time * movement_tick_per_second
+        
+        
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
        
@@ -48,15 +57,34 @@ class Timer_ViewController: UIViewController {
         timer?.invalidate()
     }
     
-    var counter_timer : Int = 0
+    var counter_timer : CGFloat = 0.0
+    var movement_tick : CGFloat = 0.0
+    
     // using the timer to re-draw
     @objc func fireTimer() {
         print("Timer fired!")
-        counter_timer=counter_timer+1
-        print(counter_timer)
+        counter_timer=counter_timer+1.0
         
+        
+        
+        print(counter_timer)
+        seconds = seconds-1
+        
+        if seconds > 60{
+            let minutes = seconds/60
+            let sec = seconds - (60*minutes)
+            self.label_timer.text = "\(minutes) min : \(sec) sec"
+        }
+        else{
+            self.label_timer.text = "\(seconds) sec"
+
+        }
+        
+
         if(index<1){
-            index = index+0.0166
+            //index = index+0.0166
+            //index = index+self.movement_tick
+            index = counter_timer*movement_tick
             print(index)
             self.animation.prgress = index
         }

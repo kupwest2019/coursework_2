@@ -17,15 +17,15 @@ public class Trackertask : NSObject {
 
     //// Drawing Methods
 
-    @objc dynamic public class func drawCanvas1(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 160, height: 155), resizing: ResizingBehavior = .aspectFit, failure: CGFloat = 0, achive: CGFloat = 0) {
+    @objc dynamic public class func drawCanvas1(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 136, height: 136), resizing: ResizingBehavior = .aspectFit, failure: CGFloat = 0, achive: CGFloat = 0) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
         //// Resize to Target Frame
         context.saveGState()
-        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 160, height: 155), target: targetFrame)
+        let resizedFrame: CGRect = resizing.apply(rect: CGRect(x: 0, y: 0, width: 136, height: 136), target: targetFrame)
         context.translateBy(x: resizedFrame.minX, y: resizedFrame.minY)
-        context.scaleBy(x: resizedFrame.width / 160, y: resizedFrame.height / 155)
+        context.scaleBy(x: resizedFrame.width / 136, y: resizedFrame.height / 136)
 
 
         //// Color Declarations
@@ -33,7 +33,6 @@ public class Trackertask : NSObject {
         let colorFail2 = UIColor(red: 0.574, green: 0.000, blue: 0.000, alpha: 1.000)
         let greenPower = UIColor(red: 0.151, green: 0.823, blue: 0.565, alpha: 1.000)
         let white = UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 1.000)
-        let failRed = UIColor(red: 0.619, green: 0.000, blue: 0.000, alpha: 1.000)
 
         //// Gradient Declarations
         let gradientFail = CGGradient(colorsSpace: nil, colors: [colorFail.cgColor, colorFail2.cgColor] as CFArray, locations: [0, 1])!
@@ -41,7 +40,6 @@ public class Trackertask : NSObject {
 
         //// Variable Declarations
         let expr_failure: CGFloat = 302 * failure
-        let sad = failure < 0.98 ? white : failRed
         let expr_achive: CGFloat = 220 * achive
         let one = achive < 0.22 ? white : greenPower
         let two = achive < 0.45 ? white : greenPower
@@ -53,10 +51,10 @@ public class Trackertask : NSObject {
         context.setAlpha(0.2)
         context.beginTransparencyLayer(auxiliaryInfo: nil)
 
-        let ovalPath = UIBezierPath(ovalIn: CGRect(x: 25, y: 21, width: 111, height: 111))
+        let ovalPath = UIBezierPath(ovalIn: CGRect(x: 12, y: 21, width: 111, height: 111))
         context.saveGState()
         ovalPath.addClip()
-        context.drawLinearGradient(gradientFail, start: CGPoint(x: 80.5, y: 21), end: CGPoint(x: 80.5, y: 132), options: [])
+        context.drawLinearGradient(gradientFail, start: CGPoint(x: 67.5, y: 21), end: CGPoint(x: 67.5, y: 132), options: [])
         context.restoreGState()
         UIColor.black.setStroke()
         ovalPath.lineWidth = 2
@@ -67,7 +65,7 @@ public class Trackertask : NSObject {
 
 
         //// Oval 2 Drawing
-        let oval2Path = UIBezierPath(ovalIn: CGRect(x: 38, y: 34, width: 85, height: 85))
+        let oval2Path = UIBezierPath(ovalIn: CGRect(x: 25, y: 34, width: 85, height: 85))
         UIColor.white.setFill()
         oval2Path.fill()
         UIColor.black.setStroke()
@@ -80,10 +78,10 @@ public class Trackertask : NSObject {
         context.setAlpha(0.2)
         context.beginTransparencyLayer(auxiliaryInfo: nil)
 
-        let oval6Path = UIBezierPath(ovalIn: CGRect(x: 38, y: 34, width: 85, height: 85))
+        let oval6Path = UIBezierPath(ovalIn: CGRect(x: 25, y: 34, width: 85, height: 85))
         context.saveGState()
         oval6Path.addClip()
-        context.drawLinearGradient(gradientOK, start: CGPoint(x: 80.5, y: 34), end: CGPoint(x: 80.5, y: 119), options: [])
+        context.drawLinearGradient(gradientOK, start: CGPoint(x: 67.5, y: 34), end: CGPoint(x: 67.5, y: 119), options: [])
         context.restoreGState()
         UIColor.black.setStroke()
         oval6Path.lineWidth = 2
@@ -94,7 +92,7 @@ public class Trackertask : NSObject {
 
 
         //// Oval 3 Drawing
-        let oval3Path = UIBezierPath(ovalIn: CGRect(x: 52, y: 48, width: 57, height: 57))
+        let oval3Path = UIBezierPath(ovalIn: CGRect(x: 39, y: 48, width: 57, height: 57))
         UIColor.white.setFill()
         oval3Path.fill()
         UIColor.black.setStroke()
@@ -103,7 +101,7 @@ public class Trackertask : NSObject {
 
 
         //// Oval 4 Drawing
-        let oval4Path = UIBezierPath(ovalIn: CGRect(x: 32, y: 28, width: 97, height: 97))
+        let oval4Path = UIBezierPath(ovalIn: CGRect(x: 19, y: 28, width: 97, height: 97))
         colorFail2.setStroke()
         oval4Path.lineWidth = 10
         context.saveGState()
@@ -113,7 +111,7 @@ public class Trackertask : NSObject {
 
 
         //// Oval 5 Drawing
-        let oval5Path = UIBezierPath(ovalIn: CGRect(x: 45.5, y: 41, width: 70.5, height: 71))
+        let oval5Path = UIBezierPath(ovalIn: CGRect(x: 32.5, y: 41, width: 70.5, height: 71))
         greenPower.setStroke()
         oval5Path.lineWidth = 10
         context.saveGState()
@@ -124,16 +122,16 @@ public class Trackertask : NSObject {
 
         //// Star 2 Drawing
         let star2Path = UIBezierPath()
-        star2Path.move(to: CGPoint(x: 79.5, y: 134.5))
-        star2Path.addLine(to: CGPoint(x: 81.97, y: 138.1))
-        star2Path.addLine(to: CGPoint(x: 86.16, y: 139.34))
-        star2Path.addLine(to: CGPoint(x: 83.49, y: 142.8))
-        star2Path.addLine(to: CGPoint(x: 83.61, y: 147.16))
-        star2Path.addLine(to: CGPoint(x: 79.5, y: 145.7))
-        star2Path.addLine(to: CGPoint(x: 75.39, y: 147.16))
-        star2Path.addLine(to: CGPoint(x: 75.51, y: 142.8))
-        star2Path.addLine(to: CGPoint(x: 72.84, y: 139.34))
-        star2Path.addLine(to: CGPoint(x: 77.03, y: 138.1))
+        star2Path.move(to: CGPoint(x: 19.5, y: 5.5))
+        star2Path.addLine(to: CGPoint(x: 21.97, y: 9.1))
+        star2Path.addLine(to: CGPoint(x: 26.16, y: 10.34))
+        star2Path.addLine(to: CGPoint(x: 23.49, y: 13.8))
+        star2Path.addLine(to: CGPoint(x: 23.61, y: 18.16))
+        star2Path.addLine(to: CGPoint(x: 19.5, y: 16.7))
+        star2Path.addLine(to: CGPoint(x: 15.39, y: 18.16))
+        star2Path.addLine(to: CGPoint(x: 15.51, y: 13.8))
+        star2Path.addLine(to: CGPoint(x: 12.84, y: 10.34))
+        star2Path.addLine(to: CGPoint(x: 17.03, y: 9.1))
         star2Path.close()
         one.setFill()
         star2Path.fill()
@@ -144,16 +142,16 @@ public class Trackertask : NSObject {
 
         //// Star 3 Drawing
         let star3Path = UIBezierPath()
-        star3Path.move(to: CGPoint(x: 15.5, y: 68.5))
-        star3Path.addLine(to: CGPoint(x: 17.97, y: 72.1))
-        star3Path.addLine(to: CGPoint(x: 22.16, y: 73.34))
-        star3Path.addLine(to: CGPoint(x: 19.49, y: 76.8))
-        star3Path.addLine(to: CGPoint(x: 19.61, y: 81.16))
-        star3Path.addLine(to: CGPoint(x: 15.5, y: 79.7))
-        star3Path.addLine(to: CGPoint(x: 11.39, y: 81.16))
-        star3Path.addLine(to: CGPoint(x: 11.51, y: 76.8))
-        star3Path.addLine(to: CGPoint(x: 8.84, y: 73.34))
-        star3Path.addLine(to: CGPoint(x: 13.03, y: 72.1))
+        star3Path.move(to: CGPoint(x: 53.5, y: 5.5))
+        star3Path.addLine(to: CGPoint(x: 55.97, y: 9.1))
+        star3Path.addLine(to: CGPoint(x: 60.16, y: 10.34))
+        star3Path.addLine(to: CGPoint(x: 57.49, y: 13.8))
+        star3Path.addLine(to: CGPoint(x: 57.61, y: 18.16))
+        star3Path.addLine(to: CGPoint(x: 53.5, y: 16.7))
+        star3Path.addLine(to: CGPoint(x: 49.39, y: 18.16))
+        star3Path.addLine(to: CGPoint(x: 49.51, y: 13.8))
+        star3Path.addLine(to: CGPoint(x: 46.84, y: 10.34))
+        star3Path.addLine(to: CGPoint(x: 51.03, y: 9.1))
         star3Path.close()
         two.setFill()
         star3Path.fill()
@@ -164,16 +162,16 @@ public class Trackertask : NSObject {
 
         //// Star 4 Drawing
         let star4Path = UIBezierPath()
-        star4Path.move(to: CGPoint(x: 80.5, y: 5.5))
-        star4Path.addLine(to: CGPoint(x: 82.97, y: 9.1))
-        star4Path.addLine(to: CGPoint(x: 87.16, y: 10.34))
-        star4Path.addLine(to: CGPoint(x: 84.49, y: 13.8))
-        star4Path.addLine(to: CGPoint(x: 84.61, y: 18.16))
-        star4Path.addLine(to: CGPoint(x: 80.5, y: 16.7))
-        star4Path.addLine(to: CGPoint(x: 76.39, y: 18.16))
-        star4Path.addLine(to: CGPoint(x: 76.51, y: 13.8))
-        star4Path.addLine(to: CGPoint(x: 73.84, y: 10.34))
-        star4Path.addLine(to: CGPoint(x: 78.03, y: 9.1))
+        star4Path.move(to: CGPoint(x: 84.5, y: 5.5))
+        star4Path.addLine(to: CGPoint(x: 86.97, y: 9.1))
+        star4Path.addLine(to: CGPoint(x: 91.16, y: 10.34))
+        star4Path.addLine(to: CGPoint(x: 88.49, y: 13.8))
+        star4Path.addLine(to: CGPoint(x: 88.61, y: 18.16))
+        star4Path.addLine(to: CGPoint(x: 84.5, y: 16.7))
+        star4Path.addLine(to: CGPoint(x: 80.39, y: 18.16))
+        star4Path.addLine(to: CGPoint(x: 80.51, y: 13.8))
+        star4Path.addLine(to: CGPoint(x: 77.84, y: 10.34))
+        star4Path.addLine(to: CGPoint(x: 82.03, y: 9.1))
         star4Path.close()
         three.setFill()
         star4Path.fill()
@@ -184,16 +182,16 @@ public class Trackertask : NSObject {
 
         //// Star 5 Drawing
         let star5Path = UIBezierPath()
-        star5Path.move(to: CGPoint(x: 147.5, y: 68.5))
-        star5Path.addLine(to: CGPoint(x: 149.97, y: 72.1))
-        star5Path.addLine(to: CGPoint(x: 154.16, y: 73.34))
-        star5Path.addLine(to: CGPoint(x: 151.49, y: 76.8))
-        star5Path.addLine(to: CGPoint(x: 151.61, y: 81.16))
-        star5Path.addLine(to: CGPoint(x: 147.5, y: 79.7))
-        star5Path.addLine(to: CGPoint(x: 143.39, y: 81.16))
-        star5Path.addLine(to: CGPoint(x: 143.51, y: 76.8))
-        star5Path.addLine(to: CGPoint(x: 140.84, y: 73.34))
-        star5Path.addLine(to: CGPoint(x: 145.03, y: 72.1))
+        star5Path.move(to: CGPoint(x: 113.5, y: 5.5))
+        star5Path.addLine(to: CGPoint(x: 115.97, y: 9.1))
+        star5Path.addLine(to: CGPoint(x: 120.16, y: 10.34))
+        star5Path.addLine(to: CGPoint(x: 117.49, y: 13.8))
+        star5Path.addLine(to: CGPoint(x: 117.61, y: 18.16))
+        star5Path.addLine(to: CGPoint(x: 113.5, y: 16.7))
+        star5Path.addLine(to: CGPoint(x: 109.39, y: 18.16))
+        star5Path.addLine(to: CGPoint(x: 109.51, y: 13.8))
+        star5Path.addLine(to: CGPoint(x: 106.84, y: 10.34))
+        star5Path.addLine(to: CGPoint(x: 111.03, y: 9.1))
         star5Path.close()
         four.setFill()
         star5Path.fill()
@@ -209,38 +207,6 @@ public class Trackertask : NSObject {
         UIColor.black.setStroke()
         bezierPath.lineWidth = 1
         bezierPath.stroke()
-
-
-        //// Group
-        //// Oval 7 Drawing
-        let oval7Path = UIBezierPath(ovalIn: CGRect(x: 63.5, y: 63.5, width: 5, height: 5))
-        four.setFill()
-        oval7Path.fill()
-        sad.setStroke()
-        oval7Path.lineWidth = 1
-        oval7Path.stroke()
-
-
-        //// Oval 8 Drawing
-        let oval8Path = UIBezierPath(ovalIn: CGRect(x: 90.5, y: 63.5, width: 5, height: 5))
-        four.setFill()
-        oval8Path.fill()
-        sad.setStroke()
-        oval8Path.lineWidth = 1
-        oval8Path.stroke()
-
-
-        //// Bezier 2 Drawing
-        let bezier2Path = UIBezierPath()
-        bezier2Path.move(to: CGPoint(x: 67.5, y: 92.5))
-        bezier2Path.addLine(to: CGPoint(x: 71.5, y: 88.5))
-        bezier2Path.addLine(to: CGPoint(x: 89.5, y: 88.5))
-        bezier2Path.addLine(to: CGPoint(x: 92.5, y: 92.5))
-        sad.setFill()
-        bezier2Path.fill()
-        sad.setStroke()
-        bezier2Path.lineWidth = 1
-        bezier2Path.stroke()
         
         context.restoreGState()
 

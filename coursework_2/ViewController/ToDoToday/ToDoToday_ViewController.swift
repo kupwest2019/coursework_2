@@ -388,7 +388,7 @@ class ToDoToday_ViewController: UIViewController, UITableViewDataSource, UITable
             let passingArgument = segue.destination as? CompleteActivity_ViewController
             print(self.toDoActivity[self.selected_item])
             
-            passingArgument?.activityToBeExecuted = self.item[self.selected_item]
+            passingArgument?.activityToBeExecuted = self.toDoActivity[self.selected_item]
             passingArgument?.dateOfActivity = self.elaboration_date
         }
     }

@@ -23,6 +23,13 @@ struct CategoryColor {
     let red : String = "Red"
 }
 
+struct PredifinedCategory{
+    let exercise = "exercise"
+    let study = "study"
+    let health = "health"
+    let amuse = "amuse"
+}
+
 
 struct Calendar_Day_Activity{
     var activities_scheduled : [Activity] = []

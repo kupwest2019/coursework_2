@@ -62,6 +62,10 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     
     @IBOutlet weak var animation: TrackerChart!
     
+    override func viewWillDisappear(_ animated: Bool) {
+        timer!.invalidate()
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -128,7 +132,7 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
      //   print("Timer fired!")
         
         if(index<1){
-            index = index+0.001
+            index = index+0.003
          //   print(index)
             if (index < self.completedRatio){
                 self.animation.completedActivities = index

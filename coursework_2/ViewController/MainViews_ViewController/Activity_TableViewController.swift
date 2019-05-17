@@ -27,7 +27,7 @@ class Activity_TableViewController: UITableViewController {
     
     var selected_activity : Activity?
     
-    var dictionary_category_activities : [String : [String]] = [:]
+ //   var dictionary_category_activities : [String : [String]] = [:]
     var dictionary_cat_act : [tableViewCustom] = []
     
     var selected_item : Int = 0
@@ -140,7 +140,8 @@ class Activity_TableViewController: UITableViewController {
             for data in result {
                 item.append(data)
                 
-                // dictionary population --------
+                // dictionary population -------- OLD METHOD
+                /*
                 if var items = dictionary_category_activities[data.cateogry!.name!] {
                     items.append(data.name!)
                     dictionary_category_activities[data.cateogry!.name!] = items
@@ -154,7 +155,7 @@ class Activity_TableViewController: UITableViewController {
                     name_category.append(data.cateogry!.name!)
                 }
                 
-                
+                */
                 
                 // arrey of struct in dictionary form
                 
@@ -188,7 +189,7 @@ class Activity_TableViewController: UITableViewController {
             print("Failed")
         }
         print("DICTIONARY")
-        print(dictionary_category_activities)
+       // print(dictionary_category_activities)
         print(dictionary_cat_act)
         print(name_category)
     }

@@ -15,7 +15,7 @@ class NewActivity_Dates_ViewController: UIViewController {
     let date_helper : DealWithDate = DealWithDate()
     var oldActivity : Activity?
     var editing_mode_on: Bool = false
-    
+    var today_plus1_ : Date?
     
     // hide the date --> infninite activity
     @IBOutlet weak var switch_EndDay: UISwitch!
@@ -25,9 +25,12 @@ class NewActivity_Dates_ViewController: UIViewController {
         
         if switch_EndDay.isOn == false {
             picker_EndDate.isHidden = true
+            let infinite : Date = date_helper.returnInfiniteDate()
+            picker_startDate.maximumDate = infinite
         }
         if (switch_EndDay.isOn == true){
             picker_EndDate.isHidden = false
+            picker_startDate.maximumDate = today_plus1_
 
         }
     }
@@ -69,10 +72,13 @@ class NewActivity_Dates_ViewController: UIViewController {
         let today_plus1 = Calendar.current.date(byAdding: .day, value: +1, to: today)
         picker_EndDate.minimumDate = today_plus1
     }
+    
+    
     @objc func datePickerStartValueChanged(_ sender: UIDatePicker) {
         let today = sender.date
         let today_plus1 = Calendar.current.date(byAdding: .day, value: -1, to: today)
         picker_startDate.maximumDate = today_plus1
+        today_plus1_ = today_plus1
         
         
         print(today)

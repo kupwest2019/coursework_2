@@ -104,8 +104,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
             let alertController = UIAlertController(title: "Warning", message: "Are you sure?", preferredStyle: .alert)
             
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
-                self.deleteRequest(indexPath: indexPath)
-                
+                    self.deleteRequest(indexPath: indexPath)
             })
             
             alertController.addAction(deleteAction)
@@ -116,12 +115,34 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
 
     }
     
+    
+    
+    
+    func checkActivityPredifined(_ nameCategory: String) -> Bool{
+        var check = false
+        let predifinedActivities : PredifinedCategory = PredifinedCategory()
+        if (nameCategory == predifinedActivities.amuse || nameCategory == predifinedActivities.exercise || nameCategory == predifinedActivities.health || nameCategory == predifinedActivities.study){
+            check = true
+        }
+        
+        return check
+    }
+    
+    
+    
     func deleteRequest(indexPath: IndexPath){
         
         let temp = self.activities[indexPath.row]
         let name : String = temp.value(forKey: "name") as! String
-        
-        if(checkActivitiesRelated(name)){
+        if(checkActivityPredifined(name)){
+            print("ERROR! Category is a predifined!")
+            let alertController = UIAlertController(title: "Warning", message: "Category is a predifined!!", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true, completion: nil)
+            
+        }
+        else if(checkActivitiesRelated(name)){
             print("ERROR! Category is used!")
             let alertController = UIAlertController(title: "Warning", message: "Category is associated by an Activity", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
@@ -181,8 +202,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
            
     }
         
-        
-    
+  
     
     func checkActivitiesRelated(_ nameCategory: String) -> Bool{
         
@@ -190,7 +210,6 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
         
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
