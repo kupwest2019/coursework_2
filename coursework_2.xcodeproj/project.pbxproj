@@ -162,6 +162,7 @@
 		EB04DB70228ABA2B00703614 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EBE6AD3B228F1E8C00FA26FC /* Coaching */,
 				EBBD8BBD228DB7B3000C62D8 /* Personal Settings */,
 				EB026C9C228CD1BB0081690A /* ToDoToday */,
 				EBBC31FF228B9B5A0064451F /* TaskTrackerCalendar */,
@@ -220,7 +221,6 @@
 		EB482ED32289C671001F1F3F /* coursework_2 */ = {
 			isa = PBXGroup;
 			children = (
-				EBE6AD3B228F1E8C00FA26FC /* Coaching */,
 				EBE6AD38228EFA5600FA26FC /* Login */,
 				EBD1A821228C2FC90007B38A /* PaintCode_Framework */,
 				EBD1A818228C05D90007B38A /* Helper */,

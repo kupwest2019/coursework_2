@@ -2472,7 +2472,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities not completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-oO-ivO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remanining activities for the Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkb-oO-ivO">
                                         <rect key="frame" x="0.0" y="183" width="288" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -2512,8 +2512,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="label_categoryGoal" destination="5iN-9A-Pj1" id="sxK-pQ-r4R"/>
-                        <outlet property="label_completed_act" destination="5iN-9A-Pj1" id="Qs7-nM-lf6"/>
+                        <outlet property="label_completed_act" destination="ft3-8c-27p" id="86y-of-xtB"/>
                         <outlet property="label_not_completed_act" destination="sg0-vG-Co2" id="Dit-fI-oLj"/>
+                        <outlet property="label_remainingActivities" destination="nkb-oO-ivO" id="vCG-dH-dhH"/>
                         <outlet property="start_date" destination="Xp0-TT-xv9" id="Ldt-m5-iD1"/>
                     </connections>
                 </viewController>
