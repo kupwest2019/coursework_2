@@ -57,9 +57,8 @@ class CompleteActivity_ViewController: UIViewController {
         let newElement = NSManagedObject(entity: entity!, insertInto: context)
         newElement.setValue(self.activityToBeExecuted!.name, forKey: "activity_name")
         newElement.setValue(self.dateOfActivity!, forKey: "date")
-    
-        
-        
+        newElement.setValue(self.activityToBeExecuted?.cateogry?.name!, forKey: "category")
+
         // saving a entity
         do {
             try context.save()
