@@ -353,10 +353,10 @@ class NewActivity_Partner_ViewController: UIViewController {
             let passingArgument = segue.destination as? NewActivity_TimeDuration_ViewController
             
             passingArgument?.new_activity = new_activity
-            
+            passingArgument?.editing_mode_on = self.editing_mode_on
             if (self.editing_mode_on){
                 passingArgument?.oldActivity = oldActivity
-                passingArgument?.editing_mode_on = true
+                
             }
         }
     }

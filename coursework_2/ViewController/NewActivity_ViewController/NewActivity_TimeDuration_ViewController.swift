@@ -150,9 +150,10 @@ class NewActivity_TimeDuration_ViewController: UIViewController,UIPickerViewDele
             
             passingArgument?.new_activity = new_activity
             
+            passingArgument?.editing_mode_on = self.editing_mode_on
             if (self.editing_mode_on){
                 passingArgument?.oldActivity = oldActivity
-                passingArgument?.editing_mode_on = true
+                
             }
         }
         
@@ -172,9 +173,10 @@ class NewActivity_TimeDuration_ViewController: UIViewController,UIPickerViewDele
             new_activity?.duration_choice = switchDuration.isOn
             
             passingArgument?.new_activity = new_activity
+            passingArgument?.editing_mode_on = self.editing_mode_on
             if (self.editing_mode_on){
                 passingArgument?.oldActivity = oldActivity
-                passingArgument?.editing_mode_on = true
+                
             }
         }
     }

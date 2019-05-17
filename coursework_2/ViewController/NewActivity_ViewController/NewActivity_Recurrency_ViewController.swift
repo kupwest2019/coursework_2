@@ -488,10 +488,10 @@ class NewActivity_Recurrency_ViewController: UIViewController {
             let passingArgument = segue.destination as? NewActivity_Dates_ViewController
             
             passingArgument?.new_activity = new_activity
-            
+            passingArgument?.editing_mode_on = self.editing_mode_on
             if (self.editing_mode_on){
                 passingArgument?.oldActivity = oldActivity
-                passingArgument?.editing_mode_on = true
+                
             }
         }
         
@@ -516,9 +516,10 @@ class NewActivity_Recurrency_ViewController: UIViewController {
             new_activity?.month_trigger = month_trigger
             
             passingArgument?.new_activity = new_activity
+            passingArgument?.editing_mode_on = self.editing_mode_on
             if (self.editing_mode_on){
                 passingArgument?.oldActivity = oldActivity
-                passingArgument?.editing_mode_on = true
+                
             }
         }
     }
@@ -539,35 +540,75 @@ class NewActivity_Recurrency_ViewController: UIViewController {
         
         
         if daily_trigger == true{
-            day.backgroundColor = UIColor.red
+            day.backgroundColor = myColor.light_yellow
+            day.borderColor = myColor.orange
+            day.shadowRadius = 1
+            day.shadowOpacity = 2
+            day.borderWidth = 3
             weekDisable()
         }
         if week_trigger == true{
             if mon_trigger == true {
-                mon.backgroundColor = UIColor.red
+                mon.backgroundColor = myColor.light_yellow
+                mon.borderColor = myColor.orange
+                mon.shadowRadius = 1
+                mon.shadowOpacity = 2
+                mon.borderWidth = 3
             }
             if tue_trigger == true {
-                tue.backgroundColor = UIColor.red
+                tue.backgroundColor = myColor.light_yellow
+                tue.borderColor = myColor.orange
+                tue.shadowRadius = 1
+                tue.shadowOpacity = 2
+                tue.borderWidth = 3
             }
             if wed_trigger == true {
-                wed.backgroundColor = UIColor.red
+                wed.backgroundColor = myColor.light_yellow
+                wed.borderColor = myColor.orange
+                wed.shadowRadius = 1
+                wed.shadowOpacity = 2
+                wed.borderWidth = 3
             }
             if thr_trigger == true {
-                thr.backgroundColor = UIColor.red
+                thr.backgroundColor = myColor.light_yellow
+                thr.borderColor = myColor.orange
+                thr.shadowRadius = 1
+                thr.shadowOpacity = 2
+                thr.borderWidth = 3
             }
             if fri_trigger == true {
-                fri.backgroundColor = UIColor.red
+                fri.backgroundColor = myColor.light_yellow
+                fri.borderColor = myColor.orange
+                fri.shadowRadius = 1
+                fri.shadowOpacity = 2
+                fri.borderWidth = 3
             }
             if sat_trigger == true {
-                sat.backgroundColor = UIColor.red
+                sat.backgroundColor = myColor.light_yellow
+                sat.borderColor = myColor.orange
+                sat.shadowRadius = 1
+                sat.shadowOpacity = 2
+                sat.borderWidth = 3
             }
             if sun_trigger == true {
-                sun.backgroundColor = UIColor.red
+                sun.backgroundColor = myColor.light_yellow
+                sun.borderColor = myColor.orange
+                sun.shadowRadius = 1
+                sun.shadowOpacity = 2
+                sun.borderWidth = 3
             }
-            week.backgroundColor = UIColor.red
+            week.backgroundColor = myColor.light_yellow
+            week.borderColor = myColor.orange
+            week.shadowRadius = 1
+            week.shadowOpacity = 2
+            week.borderWidth = 3
         }
         if month_trigger == true{
-            month.backgroundColor = UIColor.red
+            month.backgroundColor = myColor.light_yellow
+            month.borderColor = myColor.orange
+            month.shadowRadius = 1
+            month.shadowOpacity = 2
+            month.borderWidth = 3
             weekDisable()
         }
     }

@@ -13,7 +13,8 @@ class NewCategory_Color_ViewController: UIViewController,UIPickerViewDelegate, U
    // used for passing values
     var new_category: Category_obj = Category_obj()
     var new_activity : Activity_obj?
-
+    var oldActivity : Activity?
+    var editing_mode_on: Bool = false
     
     let colors = ["Red","Yellow","Green","Blue"]
     
@@ -51,6 +52,10 @@ class NewCategory_Color_ViewController: UIViewController,UIPickerViewDelegate, U
             
             passingArgument?.new_category = new_category
             passingArgument?.new_activity = new_activity
+            passingArgument?.editing_mode_on = self.editing_mode_on
+            if(passingArgument?.editing_mode_on == self.editing_mode_on){
+                passingArgument?.oldActivity = self.oldActivity
+            }
 
         }
     }

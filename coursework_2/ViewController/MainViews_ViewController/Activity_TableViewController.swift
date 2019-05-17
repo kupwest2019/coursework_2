@@ -9,15 +9,25 @@
 import UIKit
 import CoreData
 
+
+struct tableViewCustom {
+    var category : String = ""
+    var category_color : String = ""
+    var activities : [String] = []
+}
+
+
 class Activity_TableViewController: UITableViewController {
 
     
     
     
-    
-    
-    
     var item : [Activity] = []
+    var name_category : [String] = []
+    
+    var dictionary_category_activities : [String : [String]] = [:]
+    var dictionary_cat_act : [tableViewCustom] = []
+    
     var selected_item : Int = 0
     var editingAvailable = false
     
@@ -28,7 +38,6 @@ class Activity_TableViewController: UITableViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.dataSource = self
         print("HELLO --> \(item.count)")
-
     }
     
     override func viewDidLoad() {
@@ -36,36 +45,74 @@ class Activity_TableViewController: UITableViewController {
         self.button_edit.isEnabled = false
 
     }
-
-    // MARK: - Table view data source
-
-    
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "Section \(section)"
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let vw = UIView()
-//        vw.backgroundColor = UIColor.red
-//        return vw
-//    }
-//    
+   
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return dictionary_cat_act.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.item.count
+       // return self.item.count
+       let categories = dictionary_cat_act[section]
+       return categories.activities.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //-> NB SAME TYPE OF CELL
-        let item = self.item[indexPath.row]
-        cell.textLabel?.text = item.name!
+//        let item = self.item[indexPath.row]
+//        cell.textLabel?.text = item.name!
+//        //return cell
+        
+        let category_selection = self.dictionary_cat_act[indexPath.section]
+        let activity_selection = category_selection.activities[indexPath.row]
+        cell.textLabel?.text =  activity_selection
         return cell
+        
+        
+    }
+    
+    let myColour : MyCustomColors = MyCustomColors()
+    let categoryColor : CategoryColor = CategoryColor()
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let category_selection_color = self.dictionary_cat_act[section].category_color
+        
+        
+        var category_hex_color : UIColor?
+        var text_color : UIColor?
+        if category_selection_color == categoryColor.blue{
+            category_hex_color = myColour.blue
+            text_color = myColour.light_yellow
+        }
+        if category_selection_color == categoryColor.green{
+            category_hex_color = myColour.green
+            text_color = myColour.light_yellow
+
+        }
+        if category_selection_color == categoryColor.yellow{
+            category_hex_color = myColour.light_orange
+            text_color = myColour.blue
+
+        }
+        if category_selection_color == categoryColor.red{
+            category_hex_color = myColour.orange
+            text_color = UIColor.white
+
+        }
+        
+        
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.contentView.backgroundColor = category_hex_color
+            headerView.textLabel?.textColor = text_color
+        }
+    }
+ 
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let category_selection = self.dictionary_cat_act[section].category
+        return category_selection// formatted diaryDay.date
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -82,12 +129,58 @@ class Activity_TableViewController: UITableViewController {
             let result = try context.fetch(fetchRequest2) as! [Activity]
             for data in result {
                 item.append(data)
+                
+                // dictionary population --------
+                if var items = dictionary_category_activities[data.cateogry!.name!] {
+                    items.append(data.name!)
+                    dictionary_category_activities[data.cateogry!.name!] = items
+                }
+                else {
+                    dictionary_category_activities[data.cateogry!.name!] = [data.name!]
+                }
+                
+                
+                if !name_category.contains(data.cateogry!.name!){
+                    name_category.append(data.cateogry!.name!)
+                }
+                
+                
+                
+                // arrey of struct in dictionary form
+                
+                
+                if dictionary_cat_act.contains(where: {$0.category == data.cateogry!.name!}){
+                    print(data.name!)
+                    
+                    for i in 0...dictionary_cat_act.count-1{
+                        if dictionary_cat_act[i].category == data.cateogry!.name!{
+                            dictionary_cat_act[i].activities.append(data.name!)
+                        }
+                    }
+
+                }
+                else{
+                    var a : tableViewCustom = tableViewCustom()
+                    a.category = data.cateogry!.name!
+                    a.activities.append(data.name!)
+                    a.category_color = data.cateogry!.colour!
+                    dictionary_cat_act.append(a)
+                }
+                
+                
+                
+                /// ---------------------------
+                
             }
             
         } catch {
             
             print("Failed")
         }
+        print("DICTIONARY")
+        print(dictionary_category_activities)
+        print(dictionary_cat_act)
+        print(name_category)
     }
     
 

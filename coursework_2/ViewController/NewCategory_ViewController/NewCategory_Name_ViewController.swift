@@ -13,7 +13,8 @@ class NewCategory_Name_ViewController: UIViewController {
     @IBOutlet weak var textField_categoryName: UITextField!
     
     var new_activity : Activity_obj?
-
+    var oldActivity : Activity?
+    var editing_mode_on: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,17 @@ class NewCategory_Name_ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if (segue.identifier == "returnBack"){
+        
+            let passingArgument = segue.destination as? NewCategory_Color_ViewController
+            passingArgument?.new_activity = new_activity
+            passingArgument?.editing_mode_on = self.editing_mode_on
+            if(passingArgument?.editing_mode_on == self.editing_mode_on){
+                passingArgument?.oldActivity = self.oldActivity
+            }
+        }
+        
+        
         if(segue.identifier == "segue_newCategoryName"){
             var new_category:Category_obj = Category_obj()
             new_category.name = textField_categoryName.text!
@@ -32,6 +44,10 @@ class NewCategory_Name_ViewController: UIViewController {
             let passingArgument = segue.destination as? NewCategory_Color_ViewController
             passingArgument?.new_category = new_category
             passingArgument?.new_activity = new_activity
+            passingArgument?.editing_mode_on = self.editing_mode_on
+            if(passingArgument?.editing_mode_on == self.editing_mode_on){
+                passingArgument?.oldActivity = self.oldActivity
+            }
 
         }
     }
@@ -40,6 +56,9 @@ class NewCategory_Name_ViewController: UIViewController {
                                      sender: Any?) -> Bool{
         
         // check on the SEGUE ~~
+        
+        
+        
         if identifier == "segue_newCategoryName"
         {
             var check_univocity : Bool = false
