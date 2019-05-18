@@ -32,6 +32,9 @@
 		EB482EE22289C672001F1F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB482EE02289C672001F1F3F /* LaunchScreen.storyboard */; };
 		EB482EED2289C672001F1F3F /* coursework_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */; };
 		EB6C14E522905131000DC9A0 /* MainSettings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E422905131000DC9A0 /* MainSettings_ViewController.swift */; };
+		EB6C14E722905CCE000DC9A0 /* Dates_4text.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E622905CCE000DC9A0 /* Dates_4text.swift */; };
+		EB6C14E922905CE4000DC9A0 /* FourElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E822905CE4000DC9A0 /* FourElements.swift */; };
+		EB6C14EB22905DEE000DC9A0 /* MainCoaching_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */; };
 		EBA57E66228C66B40021F18A /* ColorCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA57E65228C66B40021F18A /* ColorCategory_ViewController.swift */; };
 		EBA57E68228C66C40021F18A /* GoalCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA57E67228C66C40021F18A /* GoalCategory_ViewController.swift */; };
 		EBB397F7228D703900723640 /* TrackerChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB397F6228D703900723640 /* TrackerChart.swift */; };
@@ -100,6 +103,9 @@
 		EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursework_2Tests.swift; sourceTree = "<group>"; };
 		EB482EEE2289C672001F1F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6C14E422905131000DC9A0 /* MainSettings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettings_ViewController.swift; sourceTree = "<group>"; };
+		EB6C14E622905CCE000DC9A0 /* Dates_4text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates_4text.swift; sourceTree = "<group>"; };
+		EB6C14E822905CE4000DC9A0 /* FourElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourElements.swift; sourceTree = "<group>"; };
+		EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoaching_ViewController.swift; sourceTree = "<group>"; };
 		EBA57E65228C66B40021F18A /* ColorCategory_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCategory_ViewController.swift; sourceTree = "<group>"; };
 		EBA57E67228C66C40021F18A /* GoalCategory_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCategory_ViewController.swift; sourceTree = "<group>"; };
 		EBB397F6228D703900723640 /* TrackerChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerChart.swift; sourceTree = "<group>"; };
@@ -317,6 +323,7 @@
 		EBD1A821228C2FC90007B38A /* PaintCode_Framework */ = {
 			isa = PBXGroup;
 			children = (
+				EB6C14E622905CCE000DC9A0 /* Dates_4text.swift */,
 				EBE6AD34228EEAAB00FA26FC /* Trackertask.swift */,
 				EB03D4BD229022F80049613D /* CategoryColors.swift */,
 				EBD1A822228C2FFF0007B38A /* Test1.swift */,
@@ -325,6 +332,7 @@
 				EB026CA7228CE4A50081690A /* Timer.swift */,
 				EBB397F6228D703900723640 /* TrackerChart.swift */,
 				EBE6AD44228F3A0700FA26FC /* FourCategories.swift */,
+				EB6C14E822905CE4000DC9A0 /* FourElements.swift */,
 			);
 			path = PaintCode_Framework;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 				EBE6AD3C228F1EA200FA26FC /* ShowCategory_ViewController.swift */,
 				EBE6AD3E228F1EAF00FA26FC /* ShowGoalCategory_ViewController.swift */,
 				EBE6AD40228F21BC00FA26FC /* ShowGoalDeail_ViewController.swift */,
+				EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */,
 			);
 			path = Coaching;
 			sourceTree = "<group>";
@@ -449,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */,
+				EB6C14EB22905DEE000DC9A0 /* MainCoaching_ViewController.swift in Sources */,
 				EBA57E68228C66C40021F18A /* GoalCategory_ViewController.swift in Sources */,
 				EBE6AD37228EEB7900FA26FC /* Clock.swift in Sources */,
 				EB026CA0228CD1EB0081690A /* CompleteActivity_ViewController.swift in Sources */,
@@ -475,10 +485,12 @@
 				EB04DB76228ABA9400703614 /* NewActivity_Dates_ViewController.swift in Sources */,
 				EB026C9E228CD1DC0081690A /* ToDoToday_ViewController.swift in Sources */,
 				EB026CA2228CD1F40081690A /* Timer_ViewController.swift in Sources */,
+				EB6C14E922905CE4000DC9A0 /* FourElements.swift in Sources */,
 				EBBC31FA228B995C0064451F /* RoundedTextFieldIBDesign.swift in Sources */,
 				EBE6AD41228F21BC00FA26FC /* ShowGoalDeail_ViewController.swift in Sources */,
 				EBCA2F86228C7FEC005FF9BE /* CategoryManage_ViewController.swift in Sources */,
 				EBBC31F8228B99310064451F /* CustomColor.swift in Sources */,
+				EB6C14E722905CCE000DC9A0 /* Dates_4text.swift in Sources */,
 				EB04DB72228ABA4100703614 /* NewActivity_Name_ViewController.swift in Sources */,
 				EBE6AD3D228F1EA200FA26FC /* ShowCategory_ViewController.swift in Sources */,
 				EB04DB86228AD1B100703614 /* CoreDataHelper.swift in Sources */,

@@ -11,11 +11,7 @@ import UIKit
 class MainSettings_ViewController: UIViewController {
     let defaults = UserDefaults.standard
 
-    
-    
-   
-    
-    
+    // delete core data and user default
     @IBAction func logOut(_ sender: UIButton) {
     
         let core_data = accessingCoreData()
@@ -28,9 +24,6 @@ class MainSettings_ViewController: UIViewController {
         self.defaults.removeObject(forKey: "Heigh")
         self.defaults.removeObject(forKey: "Age")
         self.defaults.set("false", forKey: "Category_uploaded")
-        
-     
-        
 
     }
 

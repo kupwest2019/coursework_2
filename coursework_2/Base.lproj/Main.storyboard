@@ -2344,11 +2344,95 @@
         <!--Coaching Mentor-->
         <scene sceneID="tgY-pE-55s">
             <objects>
-                <viewController id="1fQ-Xy-NUd" sceneMemberID="viewController">
+                <viewController id="1fQ-Xy-NUd" customClass="MainCoaching_ViewController" customModule="coursework_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Gs-Zi-9Ta">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-Dc-1Yb">
+                                <rect key="frame" x="16" y="64" width="288" height="458.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Body Mass Index (BMI) is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XF-FP-eTJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U86-5n-fEH">
+                                        <rect key="frame" x="0.0" y="27" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="BMI distributions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uX-gR-IPP">
+                                        <rect key="frame" x="0.0" y="53.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Underweight: &lt; 18.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME0-ID-iOu">
+                                        <rect key="frame" x="0.0" y="80" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normal: 18.5 - 24.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsF-Jl-8jF">
+                                        <rect key="frame" x="0.0" y="106.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overweight: 25 &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bD-Bc-Lfs">
+                                        <rect key="frame" x="0.0" y="133" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Exercize goal is set to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-Hz-vZv">
+                                        <rect key="frame" x="0.0" y="159.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have XX exercise Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3y-QB-97N">
+                                        <rect key="frame" x="0.0" y="186" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advice:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-0N-LTg">
+                                        <rect key="frame" x="0.0" y="212.5" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="you must take in ...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UEX-HG-Z7y">
+                                        <rect key="frame" x="0.0" y="239" width="288" height="86"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="86" id="p2o-y4-aXs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-HU-VzT" customClass="ForElements" customModule="coursework_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="331" width="288" height="127.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vqt-HU-VzT" firstAttribute="top" secondItem="sl1-Dc-1Yb" secondAttribute="top" constant="331" id="BNx-5R-c7i"/>
+                                    <constraint firstItem="UEX-HG-Z7y" firstAttribute="top" secondItem="AHY-0N-LTg" secondAttribute="bottom" constant="6" id="hCg-oH-s13"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sl1-Dc-1Yb" firstAttribute="top" secondItem="wVa-ee-Pw9" secondAttribute="top" id="J7H-EO-sKE"/>
+                            <constraint firstItem="sl1-Dc-1Yb" firstAttribute="leading" secondItem="wVa-ee-Pw9" secondAttribute="leading" constant="16" id="UO8-w9-ggP"/>
+                            <constraint firstItem="wVa-ee-Pw9" firstAttribute="trailing" secondItem="sl1-Dc-1Yb" secondAttribute="trailing" constant="16" id="ZdT-aN-PTz"/>
+                            <constraint firstItem="sl1-Dc-1Yb" firstAttribute="bottom" secondItem="wVa-ee-Pw9" secondAttribute="bottom" constant="3.5" id="mk0-Ud-AfX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wVa-ee-Pw9"/>
                     </view>
                     <navigationItem key="navigationItem" title="Coaching Mentor" id="XgH-Wt-pkO">
@@ -2358,10 +2442,23 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animation" destination="vqt-HU-VzT" id="OBP-jU-E5P"/>
+                        <outlet property="label_BMI_distribution" destination="3uX-gR-IPP" id="cPT-Bg-7FQ"/>
+                        <outlet property="label_YourBodyMass" destination="7XF-FP-eTJ" id="2Ot-bf-KKk"/>
+                        <outlet property="label_activitiesNumber" destination="b3y-QB-97N" id="KNf-x9-wG5"/>
+                        <outlet property="label_advice" destination="AHY-0N-LTg" id="eAG-ER-h1o"/>
+                        <outlet property="label_goalCategory" destination="aGo-Hz-vZv" id="1uR-Hj-sxg"/>
+                        <outlet property="label_normalBMI" destination="vsF-Jl-8jF" id="MXT-og-ruU"/>
+                        <outlet property="label_overweightBMI" destination="4bD-Bc-Lfs" id="Hvq-TH-5de"/>
+                        <outlet property="label_personalBMI" destination="U86-5n-fEH" id="jwE-hf-cu8"/>
+                        <outlet property="label_underweight_BMI" destination="ME0-ID-iOu" id="f3d-Ng-QRB"/>
+                        <outlet property="textField_Advice" destination="UEX-HG-Z7y" id="MaB-GB-bKg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRj-jd-lZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6804" y="1018"/>
+            <point key="canvasLocation" x="6802.5" y="1017.2535211267606"/>
         </scene>
         <!--Goals-->
         <scene sceneID="CAc-zg-Qga">
