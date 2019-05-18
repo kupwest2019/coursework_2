@@ -12,6 +12,7 @@
 		EB026CA2228CD1F40081690A /* Timer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA1228CD1F40081690A /* Timer_ViewController.swift */; };
 		EB026CA8228CE4A50081690A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA7228CE4A50081690A /* Timer.swift */; };
 		EB03D4BA228FE3790049613D /* CoreData_Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03D4B9228FE3790049613D /* CoreData_Category.swift */; };
+		EB03D4BE229022F80049613D /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03D4BD229022F80049613D /* CategoryColors.swift */; };
 		EB04DB72228ABA4100703614 /* NewActivity_Name_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */; };
 		EB04DB74228ABA5400703614 /* NewActivity_Category_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */; };
 		EB04DB76228ABA9400703614 /* NewActivity_Dates_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB75228ABA9400703614 /* NewActivity_Dates_ViewController.swift */; };
@@ -55,7 +56,6 @@
 		EBE6AD3D228F1EA200FA26FC /* ShowCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE6AD3C228F1EA200FA26FC /* ShowCategory_ViewController.swift */; };
 		EBE6AD3F228F1EAF00FA26FC /* ShowGoalCategory_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE6AD3E228F1EAF00FA26FC /* ShowGoalCategory_ViewController.swift */; };
 		EBE6AD41228F21BC00FA26FC /* ShowGoalDeail_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE6AD40228F21BC00FA26FC /* ShowGoalDeail_ViewController.swift */; };
-		EBE6AD43228F39E700FA26FC /* CategoryColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE6AD42228F39E700FA26FC /* CategoryColors.swift */; };
 		EBE6AD45228F3A0700FA26FC /* FourCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE6AD44228F3A0700FA26FC /* FourCategories.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +75,7 @@
 		EB026CA1228CD1F40081690A /* Timer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer_ViewController.swift; sourceTree = "<group>"; };
 		EB026CA7228CE4A50081690A /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		EB03D4B9228FE3790049613D /* CoreData_Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_Category.swift; sourceTree = "<group>"; };
+		EB03D4BD229022F80049613D /* CategoryColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Name_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Category_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB75228ABA9400703614 /* NewActivity_Dates_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Dates_ViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +121,6 @@
 		EBE6AD3C228F1EA200FA26FC /* ShowCategory_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategory_ViewController.swift; sourceTree = "<group>"; };
 		EBE6AD3E228F1EAF00FA26FC /* ShowGoalCategory_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGoalCategory_ViewController.swift; sourceTree = "<group>"; };
 		EBE6AD40228F21BC00FA26FC /* ShowGoalDeail_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGoalDeail_ViewController.swift; sourceTree = "<group>"; };
-		EBE6AD42228F39E700FA26FC /* CategoryColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryColors.swift; sourceTree = "<group>"; };
 		EBE6AD44228F3A0700FA26FC /* FourCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourCategories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,12 +315,12 @@
 			isa = PBXGroup;
 			children = (
 				EBE6AD34228EEAAB00FA26FC /* Trackertask.swift */,
+				EB03D4BD229022F80049613D /* CategoryColors.swift */,
 				EBD1A822228C2FFF0007B38A /* Test1.swift */,
 				EBD1A825228C312C0007B38A /* Stopwatch.swift */,
 				EBE6AD36228EEB7900FA26FC /* Clock.swift */,
 				EB026CA7228CE4A50081690A /* Timer.swift */,
 				EBB397F6228D703900723640 /* TrackerChart.swift */,
-				EBE6AD42228F39E700FA26FC /* CategoryColors.swift */,
 				EBE6AD44228F3A0700FA26FC /* FourCategories.swift */,
 			);
 			path = PaintCode_Framework;
@@ -456,7 +456,7 @@
 				EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */,
 				EB04DB7F228ABAE600703614 /* NewCategory_Name_ViewController.swift in Sources */,
 				EB482ED72289C671001F1F3F /* ViewController.swift in Sources */,
-				EBE6AD43228F39E700FA26FC /* CategoryColors.swift in Sources */,
+				EB03D4BE229022F80049613D /* CategoryColors.swift in Sources */,
 				EBE6AD3A228EFA6800FA26FC /* LoginView_ViewController.swift in Sources */,
 				EBB397F7228D703900723640 /* TrackerChart.swift in Sources */,
 				EBCA2F88228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift in Sources */,
