@@ -11,6 +11,7 @@
 		EB026CA0228CD1EB0081690A /* CompleteActivity_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */; };
 		EB026CA2228CD1F40081690A /* Timer_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA1228CD1F40081690A /* Timer_ViewController.swift */; };
 		EB026CA8228CE4A50081690A /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB026CA7228CE4A50081690A /* Timer.swift */; };
+		EB03D4BA228FE3790049613D /* CoreData_Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB03D4B9228FE3790049613D /* CoreData_Category.swift */; };
 		EB04DB72228ABA4100703614 /* NewActivity_Name_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */; };
 		EB04DB74228ABA5400703614 /* NewActivity_Category_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */; };
 		EB04DB76228ABA9400703614 /* NewActivity_Dates_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB04DB75228ABA9400703614 /* NewActivity_Dates_ViewController.swift */; };
@@ -73,6 +74,7 @@
 		EB026C9F228CD1EB0081690A /* CompleteActivity_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteActivity_ViewController.swift; sourceTree = "<group>"; };
 		EB026CA1228CD1F40081690A /* Timer_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer_ViewController.swift; sourceTree = "<group>"; };
 		EB026CA7228CE4A50081690A /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		EB03D4B9228FE3790049613D /* CoreData_Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData_Category.swift; sourceTree = "<group>"; };
 		EB04DB71228ABA4100703614 /* NewActivity_Name_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Name_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB73228ABA5400703614 /* NewActivity_Category_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Category_ViewController.swift; sourceTree = "<group>"; };
 		EB04DB75228ABA9400703614 /* NewActivity_Dates_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivity_Dates_ViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 			path = ToDoToday;
 			sourceTree = "<group>";
 		};
+		EB03D4B8228FE35C0049613D /* AccessingCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				EB03D4B9228FE3790049613D /* CoreData_Category.swift */,
+			);
+			path = AccessingCoreData;
+			sourceTree = "<group>";
+		};
 		EB04DB6F228ABA1400703614 /* NewActivity_ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +235,7 @@
 		EB482ED32289C671001F1F3F /* coursework_2 */ = {
 			isa = PBXGroup;
 			children = (
+				EB03D4B8228FE35C0049613D /* AccessingCoreData */,
 				EBE6AD38228EFA5600FA26FC /* Login */,
 				EBD1A821228C2FC90007B38A /* PaintCode_Framework */,
 				EBD1A818228C05D90007B38A /* Helper */,
@@ -476,6 +487,7 @@
 				EB04DB78228ABAA900703614 /* NewActivity_Recurrency_ViewController.swift in Sources */,
 				EB482EDD2289C671001F1F3F /* coursework_2.xcdatamodeld in Sources */,
 				EB04DB7C228ABAC400703614 /* NewActivity_Partner_ViewController.swift in Sources */,
+				EB03D4BA228FE3790049613D /* CoreData_Category.swift in Sources */,
 				EB026CA8228CE4A50081690A /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

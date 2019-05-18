@@ -18,7 +18,8 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
     var completedExercise : [CompletedActivity] = []
     var completedStudy : [CompletedActivity] = []
     var completedHealth : [CompletedActivity] = []
-    
+    let core_data : Core_Data_Interface = accessingCoreData()
+
 
     var activities : [Category] = []
 
@@ -71,6 +72,7 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        editingAvailable = false
         // self.registerCustomCell()
         activities.removeAll()
          completedAmuse.removeAll()
@@ -93,27 +95,32 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func populateList(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-        // filtering
-        //request.predicate = NSPredicate(format: "age = %@", "12")
-        //        let filter = NSPredicate(format: "name == %@", textFiled_activityName.text!)
-        //        request.predicate = filter
         
-        // doing the request -- fetching the request
-        fetchRequest2.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(fetchRequest2) as! [Category]
-            for data in result {
-                print(data)
-                activities.append(data)
-            }
-            
-        } catch {
-            
-            print("Failed")
-        }
+        activities = core_data.returnAllCategry()
+        
+//
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+//        // filtering
+//        //request.predicate = NSPredicate(format: "age = %@", "12")
+//        //        let filter = NSPredicate(format: "name == %@", textFiled_activityName.text!)
+//        //        request.predicate = filter
+//
+//        // doing the request -- fetching the request
+//        fetchRequest2.returnsObjectsAsFaults = false
+//        do {
+//            let result = try context.fetch(fetchRequest2) as! [Category]
+//            for data in result {
+//                print(data)
+//                activities.append(data)
+//            }
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
     }
     
     
@@ -143,49 +150,30 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
     
     
     func loadAllData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
-        
-        //let newDay = Calendar.current.date(byAdding: .day, value: self.counterDay, to: today)
-        //self.elaboration_date = newDay!
-        
-        
-        // COMPLETED ACTIVITIES
-        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
-        let predifinedCategory : PredifinedCategory = PredifinedCategory()
-        
-        fetchRequest2.returnsObjectsAsFaults = false
-        do {
+        let completed_activities = core_data.returnAllCompletedActivities()
+         let predifinedCategory : PredifinedCategory = PredifinedCategory()
+        for data in completed_activities {
+            print(data)
             
-            print("COMPLETED ACTIVITIES")
-            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
-            for data in result {
-                print(data)
+            if (data.category == predifinedCategory.amuse){
+                self.completedAmuse.append(data)
+            }
+            else if (data.category == predifinedCategory.exercise){
+                self.completedExercise.append(data)
                 
-                if (data.category == predifinedCategory.amuse){
-                        self.completedAmuse.append(data)
-                }
-                else if (data.category == predifinedCategory.exercise){
-                    self.completedExercise.append(data)
-
-                }
-                else if (data.category == predifinedCategory.health) {
-                    self.completedHealth.append(data)
-
-                }
-                else if (data.category == predifinedCategory.study ) {
-                    self.completedStudy.append(data)
-
-                }
+            }
+            else if (data.category == predifinedCategory.health) {
+                self.completedHealth.append(data)
+                
+            }
+            else if (data.category == predifinedCategory.study ) {
+                self.completedStudy.append(data)
                 
             }
             
-        } catch {
-            
-            print("Failed")
         }
- 
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -309,9 +297,6 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
             
         }
         else if index == 1{
-            
-            let myColor : MyCustomColors = MyCustomColors()
-            
             
             timer!.invalidate()
             

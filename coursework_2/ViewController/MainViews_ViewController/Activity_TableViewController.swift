@@ -18,24 +18,28 @@ struct tableViewCustom {
 
 
 class Activity_TableViewController: UITableViewController {
-
-    
-    
-    
     var item : [Activity] = []
     var name_category : [String] = []
     
     var selected_activity : Activity?
+    var dictionary_cat_act : [tableViewCustom] = []
+
+    
+    
+    
     
  //   var dictionary_category_activities : [String : [String]] = [:]
-    var dictionary_cat_act : [tableViewCustom] = []
     
     var selected_item : Int = 0
     var editingAvailable = false
     
     @IBOutlet weak var button_edit: UIBarButtonItem!
     override func viewWillAppear(_ animated: Bool) {
+        editingAvailable = false
         item.removeAll()
+        dictionary_cat_act.removeAll()
+        name_category.removeAll()
+        
         populateList()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.dataSource = self
@@ -129,65 +133,75 @@ class Activity_TableViewController: UITableViewController {
         return true
     }
     
-    
-    func populateList(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
-        fetchRequest2.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(fetchRequest2) as! [Activity]
-            for data in result {
-                item.append(data)
-                
-                // dictionary population -------- OLD METHOD
-                /*
-                if var items = dictionary_category_activities[data.cateogry!.name!] {
-                    items.append(data.name!)
-                    dictionary_category_activities[data.cateogry!.name!] = items
-                }
-                else {
-                    dictionary_category_activities[data.cateogry!.name!] = [data.name!]
-                }
-                
-                
-                if !name_category.contains(data.cateogry!.name!){
-                    name_category.append(data.cateogry!.name!)
-                }
-                
-                */
-                
-                // arrey of struct in dictionary form
-                
-                
-                if dictionary_cat_act.contains(where: {$0.category == data.cateogry!.name!}){
-                    print(data.name!)
-                    
-                    for i in 0...dictionary_cat_act.count-1{
-                        if dictionary_cat_act[i].category == data.cateogry!.name!{
-                            dictionary_cat_act[i].activities.append(data.name!)
-                        }
-                    }
+    let core_data : Core_Data_Interface = accessingCoreData()
 
+    func populateList(){
+        
+        let result = core_data.returnAllActivities()
+        self.item = result
+        for data in result {
+            
+            print(data)
+            guard let activity : Category = data.cateogry else {fatalError("Unexpected class type in allObjects")}
+            guard let category_name : String = activity.name else {fatalError("Unexpected class type in allObjects")}
+            
+            if dictionary_cat_act.contains(where: {$0.category == category_name}){
+                print(data.name!)
+                
+                for i in 0...dictionary_cat_act.count-1{
+                    if dictionary_cat_act[i].category == data.cateogry!.name!{
+                        dictionary_cat_act[i].activities.append(data.name!)
+                    }
                 }
-                else{
-                    var a : tableViewCustom = tableViewCustom()
-                    a.category = data.cateogry!.name!
-                    a.activities.append(data.name!)
-                    a.category_color = data.cateogry!.colour!
-                    dictionary_cat_act.append(a)
-                }
-                
-                
-                
-                /// ---------------------------
                 
             }
-            
-        } catch {
-            
-            print("Failed")
+            else{
+                var a : tableViewCustom = tableViewCustom()
+                a.category = data.cateogry!.name!
+                a.activities.append(data.name!)
+                a.category_color = data.cateogry!.colour!
+                dictionary_cat_act.append(a)
+            }
         }
+        
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
+//        fetchRequest2.returnsObjectsAsFaults = false
+//        do {
+//            let result = try context.fetch(fetchRequest2) as! [Activity]
+//            for data in result {
+//                item.append(data)
+//
+//                if dictionary_cat_act.contains(where: {$0.category == data.cateogry!.name!}){
+//                    print(data.name!)
+//
+//                    for i in 0...dictionary_cat_act.count-1{
+//                        if dictionary_cat_act[i].category == data.cateogry!.name!{
+//                            dictionary_cat_act[i].activities.append(data.name!)
+//                        }
+//                    }
+//
+//                }
+//                else{
+//                    var a : tableViewCustom = tableViewCustom()
+//                    a.category = data.cateogry!.name!
+//                    a.activities.append(data.name!)
+//                    a.category_color = data.cateogry!.colour!
+//                    dictionary_cat_act.append(a)
+//                }
+//
+//
+//
+//                /// ---------------------------
+//
+//            }
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
         print("DICTIONARY")
        // print(dictionary_category_activities)
         print(dictionary_cat_act)
@@ -266,72 +280,80 @@ class Activity_TableViewController: UITableViewController {
     func delete_CoreData(indexPath: IndexPath){
         print("YOO DELETING")
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-//        let temp = self.item[indexPath.row]
-//
-//        let name : String = temp.value(forKey: "name") as! String
+        //        let temp = self.item[indexPath.row]
+        //
+        //        let name : String = temp.value(forKey: "name") as! String
         
         let name_activity : String = self.dictionary_cat_act[indexPath.section].activities[indexPath.row]
-
         
-        print (name_activity)
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
-        
-        // filtering
-        // DELETE ACTIVITIES
-        let filter = NSPredicate(format: "name == %@", name_activity)
-        request.predicate = filter
-        
-        // doing the request -- fetching the request
-        request.returnsObjectsAsFaults = false
-        do {
-            print("YO - RESULT")
-            let result = try context.fetch(request)
-            if (result.count > 0){
-                let manage = result[0] as! NSManagedObject
-                context.delete(manage)
-                // saving a entity
-                do {
-                    try context.save()
-                }catch {print("failed save!")}
-            }
-        } catch {
-            print("Failed")
-        }
-        
-        
-        let request2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
-        
-        // filtering
-        let filter2 = NSPredicate(format: "activity_name == %@", name_activity)
-        request2.predicate = filter2
-        
-        
-        // doing the request -- fetching the request
-        request2.returnsObjectsAsFaults = false
-        do {
-            print("YO - RESULT")
-            let result = try context.fetch(request2)
-            if (result.count > 0){
-                let manage = result[0] as! NSManagedObject
-                context.delete(manage)
-                // saving a entity
-                do {
-                    try context.save()
-                }catch {print("failed save!")}
-            }
-            else if (result.count == 0){          // delete it
-                print("YO - NO ACTIVITIES WERE COMPLETED")
-        }
-
-            
-        } catch {
-            
-            print("Failed")
-        }
+        print ("TO BE DELETED --> \(name_activity)")
+        core_data.deleteActivity(name_activity: name_activity)
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//
+////        let temp = self.item[indexPath.row]
+////
+////        let name : String = temp.value(forKey: "name") as! String
+//
+//        let name_activity : String = self.dictionary_cat_act[indexPath.section].activities[indexPath.row]
+//
+//
+//        print (name_activity)
+//
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
+//
+//        // filtering
+//        // DELETE ACTIVITIES
+//        let filter = NSPredicate(format: "name == %@", name_activity)
+//        request.predicate = filter
+//
+//        // doing the request -- fetching the request
+//        request.returnsObjectsAsFaults = false
+//        do {
+//            print("YO - RESULT")
+//            let result = try context.fetch(request)
+//            if (result.count > 0){
+//                let manage = result[0] as! NSManagedObject
+//                context.delete(manage)
+//                // saving a entity
+//                do {
+//                    try context.save()
+//                }catch {print("failed save!")}
+//            }
+//        } catch {
+//            print("Failed")
+//        }
+//
+//
+//        let request2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
+//
+//        // filtering
+//        let filter2 = NSPredicate(format: "activity_name == %@", name_activity)
+//        request2.predicate = filter2
+//
+//
+//        // doing the request -- fetching the request
+//        request2.returnsObjectsAsFaults = false
+//        do {
+//            print("YO - RESULT")
+//            let result = try context.fetch(request2)
+//            if (result.count > 0){
+//                let manage = result[0] as! NSManagedObject
+//                context.delete(manage)
+//                // saving a entity
+//                do {
+//                    try context.save()
+//                }catch {print("failed save!")}
+//            }
+//            else if (result.count == 0){          // delete it
+//                print("YO - NO ACTIVITIES WERE COMPLETED")
+//        }
+//
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
 
     
     }

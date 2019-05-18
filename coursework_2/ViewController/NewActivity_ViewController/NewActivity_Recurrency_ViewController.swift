@@ -227,6 +227,7 @@ class NewActivity_Recurrency_ViewController: UIViewController {
             day.borderColor = UIColor.red
             day.shadowRadius = 0
             day.shadowOpacity = 0
+            day.isHidden = true
         }
 
     }
@@ -243,6 +244,7 @@ class NewActivity_Recurrency_ViewController: UIViewController {
 
         for day in daysInAWeek{
             day.isEnabled = true
+            day.isHidden = false
         }
         
      
@@ -472,6 +474,9 @@ class NewActivity_Recurrency_ViewController: UIViewController {
                 print("NO SELECTION!")
                 
             }
+            else if (week_trigger == true && mon_trigger == false && tue_trigger == false && wed_trigger == false && thr_trigger == false && fri_trigger == false && sat_trigger == false && sun_trigger == false ){
+                check = false
+            }
             else{
                 check = true
 
@@ -502,6 +507,7 @@ class NewActivity_Recurrency_ViewController: UIViewController {
             if (week_trigger != true){
                 weekDaysFalse()
             }
+
             
             new_activity?.mon_trigger = mon_trigger
             new_activity?.tue_trigger = tue_trigger
@@ -548,6 +554,9 @@ class NewActivity_Recurrency_ViewController: UIViewController {
             weekDisable()
         }
         if week_trigger == true{
+            weekEnable()
+            
+            
             if mon_trigger == true {
                 mon.backgroundColor = myColor.light_yellow
                 mon.borderColor = myColor.orange

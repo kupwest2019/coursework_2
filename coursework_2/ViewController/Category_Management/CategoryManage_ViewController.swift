@@ -45,6 +45,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewWillAppear(_ animated: Bool) {
         // self.registerCustomCell()
+        editingAvailable = false
         activities.removeAll()
         
         self.editingButton.isEnabled = false

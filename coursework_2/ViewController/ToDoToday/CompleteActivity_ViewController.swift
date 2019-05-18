@@ -50,22 +50,29 @@ class CompleteActivity_ViewController: UIViewController {
     
     
     func updateCoreData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-                
-        // manage Update
-        // create a new entity
-        let entity = NSEntityDescription.entity(forEntityName: "CompletedActivity", in: context)
-        let newElement = NSManagedObject(entity: entity!, insertInto: context)
-        newElement.setValue(self.activityToBeExecuted!.name, forKey: "activity_name")
-        newElement.setValue(self.dateOfActivity!, forKey: "date")
-        newElement.setValue(self.activityToBeExecuted?.cateogry?.name!, forKey: "category")
-
-        // saving a entity
-        do {
-            try context.save()
-        }catch {print("failed save!")}
         
+        let core_data : Core_Data_Interface = accessingCoreData()
+        guard let activity_exec = activityToBeExecuted else {fatalError("Unexpected class type in allObjects")}
+        guard let date_activity = self.dateOfActivity else {fatalError("Unexpected class type in allObjects")}
+        
+        core_data.completeAnActivity(activityToBeExecuted: activity_exec, dateOfActivity: date_activity)
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        // manage Update
+//        // create a new entity
+//        let entity = NSEntityDescription.entity(forEntityName: "CompletedActivity", in: context)
+//        let newElement = NSManagedObject(entity: entity!, insertInto: context)
+//        newElement.setValue(self.activityToBeExecuted!.name, forKey: "activity_name")
+//        newElement.setValue(self.dateOfActivity!, forKey: "date")
+//        newElement.setValue(self.activityToBeExecuted?.cateogry?.name!, forKey: "category")
+//
+//        // saving a entity
+//        do {
+//            try context.save()
+//        }catch {print("failed save!")}
+//
         
     }
     

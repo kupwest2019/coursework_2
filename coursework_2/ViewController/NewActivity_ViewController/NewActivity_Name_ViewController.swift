@@ -48,6 +48,16 @@ class NewActivity_Name_ViewController: UIViewController {
                 if (new_name.count == 0){
                     print("NEED AT LEAST 1")
                     
+                    
+                    let alertController = UIAlertController(title: "Warning", message: "🐵 Please enter a name 🐵", preferredStyle: .alert)
+                    
+                    
+                    let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    
+                    alertController.addAction(cancelAction)
+                    present(alertController, animated: true, completion: nil)
+                    
+                    
                 }
                 else{
                     // perform check if the activity is already present
@@ -69,6 +79,14 @@ class NewActivity_Name_ViewController: UIViewController {
                             new_activity.name = new_name
                         }
                         else{
+                            let alertController = UIAlertController(title: "Warning", message: "🐵 Activity Already Present 🐵", preferredStyle: .alert)
+                            
+                            
+                            let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            
+                            alertController.addAction(cancelAction)
+                            present(alertController, animated: true, completion: nil)
+                            
                             print("DUPLICATE")
                         }
                     } catch {

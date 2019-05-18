@@ -47,43 +47,50 @@ class ShowGoalDeail_ViewController: UIViewController {
     }
     
     func loadAllData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
         
         
-        //let newDay = Calendar.current.date(byAdding: .day, value: self.counterDay, to: today)
-        //self.elaboration_date = newDay!
+        guard let category : Category = edit_category else {fatalError("Unexpected class type in allObjects")}
+        guard let start_date : Date = category.startDate else {fatalError("Unexpected type")}
         
-        
-        // COMPLETED ACTIVITIES
-        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
-        let fromPredicate = NSPredicate(format: "date >= %@", edit_category!.startDate! as NSDate)
-        let toPredicate = NSPredicate(format: "date =< %@", today as NSDate)
-        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-        fetchRequest2.predicate = datePredicate
-        
-        // doing the request -- fetching the request
-        
-        fetchRequest2.returnsObjectsAsFaults = false
-        do {
-            
-            print("COMPLETED ACTIVITIES")
-            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
-            for data in result {
-                if data.category == edit_category!.name{
-                    print(data)
-                    self.completed_activities.append(data)
-                }
-               
+        let core_data : Core_Data_Interface = accessingCoreData()
+        let today = Date()
+
+        let result = core_data.returnCompletedActivitiesTwoDates(start_date: start_date, end_date: today)
+        for data in result {
+            if data.category == category.name{
+                print(data)
+                self.completed_activities.append(data)
             }
             
-        } catch {
-            
-            print("Failed")
         }
-        
-        
-        
+//
+//        let fromPredicate = NSPredicate(format: "date >= %@", edit_category!.startDate! as NSDate)
+//        let toPredicate = NSPredicate(format: "date =< %@", today as NSDate)
+//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+//        fetchRequest2.predicate = datePredicate
+//
+//        // doing the request -- fetching the request
+//
+//        fetchRequest2.returnsObjectsAsFaults = false
+//        do {
+//
+//            print("COMPLETED ACTIVITIES")
+//            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
+//            for data in result {
+//                if data.category == edit_category!.name{
+//                    print(data)
+//                    self.completed_activities.append(data)
+//                }
+//
+//            }
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
+//
+//
+//
         
         
     }
@@ -105,8 +112,8 @@ class ShowGoalDeail_ViewController: UIViewController {
         
         print(notCompleted)
         print(goal_value)
-        
-        if (notCompleted <= 0){
+    
+        if (notCompleted <= 0 && goal_value > 0){
             let myColor : MyCustomColors = MyCustomColors()
             self.label_remainingActivities.isHidden = true
             

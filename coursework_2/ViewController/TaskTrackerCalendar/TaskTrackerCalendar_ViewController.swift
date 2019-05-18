@@ -325,43 +325,47 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         
     }
     
-    
-    
+    let core_data : Core_Data_Interface = accessingCoreData()
+
     func queryActivityCompleted(_ newDate : Date, _ days:Int){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
-        
-        
         let date_helper : DealWithDate = DealWithDate()
         let startDate = date_helper.returnOnlyDayMonthYear_customDay(inputDate: newDate, day: 1)
         let endDate = date_helper.returnOnlyDayMonthYear_customDay_endDate(inputDate: newDate, day: days)
-    
-        
-        // NB PAY ATTENTION TO DATE
-        let fromPredicate = NSPredicate(format: "date >= %@", startDate as NSDate)
-        let toPredicate = NSPredicate(format: "date =< %@", endDate as NSDate)
-        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-        fetchRequest2.predicate = datePredicate
-        
-        // doing the request -- fetching the request
         
         
-        
-        fetchRequest2.returnsObjectsAsFaults = false
-        do {
-            print("//---COMPLETED--//")
-            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
-            for data in result {
-                print(data)
-                addToCompletedActivities(activity: data, day: data.date!)
-            }
-            
-        } catch {
-            
-            print("Failed")
+        let result = core_data.returnCompletedActivitiesTwoDates(start_date: startDate, end_date: endDate)
+        for data in result {
+            print(data)
+            addToCompletedActivities(activity: data, day: data.date!)
         }
         
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
+//
+//        // NB PAY ATTENTION TO DATE
+//        let fromPredicate = NSPredicate(format: "date >= %@", startDate as NSDate)
+//        let toPredicate = NSPredicate(format: "date =< %@", endDate as NSDate)
+//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+//        fetchRequest2.predicate = datePredicate
+//
+//        // doing the request -- fetching the request
+//
+//        fetchRequest2.returnsObjectsAsFaults = false
+//        do {
+//            print("//---COMPLETED--//")
+//            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
+//            for data in result {
+//                print(data)
+//                addToCompletedActivities(activity: data, day: data.date!)
+//            }
+//
+//        } catch {
+//
+//            print("Failed")
+//        }
+//
         
     
     }
@@ -369,36 +373,49 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     
     
     func queryActivitis(_ newDate : Date, _ days:Int){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
-
         
         let date_helper : DealWithDate = DealWithDate()
         let startDate = date_helper.returnOnlyDayMonthYear_customDay(inputDate: newDate, day: 1)
         let endDate = date_helper.returnOnlyDayMonthYear_customDay_endDate(inputDate: newDate, day: days)
-
-
-        let fromPredicate = NSPredicate(format: "end_date >= %@", startDate as NSDate)
-        let toPredicate = NSPredicate(format: "start_date < %@", endDate as NSDate)
-        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
         
-        request.predicate = datePredicate
-        
-        // doing the request -- fetching the request
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            print("number of occurence present present --> ", result.count)
-            
-            for i in result{
-                populateScheduledActivities(activity: i as! Activity, maxDay: days, startDate: startDate, endDate: endDate)
-                
-            }
-            
-        } catch {
-            print("Failed")
+        let result = core_data.return_To_Do_Activities_TwoDates(start_date: startDate, end_date: endDate)
+        for i in result{
+            populateScheduledActivities(activity: i, maxDay: days, startDate: startDate, endDate: endDate)
         }
+        
+        
+        
+//
+//
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
+//
+//
+//
+//
+//
+//        let fromPredicate = NSPredicate(format: "end_date >= %@", startDate as NSDate)
+//        let toPredicate = NSPredicate(format: "start_date < %@", endDate as NSDate)
+//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+//
+//        request.predicate = datePredicate
+//
+//        // doing the request -- fetching the request
+//        request.returnsObjectsAsFaults = false
+//        do {
+//            let result = try context.fetch(request)
+//            print("number of occurence present present --> ", result.count)
+//
+//            for i in result{
+//                populateScheduledActivities(activity: i as! Activity, maxDay: days, startDate: startDate, endDate: endDate)
+//
+//            }
+//
+//        } catch {
+//            print("Failed")
+//        }
     }
 
     func populateScheduledActivities(activity : Activity, maxDay : Int, startDate : Date, endDate : Date){

@@ -98,13 +98,10 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
             }
                 // Manage Insert in coreData
             else{
+                
                 // create a new entity
                 let entity = NSEntityDescription.entity(forEntityName: "Category", in: context)
                 let newElement = NSManagedObject(entity: entity!, insertInto: context)
-                
-                
-                
-                
                 newElement.setValue(new_category.name, forKey: "name")
                 newElement.setValue(new_category.color, forKey: "colour")
                 newElement.setValue(choosenGoal, forKey: "goal")
