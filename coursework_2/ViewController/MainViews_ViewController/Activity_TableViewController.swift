@@ -35,6 +35,7 @@ class Activity_TableViewController: UITableViewController {
     
     @IBOutlet weak var button_edit: UIBarButtonItem!
     override func viewWillAppear(_ animated: Bool) {
+        
         editingAvailable = false
         item.removeAll()
         dictionary_cat_act.removeAll()

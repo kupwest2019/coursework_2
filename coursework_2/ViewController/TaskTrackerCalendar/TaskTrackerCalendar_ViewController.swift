@@ -213,8 +213,10 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var header_image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.clearAndsetHeaderSize()
         // Do any additional setup after loading the view.
     }
     
