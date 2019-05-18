@@ -23,6 +23,8 @@ protocol Core_Data_Interface {
     func createCategory(choosenGoal : NSNumber, new_category : Category_obj)
     func createNewActivity(new_activity : Activity_obj)
     func updateActivity(new_activity: Activity_obj, oldActivity: Activity)
+    func deleteAll()
+
 }
 
 
@@ -30,6 +32,67 @@ class accessingCoreData : Core_Data_Interface{
     
     let date_helper : DealWithDate = DealWithDate()
 
+    
+    func deleteAll(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        
+        let fetchRequest1 = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
+        
+        fetchRequest1.returnsObjectsAsFaults = false
+        do {
+            
+            guard let result = try context.fetch(fetchRequest1) as? [Category] else {fatalError("Unexpected class type in allObjects")}
+            
+            for data in result {
+                context.delete(data)
+            }
+            // guard in exctraction
+            try context.save()
+            
+        } catch {
+            print("Failed")
+        }
+        
+        
+        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
+        
+        fetchRequest2.returnsObjectsAsFaults = false
+        do {
+            
+            guard let result = try context.fetch(fetchRequest2) as? [Activity] else {fatalError("Unexpected class type in allObjects")}
+            
+            for data in result {
+                context.delete(data)
+            }
+            // guard in exctraction
+            try context.save()
+            
+        } catch {
+            print("Failed")
+        }
+        
+        let fetchRequest3 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
+
+        fetchRequest3.returnsObjectsAsFaults = false
+        do {
+            
+            guard let result = try context.fetch(fetchRequest3) as? [CompletedActivity] else {fatalError("Unexpected class type in allObjects")}
+            
+            for data in result {
+                context.delete(data)
+            }
+            // guard in exctraction
+            try context.save()
+            
+        } catch {
+            print("Failed")
+        }
+        
+       
+    }
+    
     
     func returnAllCategry() -> [Category]{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

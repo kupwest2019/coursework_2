@@ -13,10 +13,19 @@ class LoginView_ViewController: UIViewController {
     let defaults = UserDefaults.standard
     let date_helper : DealWithDate = DealWithDate()
 
+    
+    
+  
+    @IBAction func login_noaccount(_ sender: Any) {
+        defaults.set("true", forKey: "LoggedIn")
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let check = defaults.string(forKey: "Category_uploaded"){
+        if defaults.string(forKey: "Category_uploaded") != nil && defaults.string(forKey: "Category_uploaded") == "true"{
             print("LOADED")
         }
         else{
@@ -83,6 +92,16 @@ class LoginView_ViewController: UIViewController {
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if defaults.string(forKey: "LoggedIn") != nil{
+            if defaults.string(forKey: "LoggedIn") == "true"{
+                performSegue(withIdentifier: "next", sender: nil)
+            }
+            
+        }
     }
     
 
