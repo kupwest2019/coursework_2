@@ -15,6 +15,8 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     var calendar = Calendar.current
     var counter_monthSelected : Int = 0
     
+    @IBOutlet weak var sizeHeaderImage: NSLayoutConstraint!
+    
     var totalNumberOfDaysInAMonth : Int = 0
     var existsActivityScheduledForTheMonth : Bool = false
     
@@ -216,7 +218,11 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     @IBOutlet weak var header_image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.clearAndsetHeaderSize()
+        
+        self.sizeHeaderImage.constant = clearAndsetHeaderSize()
+        let a : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = a.textNavBarAttributes(color1: UIColor.black, text1: "ACTIVITY", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "tracker")
+        //self.clearAndsetHeaderSize()
         // Do any additional setup after loading the view.
     }
     

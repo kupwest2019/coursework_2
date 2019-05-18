@@ -81,11 +81,11 @@ struct System {
 
 
 struct PhoneHeaderSize {
-    static let iPhone_5_5S_SE = 77
-    static let iPhone_6_6S_7_8 = 80
-    static let iPhone_6p_6Sp_7p_8p = 80
+    static let iPhone_5_5S_SE = 59
+    static let iPhone_6_6S_7_8 = 62
+    static let iPhone_6p_6Sp_7p_8p = 62
     
-    static let iPhone_X_XS = 105
-    static let iPhone_XS_Max = 105
-    static let iPhone_XR = 105
+    static let iPhone_X_XS = 87
+    static let iPhone_XS_Max = 87
+    static let iPhone_XR = 87
 }

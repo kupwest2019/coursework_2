@@ -10,6 +10,7 @@ import UIKit
 
 class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var header_image: NSLayoutConstraint!
     
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -159,7 +160,9 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedDAyInfo)
-      
+        self.header_image.constant = clearAndsetHeaderSize()
+        let a : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = a.textNavBarAttributes(color1: UIColor.black, text1: "ActivityDAY", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "tracker")
         
     
         // Do any additional setup after loading the view.
