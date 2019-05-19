@@ -166,6 +166,9 @@ class TaskTrackerCalendar_ViewController: UIViewController {
    
     }
     
+    
+    
+    
     // clear the scheudle activities while the month is changing
     func clear_arrey_scheduled_activities(){
         for index in 0...arrey_scheduled_activities.count-1{
@@ -176,6 +179,8 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     
     // days func
     @IBAction func next(_ sender: UIButton) {
+        actualButton?.isSelected = false
+        actualButton = nil
         counter_monthSelected = counter_monthSelected+1
         clear_arrey_scheduled_activities()
         updateDays(counter_monthSelected)
@@ -184,6 +189,8 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     
     
     @IBAction func prev(_ sender: UIButton) {
+        actualButton?.isSelected = false
+        actualButton = nil
         counter_monthSelected = counter_monthSelected-1
         clear_arrey_scheduled_activities()
         updateDays(counter_monthSelected)
