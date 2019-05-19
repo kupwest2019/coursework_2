@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class NewCategory_Name_ViewController: UIViewController {
+class NewCategory_Name_ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField_categoryName: UITextField!
     
@@ -18,9 +18,15 @@ class NewCategory_Name_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.textField_categoryName.delegate = self
         print(new_activity)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
     }
     
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PersonalInformation_ViewController: UIViewController {
+class PersonalInformation_ViewController: UIViewController, UITextFieldDelegate {
 
     let defaults = UserDefaults.standard
 
@@ -43,10 +43,17 @@ class PersonalInformation_ViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     
     @IBOutlet weak var save_button: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.name_label.delegate = self
+        self.lastname_label.delegate = self
         // Do any additional setup after loading the view.
     }
     

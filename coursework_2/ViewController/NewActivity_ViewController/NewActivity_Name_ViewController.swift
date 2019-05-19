@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewActivity_Name_ViewController: UIViewController {
+class NewActivity_Name_ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textFiled_activityName: UITextField!
     
@@ -20,11 +20,14 @@ class NewActivity_Name_ViewController: UIViewController {
     
     
     
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.textFiled_activityName.delegate = self
         
         // -- EDITING NAV_BAR --//
         let nav = self.navigationController?.navigationBar
