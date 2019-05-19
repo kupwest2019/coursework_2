@@ -174,9 +174,20 @@ class MainCoaching_ViewController: UIViewController {
 
     }
     
+    
+    func resetVar(){
+         user_detail_weight = 0.0
+         goal_exercize  = 0
+         number_activities  = 0
+         underweight_user_weight   = 0.0
+         overweight_user_weight  = 0.0
+         bmi_user  = 0.0
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         // **** editing bar style //
-        
+        resetVar()
+
         let nav = self.navigationController?.navigationBar
         
         // 2
@@ -191,7 +202,6 @@ class MainCoaching_ViewController: UIViewController {
         self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: UIColor.black, text1: "COACHING", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "tips")
         
         //
-        
         
         populateInformationBMI()
         populateExerciseGoal()
