@@ -280,12 +280,12 @@ class NewActivity_Partner_ViewController: UIViewController {
             duration = Int(number)
         }
         
-        print("------------")
-        print(oldActivity)
-        print("------------")
-        print(self.new_activity)
-        
-        print("------------")
+//        print("------------")
+//        print(oldActivity)
+//        print("------------")
+//        print(self.new_activity)
+//        
+//        print("------------")
 
         
         if(self.oldActivity?.cateogry?.name == self.new_activity?.category &&
@@ -332,7 +332,7 @@ class NewActivity_Partner_ViewController: UIViewController {
         self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.blue, text1: "ACTIVITIES", color2: UIColor.black, text2: "new")
         /////
         
-        print(new_activity)
+        //print(new_activity)
 
     }
     

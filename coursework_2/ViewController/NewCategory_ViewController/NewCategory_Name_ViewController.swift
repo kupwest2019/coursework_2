@@ -19,7 +19,7 @@ class NewCategory_Name_ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textField_categoryName.delegate = self
-        print(new_activity)
+        //print(new_activity)
 
         // Do any additional setup after loading the view.
     }

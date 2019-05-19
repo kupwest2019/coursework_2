@@ -159,7 +159,7 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(selectedDAyInfo)
+        //print(selectedDAyInfo)
         let myColor = MyCustomColors()
         let a : NavigationBarCustom = ChangeTextNavigationBarAttribute()
         self.navigationItem.titleView = a.textNavBarAttributes(color1: myColor.category_light_orange, text1: "ActivityDAY", color2: myColor.orange, text2: "tracker")

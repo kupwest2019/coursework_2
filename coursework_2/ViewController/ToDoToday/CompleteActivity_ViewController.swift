@@ -95,7 +95,7 @@ class CompleteActivity_ViewController: UIViewController {
         
         self.activity_date.text = "\(dayInWeek) : \(day_description.day ?? 0) - \(day_description.month ?? 0) "
         
-        print(activityToBeExecuted)
+        //print(activityToBeExecuted)
         
         
         
@@ -105,7 +105,7 @@ class CompleteActivity_ViewController: UIViewController {
         }
         else{
             let duration = activityToBeExecuted!.duration
-            print(activityToBeExecuted?.duration)
+           // print(activityToBeExecuted?.duration)
             let duration_string : String = String(duration)
             label_timer.text = "\(duration_string) minutes"
         }
