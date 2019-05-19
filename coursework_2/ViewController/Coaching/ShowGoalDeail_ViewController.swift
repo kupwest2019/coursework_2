@@ -38,13 +38,15 @@ class ShowGoalDeail_ViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: UIColor.black, text1: "COACHING", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "goalDetail")
         refreshData()
         loadAllData()
         loadAnimationView()
         
-        
     }
+    
+   
     
     func loadAllData(){
         

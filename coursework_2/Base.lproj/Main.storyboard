@@ -118,19 +118,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-9Z-zoU">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebe-9Z-zoU">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PiC-uc-Bkb"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Activity New Name" id="BIX-cv-QqQ">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="Km3-ZK-7dx">
+                                    <navigationItem title="Name" id="BIX-cv-QqQ">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="leftArrow" id="Km3-ZK-7dx">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="gWH-Pc-Gvz" kind="show" id="Mlf-bQ-l0Z"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="1de-qn-aVf">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="rightArrow" id="1de-qn-aVf">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="X7B-ey-zaa" kind="show" identifier="segue_fromActivityNewName" id="LTQ-QI-3Tx"/>
                                             </connections>
@@ -148,14 +150,15 @@
                                         <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
@@ -186,19 +189,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svy-2k-8Vv">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svy-2k-8Vv">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="yDe-p3-PUk"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="9PW-Qa-FUz">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="I3p-Us-5Ia">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="I3p-Us-5Ia">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="c5U-ws-Kua" kind="show" id="F2g-Aa-qbq"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="JI6-Kb-tib">
+                                        <barButtonItem key="rightBarButtonItem" image="rightArrow" id="JI6-Kb-tib">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="VW9-Dq-FwU" kind="show" identifier="segue_newCategoryName" id="UKk-LT-EwI"/>
                                             </connections>
@@ -206,11 +211,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5y-5N-gmi">
-                                <rect key="frame" x="20" y="80" width="280" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5y-5N-gmi" customClass="RoundTextField" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="20" y="142" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,7 +234,7 @@
                             <constraint firstItem="1Zy-eA-0dJ" firstAttribute="trailing" secondItem="svy-2k-8Vv" secondAttribute="trailing" id="MZA-r6-WM9"/>
                             <constraint firstItem="X5y-5N-gmi" firstAttribute="leading" secondItem="1Zy-eA-0dJ" secondAttribute="leading" constant="20" id="TTE-gw-pkd"/>
                             <constraint firstItem="1Zy-eA-0dJ" firstAttribute="trailing" secondItem="X5y-5N-gmi" secondAttribute="trailing" constant="20" id="YoJ-Le-qJO"/>
-                            <constraint firstItem="X5y-5N-gmi" firstAttribute="top" secondItem="1Zy-eA-0dJ" secondAttribute="top" constant="60" id="xql-14-qw6"/>
+                            <constraint firstItem="X5y-5N-gmi" firstAttribute="top" secondItem="1Zy-eA-0dJ" secondAttribute="top" constant="122" id="xql-14-qw6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1Zy-eA-0dJ"/>
                     </view>
@@ -246,13 +260,15 @@
                                     <constraint firstAttribute="height" constant="44" id="f70-cU-TUY"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="mXu-le-PCd">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="UO7-1Z-D0c">
+                                    <navigationItem title="Color" id="mXu-le-PCd">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="UO7-1Z-D0c">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="3uJ-Qj-AGQ" kind="show" identifier="back" id="C6A-Ow-ThC"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="1m1-Bw-DUM">
+                                        <barButtonItem key="rightBarButtonItem" image="rightArrow" id="1m1-Bw-DUM">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="VD4-vK-bng" kind="show" identifier="segue_CategoryColour" id="VXW-EY-fwu"/>
                                             </connections>
@@ -302,8 +318,9 @@
                                     <constraint firstAttribute="height" constant="44" id="0Rl-Vn-GGF"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Title" id="WDR-8m-I05">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="ZH6-cq-u3q">
+                                    <navigationItem title="Goal" id="WDR-8m-I05">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="ZH6-cq-u3q">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="VW9-Dq-FwU" kind="show" identifier="back" id="94N-fN-blc"/>
                                             </connections>
@@ -311,35 +328,49 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ubG-g3-3FD">
-                                <rect key="frame" x="20" y="70" width="280" height="266.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many times without failing?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eA4-U2-RV3">
-                                        <rect key="frame" x="17" y="0.0" width="246.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-6M-CBf">
-                                        <rect key="frame" x="0.0" y="20.5" width="280" height="216"/>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFD-fq-r7s">
-                                        <rect key="frame" x="112" y="236.5" width="56" height="30"/>
-                                        <state key="normal" title="CREATE"/>
-                                        <connections>
-                                            <segue destination="c5U-ws-Kua" kind="show" identifier="segue_categoryCreated" id="Wk3-OG-09P"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-6M-CBf">
+                                <rect key="frame" x="16" y="64" width="288" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFD-fq-r7s" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="102.5" y="321" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uFD-fq-r7s" secondAttribute="height" multiplier="1:1" id="05a-AU-Lrk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="eCG-4q-MKT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="c5U-ws-Kua" kind="show" identifier="segue_categoryCreated" id="Wk3-OG-09P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ubG-g3-3FD" firstAttribute="top" secondItem="sAh-1p-hUG" secondAttribute="top" constant="50" id="9U7-EN-FyJ"/>
+                            <constraint firstItem="sAh-1p-hUG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uFD-fq-r7s" secondAttribute="trailing" symbolic="YES" id="873-8U-Ent"/>
+                            <constraint firstItem="uFD-fq-r7s" firstAttribute="top" secondItem="N7n-6M-CBf" secondAttribute="bottom" constant="41" id="CQy-ts-pAr"/>
+                            <constraint firstItem="N7n-6M-CBf" firstAttribute="top" secondItem="sAh-1p-hUG" secondAttribute="top" constant="44" id="DT3-Ms-M5T"/>
+                            <constraint firstItem="uFD-fq-r7s" firstAttribute="centerX" secondItem="erW-Ty-801" secondAttribute="centerX" id="Ebw-PQ-i7b"/>
                             <constraint firstItem="6Vo-cW-MWx" firstAttribute="top" secondItem="sAh-1p-hUG" secondAttribute="top" id="K9b-Ge-o8X"/>
                             <constraint firstItem="sAh-1p-hUG" firstAttribute="trailing" secondItem="6Vo-cW-MWx" secondAttribute="trailing" id="LYp-OI-HNn"/>
-                            <constraint firstItem="sAh-1p-hUG" firstAttribute="trailing" secondItem="ubG-g3-3FD" secondAttribute="trailing" constant="20" id="Lfq-Fm-lom"/>
-                            <constraint firstItem="ubG-g3-3FD" firstAttribute="leading" secondItem="sAh-1p-hUG" secondAttribute="leading" constant="20" id="fOe-4w-vdT"/>
+                            <constraint firstItem="N7n-6M-CBf" firstAttribute="leading" secondItem="sAh-1p-hUG" secondAttribute="leading" constant="16" id="h9k-eI-094"/>
+                            <constraint firstItem="sAh-1p-hUG" firstAttribute="trailing" secondItem="N7n-6M-CBf" secondAttribute="trailing" constant="16" id="hef-nB-Zpc"/>
                             <constraint firstItem="6Vo-cW-MWx" firstAttribute="leading" secondItem="sAh-1p-hUG" secondAttribute="leading" id="kmN-Vq-OPC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sAh-1p-hUG"/>
@@ -351,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FbQ-QM-iww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7140.579710144928" y="-3277.2321428571427"/>
+            <point key="canvasLocation" x="7140" y="-3277.8169014084506"/>
         </scene>
         <!--Category Manage View Controller-->
         <scene sceneID="5Ea-qb-VK4">
@@ -361,22 +392,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-dW-wMW">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-dW-wMW">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="Categories" id="D0S-Cy-mxV">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="Y2n-iG-bQL">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="Y2n-iG-bQL">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="gWH-Pc-Gvz" kind="show" id="Shx-7r-i6M"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem systemItem="add" id="uel-6n-nIv">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <segue destination="3uJ-Qj-AGQ" kind="show" id="wio-EV-0Hj"/>
                                                 </connections>
                                             </barButtonItem>
-                                            <barButtonItem title="Item" id="nOs-EX-PFM">
+                                            <barButtonItem title="Item" image="update" id="nOs-EX-PFM">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="editing:" destination="nkW-nn-IcQ" id="0LR-EP-WDw"/>
                                                     <segue destination="VW9-Dq-FwU" kind="show" identifier="editing" id="prN-kg-XXZ"/>
@@ -421,20 +455,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-71-fVY">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-71-fVY">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="QfJ-95-SRV"/>
                                     <constraint firstAttribute="height" constant="44" id="d7g-NB-p3c"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Category New Name" id="lIx-d4-Qv8">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="tVv-yV-biB">
+                                    <navigationItem title="Title" id="lIx-d4-Qv8">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="leftArrow" id="tVv-yV-biB">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="X7B-ey-zaa" kind="show" identifier="returnBack" id="Dbf-8u-PYN"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="jtZ-Km-xfM">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="rightArrow" id="jtZ-Km-xfM">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="SGM-Kj-Cl7" kind="show" identifier="segue_newCategoryName" id="Zb1-Ge-pua"/>
                                             </connections>
@@ -442,11 +479,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdG-ct-1Wj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdG-ct-1Wj" customClass="RoundTextField" customModule="coursework_2" customModuleProvider="target">
                                 <rect key="frame" x="16" y="100" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.98823529409999999" green="0.49803921569999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -476,20 +522,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A99-ev-287">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A99-ev-287">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="KYp-Ow-wJc"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="PSY-XU-phH"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Category Color" id="mvY-jP-xHb">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="M7l-Bf-nv4">
+                                    <navigationItem title="Color" id="mvY-jP-xHb">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="M7l-Bf-nv4">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="kzC-5j-2fm" kind="show" id="oPy-3t-WBJ"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="aZM-15-lCA">
+                                        <barButtonItem key="rightBarButtonItem" image="rightArrow" id="aZM-15-lCA">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="4ug-SC-urK" kind="show" identifier="segue_CategoryColour" id="Rz1-1w-ble"/>
                                             </connections>
@@ -533,14 +581,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-f6-VBW">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYC-f6-VBW">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6xn-3f-8ms"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Category Goal" id="ZzA-2k-SfI">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="TjA-ek-CwD">
+                                    <navigationItem title="Goal" id="ZzA-2k-SfI">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="TjA-ek-CwD">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="SGM-Kj-Cl7" kind="show" identifier="back" id="Qgy-5t-Jdo"/>
                                             </connections>
@@ -548,36 +597,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="V98-qY-5pX">
-                                <rect key="frame" x="0.0" y="70" width="320" height="266.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many times without failing?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOW-PL-Cer">
-                                        <rect key="frame" x="37" y="0.0" width="246.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-IP-bHp">
-                                        <rect key="frame" x="0.0" y="20.5" width="320" height="216"/>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iri-UM-9CD">
-                                        <rect key="frame" x="132" y="236.5" width="56" height="30"/>
-                                        <state key="normal" title="CREATE"/>
-                                        <connections>
-                                            <segue destination="X7B-ey-zaa" kind="show" identifier="segue_categoryCreated" id="uDC-UJ-Soq"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-IP-bHp">
+                                <rect key="frame" x="16" y="64" width="288" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iri-UM-9CD" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="102.5" y="288" width="115" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iri-UM-9CD" secondAttribute="height" multiplier="1:1" id="21n-b7-VAG"/>
+                                    <constraint firstAttribute="height" constant="115" id="ADi-0a-u78"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="X7B-ey-zaa" kind="show" identifier="segue_categoryCreated" id="uDC-UJ-Soq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="MYC-f6-VBW" firstAttribute="leading" secondItem="DWw-wW-oJT" secondAttribute="leading" id="99W-x5-LpU"/>
-                            <constraint firstItem="DWw-wW-oJT" firstAttribute="trailing" secondItem="V98-qY-5pX" secondAttribute="trailing" id="GXA-mL-AaD"/>
+                            <constraint firstItem="iri-UM-9CD" firstAttribute="centerX" secondItem="MGl-9W-J32" secondAttribute="centerX" id="DxH-Hp-OPK"/>
                             <constraint firstItem="DWw-wW-oJT" firstAttribute="trailing" secondItem="MYC-f6-VBW" secondAttribute="trailing" id="HV3-x0-YGn"/>
-                            <constraint firstItem="V98-qY-5pX" firstAttribute="leading" secondItem="DWw-wW-oJT" secondAttribute="leading" id="XKy-jP-e0Y"/>
+                            <constraint firstItem="GZu-IP-bHp" firstAttribute="top" secondItem="DWw-wW-oJT" secondAttribute="top" constant="44" id="MpB-Pg-ohE"/>
+                            <constraint firstItem="iri-UM-9CD" firstAttribute="top" secondItem="GZu-IP-bHp" secondAttribute="bottom" constant="8" id="Oef-q6-JE1"/>
                             <constraint firstItem="MYC-f6-VBW" firstAttribute="top" secondItem="DWw-wW-oJT" secondAttribute="top" id="kvM-en-M4A"/>
-                            <constraint firstItem="V98-qY-5pX" firstAttribute="top" secondItem="DWw-wW-oJT" secondAttribute="top" constant="50" id="yr3-wU-pYh"/>
+                            <constraint firstItem="DWw-wW-oJT" firstAttribute="trailing" secondItem="GZu-IP-bHp" secondAttribute="trailing" constant="16" id="z14-WF-Hfg"/>
+                            <constraint firstItem="GZu-IP-bHp" firstAttribute="leading" secondItem="DWw-wW-oJT" secondAttribute="leading" constant="16" id="zjb-1z-sO7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWw-wW-oJT"/>
                     </view>
@@ -597,19 +653,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-Ih-dYk">
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-Ih-dYk">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JMW-Uh-pad"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Activity Category" id="hgH-EN-DtJ">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="8ay-cR-nfg">
+                                    <navigationItem title="Category" id="hgH-EN-DtJ">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="8ay-cR-nfg">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="4AA-Ez-CRe" kind="show" identifier="" id="I8W-p3-8Xb"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="gsA-df-mVf">
+                                        <barButtonItem key="rightBarButtonItem" title="Item" image="rightArrow" id="gsA-df-mVf">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="uwL-Zd-wru" kind="show" identifier="segue_createCategory" id="hlN-gz-raK"/>
                                             </connections>
@@ -617,41 +676,55 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vZr-AC-xzK">
-                                <rect key="frame" x="20" y="70" width="280" height="246"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-0V-G4A">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="216"/>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ0-q6-B5i">
-                                        <rect key="frame" x="0.0" y="216" width="280" height="30"/>
-                                        <state key="normal" title="Create New Category"/>
-                                        <connections>
-                                            <segue destination="kzC-5j-2fm" kind="show" identifier="segue_createCategory_newCategory" id="4nO-Ml-OYf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-0V-G4A">
+                                <rect key="frame" x="20" y="64" width="280" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ0-q6-B5i" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
+                                <rect key="frame" x="16" y="288" width="288" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="5f9-Ox-rb8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Create New Category">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="kzC-5j-2fm" kind="show" identifier="segue_createCategory_newCategory" id="4nO-Ml-OYf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oQy-Ih-dYk" firstAttribute="leading" secondItem="fSW-E3-c5u" secondAttribute="leading" id="6Vw-4w-N1E"/>
-                            <constraint firstItem="vZr-AC-xzK" firstAttribute="top" secondItem="fSW-E3-c5u" secondAttribute="top" constant="50" id="8y7-Wr-D3h"/>
                             <constraint firstItem="fSW-E3-c5u" firstAttribute="trailing" secondItem="oQy-Ih-dYk" secondAttribute="trailing" id="Ak3-ef-gDm"/>
                             <constraint firstItem="oQy-Ih-dYk" firstAttribute="top" secondItem="fSW-E3-c5u" secondAttribute="top" id="JCr-WO-Ses"/>
-                            <constraint firstItem="vZr-AC-xzK" firstAttribute="leading" secondItem="fSW-E3-c5u" secondAttribute="leading" constant="20" id="Rkw-oO-u1Q"/>
-                            <constraint firstItem="fSW-E3-c5u" firstAttribute="trailing" secondItem="vZr-AC-xzK" secondAttribute="trailing" constant="20" id="fVW-Nj-DXn"/>
+                            <constraint firstItem="QQ0-q6-B5i" firstAttribute="centerX" secondItem="QqL-78-16b" secondAttribute="centerX" id="KMq-mv-h82"/>
+                            <constraint firstItem="fSW-E3-c5u" firstAttribute="trailing" secondItem="9ez-0V-G4A" secondAttribute="trailing" constant="20" id="Q6W-N9-Z3X"/>
+                            <constraint firstItem="9ez-0V-G4A" firstAttribute="leading" secondItem="fSW-E3-c5u" secondAttribute="leading" constant="20" id="ROp-Il-0fn"/>
+                            <constraint firstItem="QQ0-q6-B5i" firstAttribute="top" secondItem="9ez-0V-G4A" secondAttribute="bottom" constant="8" id="k8e-V9-pCd"/>
+                            <constraint firstItem="fSW-E3-c5u" firstAttribute="trailing" secondItem="QQ0-q6-B5i" secondAttribute="trailing" constant="16" id="vC2-lZ-L3P"/>
+                            <constraint firstItem="9ez-0V-G4A" firstAttribute="top" secondItem="fSW-E3-c5u" secondAttribute="top" constant="44" id="xE9-VC-jn1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fSW-E3-c5u"/>
                     </view>
                     <connections>
+                        <outlet property="nav_bar" destination="oQy-Ih-dYk" id="poX-hj-0cD"/>
                         <outlet property="nextButton" destination="gsA-df-mVf" id="yrd-vY-FYT"/>
                         <outlet property="picker_category" destination="9ez-0V-G4A" id="ef4-Uh-Dxj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvn-rd-Osn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5431.884057971015" y="-1402.2321428571429"/>
+            <point key="canvasLocation" x="5431.875" y="-1402.8169014084508"/>
         </scene>
         <!--New Activity Dates View Controller-->
         <scene sceneID="SjX-IM-Bbd">
@@ -661,7 +734,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8sE-fi-zAt">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sE-fi-zAt">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5gz-Wd-5lZ"/>
@@ -670,13 +743,15 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="seB-4S-TS0"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Activity Period" id="s4Z-v9-2E7">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="4PN-r0-Sk4">
+                                    <navigationItem title="Dates" id="s4Z-v9-2E7">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="4PN-r0-Sk4">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="X7B-ey-zaa" kind="show" identifier="back" id="9h1-SA-jWP"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="rIx-6k-mnB">
+                                        <barButtonItem key="rightBarButtonItem" image="rightArrow" id="rIx-6k-mnB">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="HWG-cN-Mde" kind="show" identifier="segue_createPeriod" id="LE4-zX-N6d"/>
                                             </connections>
@@ -754,19 +829,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYV-Hz-JKr">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYV-Hz-JKr">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="XrE-8l-QGq"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Activity Recurrency" id="aiX-fO-jaD">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="jLX-iS-axK">
+                                    <navigationItem title="Recurrency" id="aiX-fO-jaD">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="jLX-iS-axK">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="uwL-Zd-wru" kind="show" identifier="back" id="429-Fl-KeZ"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="PmC-9H-Tvv">
+                                        <barButtonItem key="rightBarButtonItem" image="rightArrow" id="PmC-9H-Tvv">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="VyA-1m-5Lj" kind="show" identifier="segue_createRecurrency" id="ih7-lP-9Cl"/>
                                             </connections>
@@ -1022,16 +1099,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-Qu-DSu">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-Qu-DSu">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Activity Timing" id="kS6-EH-pFm">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="0HX-hN-XZ9">
+                                    <navigationItem title="Detail" id="kS6-EH-pFm">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="0HX-hN-XZ9">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="HWG-cN-Mde" kind="show" identifier="back" id="RXe-Ks-RG4"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="JWV-gg-RQG">
+                                        <barButtonItem key="rightBarButtonItem" image="rightArrow" id="JWV-gg-RQG">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="xY1-Tu-2ye" kind="show" identifier="segue_createTime" id="HdZ-r8-tFc"/>
                                             </connections>
@@ -1119,11 +1198,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-TX-YF9">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQN-TX-YF9">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Activity Partner" id="7ba-qa-sP9">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="prH-g2-aqU">
+                                    <navigationItem id="7ba-qa-sP9">
+                                        <barButtonItem key="leftBarButtonItem" image="leftArrow" id="prH-g2-aqU">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <segue destination="VyA-1m-5Lj" kind="show" identifier="back" id="y4k-1l-3L0"/>
                                             </connections>
@@ -1132,19 +1212,24 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34U-6M-e9I" customClass="RoundButtonDesignable" customModule="coursework_2" customModuleProvider="target">
-                                <rect key="frame" x="16" y="259" width="288" height="51"/>
+                                <rect key="frame" x="85" y="209" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="34U-6M-e9I" secondAttribute="height" multiplier="1:1" constant="237" id="G07-QA-wh8"/>
+                                    <constraint firstAttribute="height" constant="150" id="Ayc-Pt-w82"/>
+                                    <constraint firstAttribute="width" secondItem="34U-6M-e9I" secondAttribute="height" multiplier="1:1" id="L8S-K4-Qiq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="bIm-Lg-eLx"/>
                                 </constraints>
-                                <state key="normal" title="CREATE"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="save_new_activity:" destination="xY1-Tu-2ye" eventType="touchUpInside" id="BB4-5F-fGi"/>
@@ -1156,9 +1241,8 @@
                         <constraints>
                             <constraint firstItem="mQN-TX-YF9" firstAttribute="leading" secondItem="QhV-ec-MYf" secondAttribute="leading" id="5og-gJ-DEq"/>
                             <constraint firstItem="mQN-TX-YF9" firstAttribute="top" secondItem="QhV-ec-MYf" secondAttribute="top" id="Hm0-tM-d1M"/>
-                            <constraint firstItem="34U-6M-e9I" firstAttribute="top" secondItem="QhV-ec-MYf" secondAttribute="top" constant="239" id="OcO-3A-Syx"/>
-                            <constraint firstItem="QhV-ec-MYf" firstAttribute="trailing" secondItem="34U-6M-e9I" secondAttribute="trailing" constant="16" id="f4N-KN-Qtb"/>
-                            <constraint firstItem="34U-6M-e9I" firstAttribute="leading" secondItem="QhV-ec-MYf" secondAttribute="leading" constant="16" id="i1m-Cc-ibJ"/>
+                            <constraint firstItem="34U-6M-e9I" firstAttribute="centerX" secondItem="mQN-TX-YF9" secondAttribute="centerX" id="ahN-Jf-7Pb"/>
+                            <constraint firstItem="34U-6M-e9I" firstAttribute="centerY" secondItem="8Su-W9-zG0" secondAttribute="centerY" id="rk5-cS-Ibq"/>
                             <constraint firstItem="QhV-ec-MYf" firstAttribute="trailing" secondItem="mQN-TX-YF9" secondAttribute="trailing" id="yVr-rj-IBE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QhV-ec-MYf"/>
@@ -1980,7 +2064,7 @@
                         <viewLayoutGuide key="safeArea" id="3N8-7F-pdT"/>
                     </view>
                     <navigationItem key="navigationItem" title="To Do Activity" id="wjI-0s-jYj">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="YIE-Bm-SiG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="YIE-Bm-SiG">
                             <connections>
                                 <segue destination="k1I-gD-iC9" kind="show" identifier="next" id="Dkw-ss-3wQ"/>
                             </connections>
@@ -2073,7 +2157,7 @@
         <scene sceneID="q2p-Gy-ClC">
             <objects>
                 <navigationController id="QC7-5z-g6V" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="Pza-yL-FIJ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting" id="Pza-yL-FIJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pOv-MB-jLa">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2099,35 +2183,45 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-BV-J8d">
                                         <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
-                                        <state key="normal" title="Personal Account Settiings"/>
+                                        <state key="normal" title="Personal Account Settiings">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="l8o-in-ILX" kind="show" id="AAG-3U-9w1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYs-kg-Ntu">
                                         <rect key="frame" x="0.0" y="45" width="32" height="30"/>
-                                        <state key="normal" title="Help"/>
+                                        <state key="normal" title="Help">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="54v-UP-0AP" kind="show" id="aFr-9W-TCA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEy-Ir-Wu2">
                                         <rect key="frame" x="0.0" y="90" width="68" height="30"/>
-                                        <state key="normal" title="Feedback"/>
+                                        <state key="normal" title="Feedback">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="fUg-Zc-0c8" kind="show" id="P4R-bY-7es"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scI-zG-5Oj">
                                         <rect key="frame" x="0.0" y="135" width="150" height="30"/>
-                                        <state key="normal" title="About this application"/>
+                                        <state key="normal" title="About this application">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="SIS-Hb-d1w" kind="show" id="smD-tX-PtS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MP4-4Q-aDh">
                                         <rect key="frame" x="0.0" y="180" width="55" height="30"/>
-                                        <state key="normal" title="Log Out"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="logOut:" destination="urD-cb-Tma" eventType="touchUpInside" id="d8j-sn-tda"/>
                                             <segue destination="BYZ-38-t0r" kind="presentation" identifier="logout" id="ZDw-sc-XaF"/>
@@ -2348,7 +2442,7 @@
         <scene sceneID="BLp-8v-8BH">
             <objects>
                 <navigationController id="cEl-Mf-ItY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Coaching" id="Iwh-bf-vgc"/>
+                    <tabBarItem key="tabBarItem" title="Coaching" image="idea" id="Iwh-bf-vgc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rVR-No-9Uy">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2370,53 +2464,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sl1-Dc-1Yb">
-                                <rect key="frame" x="16" y="64" width="288" height="458.5"/>
+                                <rect key="frame" x="16" y="72" width="288" height="450.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Body Mass Index (BMI) is:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XF-FP-eTJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U86-5n-fEH">
-                                        <rect key="frame" x="0.0" y="26.5" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="24" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="BMI distributions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uX-gR-IPP">
-                                        <rect key="frame" x="0.0" y="53" width="288" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="48" width="288" height="38.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Underweight: &lt; 18.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME0-ID-iOu">
-                                        <rect key="frame" x="0.0" y="80" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="92.5" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Normal: 18.5 - 24.9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsF-Jl-8jF">
-                                        <rect key="frame" x="0.0" y="106.5" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="116.5" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overweight: 25 &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bD-Bc-Lfs">
-                                        <rect key="frame" x="0.0" y="133" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="140.5" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Exercize goal is set to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGo-Hz-vZv">
-                                        <rect key="frame" x="0.0" y="159.5" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="164.5" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have XX exercise Activities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3y-QB-97N">
-                                        <rect key="frame" x="0.0" y="186" width="288" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="188.5" width="288" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2436,7 +2530,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-HU-VzT" customClass="ForElements" customModule="coursework_2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="331" width="288" height="127.5"/>
+                                        <rect key="frame" x="0.0" y="331" width="288" height="119.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -2448,7 +2542,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sl1-Dc-1Yb" firstAttribute="top" secondItem="wVa-ee-Pw9" secondAttribute="top" id="J7H-EO-sKE"/>
+                            <constraint firstItem="sl1-Dc-1Yb" firstAttribute="top" secondItem="wVa-ee-Pw9" secondAttribute="top" constant="8" id="J7H-EO-sKE"/>
                             <constraint firstItem="sl1-Dc-1Yb" firstAttribute="leading" secondItem="wVa-ee-Pw9" secondAttribute="leading" constant="16" id="UO8-w9-ggP"/>
                             <constraint firstItem="wVa-ee-Pw9" firstAttribute="trailing" secondItem="sl1-Dc-1Yb" secondAttribute="trailing" constant="16" id="ZdT-aN-PTz"/>
                             <constraint firstItem="sl1-Dc-1Yb" firstAttribute="bottom" secondItem="wVa-ee-Pw9" secondAttribute="bottom" constant="3.5" id="mk0-Ud-AfX"/>
@@ -2693,7 +2787,7 @@
         <scene sceneID="6N4-TK-aDL">
             <objects>
                 <navigationController id="KHS-31-NZh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" id="rh2-K6-nfn"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="today" id="rh2-K6-nfn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g1l-al-F5T">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2710,7 +2804,7 @@
         <scene sceneID="Ruo-1x-fMu">
             <objects>
                 <navigationController id="PgD-VL-N8L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tracking" id="oGe-gf-de4"/>
+                    <tabBarItem key="tabBarItem" title="Tracking" image="calendar" id="oGe-gf-de4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="owB-mN-Fy8">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2727,7 +2821,7 @@
         <scene sceneID="tKu-GY-98f">
             <objects>
                 <navigationController id="Cb3-GP-fPT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activies" id="iHP-ir-AzF"/>
+                    <tabBarItem key="tabBarItem" title="Activies" image="new" id="iHP-ir-AzF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CE5-a7-5Jd">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2952,18 +3046,26 @@
     <resources>
         <image name="Logo" width="269" height="181"/>
         <image name="blue" width="621" height="250"/>
+        <image name="calendar" width="25" height="25"/>
+        <image name="idea" width="25" height="25"/>
+        <image name="leftArrow" width="25" height="25"/>
+        <image name="new" width="25" height="25"/>
+        <image name="rightArrow" width="25" height="25"/>
+        <image name="setting" width="25" height="25"/>
+        <image name="today" width="25" height="25"/>
+        <image name="update" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mlf-bQ-l0Z"/>
+        <segue reference="Shx-7r-i6M"/>
         <segue reference="y4k-1l-3L0"/>
-        <segue reference="LE4-zX-N6d"/>
+        <segue reference="RXe-Ks-RG4"/>
         <segue reference="429-Fl-KeZ"/>
-        <segue reference="ilv-rl-wia"/>
-        <segue reference="Qgy-5t-Jdo"/>
+        <segue reference="Dbf-8u-PYN"/>
+        <segue reference="Zb1-Ge-pua"/>
         <segue reference="oPy-3t-WBJ"/>
-        <segue reference="VCG-Rc-umX"/>
-        <segue reference="94N-fN-blc"/>
+        <segue reference="Wk3-OG-09P"/>
+        <segue reference="prN-kg-XXZ"/>
         <segue reference="wio-EV-0Hj"/>
-        <segue reference="ORO-Z4-PXP"/>
+        <segue reference="I8W-p3-8Xb"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -61,6 +61,20 @@ class ToDoToday_ViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nav = self.navigationController?.navigationBar
+        
+        // 2
+        let myColor = MyCustomColors()
+        // nav?.barStyle = UIBarStyle.blackOpaque
+        nav?.backgroundColor = myColor.green
+        nav?.tintColor = myColor.blue
+        
+        // 3
+        
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.darkBrown, text1: "TOdo", color2: myColor.blue, text2: "TODAY")
+        
+        
         
         
     }

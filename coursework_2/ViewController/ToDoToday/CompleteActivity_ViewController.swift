@@ -80,6 +80,13 @@ class CompleteActivity_ViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let myColor = MyCustomColors()
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.darkBrown, text1: "COMPLETE", color2: myColor.blue, text2: "yourActivity")
+      
+        
+        
         let date_helper : DealWithDate = DealWithDate()
         let day_description = date_helper.returnCalendarDayMonthYear(inputDate: dateOfActivity!)
         let dateFormatter = DateFormatter()

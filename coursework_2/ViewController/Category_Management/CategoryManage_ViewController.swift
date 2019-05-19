@@ -15,6 +15,7 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    @IBOutlet weak var navBar: UINavigationBar!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -37,6 +38,9 @@ class CategoryManage_ViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         
        
 

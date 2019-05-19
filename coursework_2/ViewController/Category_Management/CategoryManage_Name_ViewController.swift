@@ -15,6 +15,8 @@ class CategoryManage_Name_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.barTintColor = UIColor.green
+
         // Do any additional setup after loading the view.
     }
     

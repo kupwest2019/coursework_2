@@ -89,10 +89,20 @@ class ShowGoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UI
     
     @IBOutlet weak var goal_picker: UIPickerView!
     
+ 
+    
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         goal_picker.delegate = self
         goal_picker.dataSource = self
+        
+        
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: UIColor.black, text1: "GOAL", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "edit")
+        
+        
         
         guard let category : Category = self.edit_category else {fatalError("Conversion Not Possible")}
         

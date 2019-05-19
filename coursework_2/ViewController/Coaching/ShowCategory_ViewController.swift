@@ -63,7 +63,7 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +72,8 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: UIColor.black, text1: "CATEGORIES", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "goalDetail")
         editingAvailable = false
         // self.registerCustomCell()
         activities.removeAll()

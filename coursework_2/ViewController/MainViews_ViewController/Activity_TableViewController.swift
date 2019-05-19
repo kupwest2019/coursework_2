@@ -36,6 +36,19 @@ class Activity_TableViewController: UITableViewController {
     @IBOutlet weak var button_edit: UIBarButtonItem!
     override func viewWillAppear(_ animated: Bool) {
         
+        
+        // -- EDITING NAV_BAR --//
+        let nav = self.navigationController?.navigationBar
+        // 2
+        let myColor = MyCustomColors()
+        // nav?.barStyle = UIBarStyle.blackOpaque
+        nav?.backgroundColor = myColor.orange
+        nav?.tintColor = myColor.blue
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.blue, text1: "ACTIVITIES", color2: UIColor.black, text2: "all")
+        
+        
+        //
         editingAvailable = false
         item.removeAll()
         dictionary_cat_act.removeAll()

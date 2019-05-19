@@ -61,6 +61,11 @@ class PersonalInformation_ViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        let myColor = MyCustomColors()
+
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.orange, text1: "FEEDBACK", color2: UIColor.black, text2: "forUs")
+        
         updateByUserDefault()
     }
     

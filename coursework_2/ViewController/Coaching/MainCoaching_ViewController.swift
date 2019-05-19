@@ -165,9 +165,31 @@ class MainCoaching_ViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        // **** editing bar style //
+        
+        let nav = self.navigationController?.navigationBar
+        
+        // 2
+        let myColor = MyCustomColors()
+       // nav?.barStyle = UIBarStyle.blackOpaque
+        nav?.backgroundColor = myColor.light_orange
+        nav?.tintColor = myColor.blue
+        
+        // 3
+        
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: UIColor.black, text1: "COACHING", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "tips")
+        
+        //
+        
+        
         populateInformationBMI()
         populateExerciseGoal()
         thinkAboutIt()
+        
+       
+        
         print("hello did appear")
 
     }
@@ -178,6 +200,11 @@ class MainCoaching_ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     

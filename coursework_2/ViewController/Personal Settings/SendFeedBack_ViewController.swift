@@ -13,7 +13,14 @@ class SendFeedBack_ViewController: UIViewController, MFMailComposeViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        let myColor = MyCustomColors()
+        
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.orange, text1: "PERSONAL", color2: UIColor.black, text2: "details")
+        
+        
         // Do any additional setup after loading the view.
     }
     

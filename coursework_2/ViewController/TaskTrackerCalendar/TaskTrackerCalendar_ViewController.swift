@@ -219,7 +219,15 @@ class TaskTrackerCalendar_ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.sizeHeaderImage.constant = clearAndsetHeaderSize()
+        
+        let nav = self.navigationController?.navigationBar
+        
+        // 2
+        let myColor = MyCustomColors()
+        // nav?.barStyle = UIBarStyle.blackOpaque
+        //nav?.backgroundColor = myColor.green
+        nav?.tintColor = myColor.red
+        
         let a : NavigationBarCustom = ChangeTextNavigationBarAttribute()
         self.navigationItem.titleView = a.textNavBarAttributes(color1: UIColor.black, text1: "ACTIVITY", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "tracker")
         //self.clearAndsetHeaderSize()

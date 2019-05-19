@@ -29,6 +29,21 @@ class MainSettings_ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nav = self.navigationController?.navigationBar
+        
+        // 2
+        let myColor = MyCustomColors()
+        // nav?.barStyle = UIBarStyle.blackOpaque
+        nav?.backgroundColor = myColor.blue
+        nav?.tintColor = myColor.orange
+        
+        // 3
+        
+        let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.orange, text1: "SETTINGS", color2: myColor.orange, text2: "")
+        
+        
 
         // Do any additional setup after loading the view.
     }

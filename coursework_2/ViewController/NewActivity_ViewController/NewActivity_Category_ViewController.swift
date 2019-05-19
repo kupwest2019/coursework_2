@@ -44,7 +44,8 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tabBarController?.tabBar.barTintColor = UIColor.brown
+
       
     }
     let myColor : MyCustomColors = MyCustomColors()
@@ -60,24 +61,24 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
         
         let choosenCategory = item[picker_category.selectedRow(inComponent: 0)]
         if choosenCategory.colour == "Red"{
-            view.backgroundColor = myColor.orange
+            view.backgroundColor = myColor.category_red
         }
         if choosenCategory.colour == "Blue"{
-            view.backgroundColor = myColor.blue
+            view.backgroundColor = myColor.category_blue
         }
         if choosenCategory.colour == "Yellow"{
-            view.backgroundColor = myColor.light_yellow
+            view.backgroundColor = myColor.category_light_orange
         }
         if choosenCategory.colour == "Green"{
-            view.backgroundColor = myColor.green
+            view.backgroundColor = myColor.category_green
         }
     }
     
+    @IBOutlet weak var nav_bar: UINavigationBar!
+    
     // to refresh in case of add new category
     override func viewWillAppear(_ animated: Bool) {
-        //populateCategories()
-        
-        
+
         
         populateCategories2()
         if (item.count == 0){
@@ -91,16 +92,16 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
             // set color of category 0 ~> the selected
             let choosenCategory = item[picker_category.selectedRow(inComponent: 0)]
             if choosenCategory.colour == "Red"{
-                view.backgroundColor = myColor.orange
+                view.backgroundColor = myColor.category_red
             }
             if choosenCategory.colour == "Blue"{
-                view.backgroundColor = myColor.blue
+                view.backgroundColor = myColor.category_blue
             }
             if choosenCategory.colour == "Yellow"{
-                view.backgroundColor = myColor.light_yellow
+                view.backgroundColor = myColor.category_light_orange
             }
             if choosenCategory.colour == "Green"{
-                view.backgroundColor = myColor.green
+                view.backgroundColor = myColor.category_green
             }
         }
         
