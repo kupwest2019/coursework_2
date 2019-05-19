@@ -98,6 +98,12 @@ class NewCategory_Name_ViewController: UIViewController, UITextFieldDelegate {
                             check_univocity = true
                         }
                         else{
+                            let alertController = UIAlertController(title: "Warning", message: "Category is a already present!!", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                            alertController.addAction(cancelAction)
+                            present(alertController, animated: true, completion: nil)
+                            
+                            
                             print("DUPLICATE")
                         }
                     } catch {

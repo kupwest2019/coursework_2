@@ -260,7 +260,7 @@
                                     <constraint firstAttribute="height" constant="44" id="f70-cU-TUY"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Color" id="mXu-le-PCd">
+                                    <navigationItem title="Colour" id="mXu-le-PCd">
                                         <barButtonItem key="leftBarButtonItem" image="leftArrow" id="UO7-1Z-D0c">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -530,7 +530,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="PSY-XU-phH"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Color" id="mvY-jP-xHb">
+                                    <navigationItem title="Colour" id="mvY-jP-xHb">
                                         <barButtonItem key="leftBarButtonItem" image="leftArrow" id="M7l-Bf-nv4">
                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -2168,8 +2168,8 @@
                                 <rect key="frame" x="16" y="74" width="288" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-BV-J8d">
-                                        <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
-                                        <state key="normal" title="Personal Account Settiings">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="30"/>
+                                        <state key="normal" title="Personal Account Settings">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -3058,16 +3058,18 @@
         <image name="update" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="VXW-EY-fwu"/>
+        <segue reference="Rz1-1w-ble"/>
         <segue reference="jbl-BP-g7S"/>
         <segue reference="y4k-1l-3L0"/>
         <segue reference="RXe-Ks-RG4"/>
         <segue reference="hlN-gz-raK"/>
         <segue reference="uDC-UJ-Soq"/>
         <segue reference="Qgy-5t-Jdo"/>
-        <segue reference="4nO-Ml-OYf"/>
+        <segue reference="oPy-3t-WBJ"/>
         <segue reference="Wk3-OG-09P"/>
         <segue reference="94N-fN-blc"/>
-        <segue reference="wio-EV-0Hj"/>
+        <segue reference="C6A-Ow-ThC"/>
         <segue reference="I8W-p3-8Xb"/>
     </inferredMetricsTieBreakers>
 </document>
