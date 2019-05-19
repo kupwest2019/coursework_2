@@ -32,7 +32,6 @@
 		EB482EE22289C672001F1F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB482EE02289C672001F1F3F /* LaunchScreen.storyboard */; };
 		EB482EED2289C672001F1F3F /* coursework_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */; };
 		EB6C14E522905131000DC9A0 /* MainSettings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E422905131000DC9A0 /* MainSettings_ViewController.swift */; };
-		EB6C14E722905CCE000DC9A0 /* Dates_4text.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E622905CCE000DC9A0 /* Dates_4text.swift */; };
 		EB6C14E922905CE4000DC9A0 /* FourElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E822905CE4000DC9A0 /* FourElements.swift */; };
 		EB6C14EB22905DEE000DC9A0 /* MainCoaching_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */; };
 		EB6C14ED22909089000DC9A0 /* Header_Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14EC22909089000DC9A0 /* Header_Images.swift */; };
@@ -48,6 +47,7 @@
 		EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */; };
 		EBBD8BBF228DB7CA000C62D8 /* SendFeedBack_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBD8BBE228DB7CA000C62D8 /* SendFeedBack_ViewController.swift */; };
 		EBBD8BC1228DB7D7000C62D8 /* PersonalInformation_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBD8BC0228DB7D7000C62D8 /* PersonalInformation_ViewController.swift */; };
+		EBC56095229158640091BE22 /* BmiChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC56094229158640091BE22 /* BmiChart.swift */; };
 		EBCA2F86228C7FEC005FF9BE /* CategoryManage_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA2F85228C7FEC005FF9BE /* CategoryManage_ViewController.swift */; };
 		EBCA2F88228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA2F87228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift */; };
 		EBD1A81A228C05EE0007B38A /* Helper_Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD1A819228C05EE0007B38A /* Helper_Methods.swift */; };
@@ -106,7 +106,6 @@
 		EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursework_2Tests.swift; sourceTree = "<group>"; };
 		EB482EEE2289C672001F1F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB6C14E422905131000DC9A0 /* MainSettings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettings_ViewController.swift; sourceTree = "<group>"; };
-		EB6C14E622905CCE000DC9A0 /* Dates_4text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dates_4text.swift; sourceTree = "<group>"; };
 		EB6C14E822905CE4000DC9A0 /* FourElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourElements.swift; sourceTree = "<group>"; };
 		EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoaching_ViewController.swift; sourceTree = "<group>"; };
 		EB6C14EC22909089000DC9A0 /* Header_Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header_Images.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		EBBC3200228B9B730064451F /* TaskTrackerCalendar_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTrackerCalendar_ViewController.swift; sourceTree = "<group>"; };
 		EBBD8BBE228DB7CA000C62D8 /* SendFeedBack_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedBack_ViewController.swift; sourceTree = "<group>"; };
 		EBBD8BC0228DB7D7000C62D8 /* PersonalInformation_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformation_ViewController.swift; sourceTree = "<group>"; };
+		EBC56094229158640091BE22 /* BmiChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmiChart.swift; sourceTree = "<group>"; };
 		EBCA2F85228C7FEC005FF9BE /* CategoryManage_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManage_ViewController.swift; sourceTree = "<group>"; };
 		EBCA2F87228C8CBC005FF9BE /* CategoryManage_Name_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManage_Name_ViewController.swift; sourceTree = "<group>"; };
 		EBD1A819228C05EE0007B38A /* Helper_Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper_Methods.swift; sourceTree = "<group>"; };
@@ -332,9 +332,9 @@
 		EBD1A821228C2FC90007B38A /* PaintCode_Framework */ = {
 			isa = PBXGroup;
 			children = (
-				EB6C14E622905CCE000DC9A0 /* Dates_4text.swift */,
 				EBE6AD34228EEAAB00FA26FC /* Trackertask.swift */,
 				EB03D4BD229022F80049613D /* CategoryColors.swift */,
+				EBC56094229158640091BE22 /* BmiChart.swift */,
 				EBD1A822228C2FFF0007B38A /* Test1.swift */,
 				EBD1A825228C312C0007B38A /* Stopwatch.swift */,
 				EBE6AD36228EEB7900FA26FC /* Clock.swift */,
@@ -478,6 +478,7 @@
 				EBE6AD35228EEAAB00FA26FC /* Trackertask.swift in Sources */,
 				EBBC3201228B9B730064451F /* TaskTrackerCalendar_ViewController.swift in Sources */,
 				EB04DB7F228ABAE600703614 /* NewCategory_Name_ViewController.swift in Sources */,
+				EBC56095229158640091BE22 /* BmiChart.swift in Sources */,
 				EB482ED72289C671001F1F3F /* ViewController.swift in Sources */,
 				EB03D4BE229022F80049613D /* CategoryColors.swift in Sources */,
 				EBE6AD3A228EFA6800FA26FC /* LoginView_ViewController.swift in Sources */,
@@ -501,7 +502,6 @@
 				EBE6AD41228F21BC00FA26FC /* ShowGoalDeail_ViewController.swift in Sources */,
 				EBCA2F86228C7FEC005FF9BE /* CategoryManage_ViewController.swift in Sources */,
 				EBBC31F8228B99310064451F /* CustomColor.swift in Sources */,
-				EB6C14E722905CCE000DC9A0 /* Dates_4text.swift in Sources */,
 				EB04DB72228ABA4100703614 /* NewActivity_Name_ViewController.swift in Sources */,
 				EBE6AD3D228F1EA200FA26FC /* ShowCategory_ViewController.swift in Sources */,
 				EB04DB86228AD1B100703614 /* CoreDataHelper.swift in Sources */,

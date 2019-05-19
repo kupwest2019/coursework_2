@@ -118,7 +118,7 @@ class ViewDetailTracker_ViewController: UIViewController, UITableViewDataSource,
     
     
     func moveTheAnimation(){
-
+        index = 0.0
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
         timer!.fire()

@@ -110,7 +110,11 @@ class ShowGoalDeail_ViewController: UIViewController {
         
         self.label_completed_act.text = "\(completed_activities.count)"
         let notCompleted = goal_value - completed_activities.count
-        self.label_not_completed_act.text = "\(notCompleted)"
+        var notCompletedGoal = 0
+        if notCompleted < 0{
+            notCompletedGoal = 0
+        }
+        self.label_not_completed_act.text = "\(notCompletedGoal)"
         
         print(notCompleted)
         print(goal_value)

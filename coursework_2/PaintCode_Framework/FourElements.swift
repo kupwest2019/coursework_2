@@ -32,7 +32,7 @@ class ForElements: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        Dates_4text.drawCanvas1(frame: bounds, resizing: .aspectFit, third: 0, first: 0, second: 0, last: 0)
+        BmiChart.drawCanvas1(frame: bounds, resizing: .aspectFit, bmi: prgress)
     }
     
 }

@@ -41,7 +41,7 @@ class MainCoaching_ViewController: UIViewController {
     var number_activities  : Int = 0
     var underweight_user_weight  : Float = 0.0
     var overweight_user_weight  : Float = 0.0
-    
+    var bmi_user : Float = 0.0
     
     func thinkAboutIt(){
         if (user_detail_weight <= underweight_user_weight){
@@ -100,7 +100,7 @@ class MainCoaching_ViewController: UIViewController {
                     let normalBMI : Float = 22.5
                     let overweightBMI : Float = 25
                     
-                    let bmi_user = cm_weight/(cm_height * cm_height)
+                    bmi_user = cm_weight/(cm_height * cm_height)
                     underweight_user_weight = (underweightBMI * (cm_height * cm_height))
                     let normal_user = (normalBMI * (cm_height * cm_height))
                     overweight_user_weight = (overweightBMI * (cm_height * cm_height))
@@ -166,13 +166,22 @@ class MainCoaching_ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        
+
+       
+        
+        print("hello did appear")
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         // **** editing bar style //
         
         let nav = self.navigationController?.navigationBar
         
         // 2
         let myColor = MyCustomColors()
-       // nav?.barStyle = UIBarStyle.blackOpaque
+        // nav?.barStyle = UIBarStyle.blackOpaque
         nav?.backgroundColor = myColor.light_orange
         nav?.tintColor = myColor.blue
         
@@ -187,26 +196,69 @@ class MainCoaching_ViewController: UIViewController {
         populateInformationBMI()
         populateExerciseGoal()
         thinkAboutIt()
-        
-       
-        
-        print("hello did appear")
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
+        moveTheAnimation()
         print("hello")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        
-        
-        
+
+
         // Do any additional setup after loading the view.
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
+    }
+    func moveTheAnimation(){
+        index = 0.0
+        counter_timer = 0.0
+        movement_tick = 15.0
+        bmi_cgfloat = CGFloat(self.bmi_user)
+        //activity_time_in_seconds = seconds
+        //movement_tick_per_second = 1/activity_time_in_seconds
+        //movement_tick = counter_time * movement_tick_per_second
+        
+        print(bmi_cgfloat)
+        timer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+        
+        
+    }
+    var index : CGFloat = 0.0
+    var timer : Timer?
+    var counter_timer : CGFloat = 0.0
+    var movement_tick : CGFloat = 0.0
+    var bmi_cgfloat : CGFloat = 0.0
+   
+    
+    @objc func fireTimer() {
+        counter_timer=counter_timer+0.005
+        
+        print(counter_timer)
+        print(movement_tick)
+        if(movement_tick<self.bmi_cgfloat && index<1){
+            //index = index+0.0166
+            //index = index+self.movement_tick
+            index = counter_timer
+            movement_tick = movement_tick+(30*0.002)
+            print(movement_tick)
+
+            
+            self.animation.prgress = index
+        }
+        else if (index >= 1){
+
+            timer!.invalidate()
+            
+        }
+        else{
+            print(index)
+            index = index+1
+            timer!.invalidate()
+            print("Timer Stop")
+        }
+    }
+    
+    
+    
     
     func populateExerciseGoal(){
         goal_exercize = 0
@@ -237,7 +289,7 @@ class MainCoaching_ViewController: UIViewController {
         }
         
         
-        label_activitiesNumber.text = "You have \(number_activities) exercize scheduled"
+        label_activitiesNumber.text = ".. and \(number_activities) exercize scheduled"
         label_goalCategory.text = "You have a goal of \(goal_exercize) exercize"
         
         

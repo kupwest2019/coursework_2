@@ -65,7 +65,9 @@ class Timer_ViewController: UIViewController {
     var index : CGFloat = 0.0
     var timer : Timer?
     func moveTheAnimation(){
-        
+        counter_timer  = 0.0
+        movement_tick  = 0.0
+        index = 0.0
         movement_tick = 1/CGFloat(seconds)
         //activity_time_in_seconds = seconds
         //movement_tick_per_second = 1/activity_time_in_seconds

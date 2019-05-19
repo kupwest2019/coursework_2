@@ -264,7 +264,7 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
         self.animation.completedred =  0.0
         self.animation.completedgreen =  0.0
         self.animation.completedyellow =  0.0
-        
+        index = 0.0
         timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
         
     }
