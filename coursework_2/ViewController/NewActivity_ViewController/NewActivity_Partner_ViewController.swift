@@ -2,7 +2,6 @@
 //  NewActivity_Partner_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 14/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -197,75 +196,7 @@ class NewActivity_Partner_ViewController: UIViewController {
     
     
     func writing_on_CoreData(){
-        
-        
-        
-        
-        // instantiation
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//
-//
-//
-//
-//
-//        // create a new entity
-//        let entity = NSEntityDescription.entity(forEntityName: "Activity", in: context)
-//        let newElement = NSManagedObject(entity: entity!, insertInto: context)
-//        newElement.setValue(new_activity?.name, forKey: "name")
-//        //newElement.setValue(new_activity?.category, forKey: "category")
-//        newElement.setValue(new_activity?.start_date, forKey: "start_date")
-//        newElement.setValue(new_activity?.not_infinite, forKey: "not_infinite")
-//        newElement.setValue(new_activity?.end_date, forKey: "end_date")
-//        newElement.setValue(new_activity?.duration, forKey: "duration")
-//        newElement.setValue(new_activity?.time, forKey: "time")
-//        newElement.setValue(new_activity?.mon_trigger, forKey: "monday")
-//        newElement.setValue(new_activity?.tue_trigger, forKey: "tuesday")
-//        newElement.setValue(new_activity?.wed_trigger, forKey: "wednseday")
-//        newElement.setValue(new_activity?.thr_trigger, forKey: "thursday")
-//        newElement.setValue(new_activity?.fri_trigger, forKey: "friday")
-//        newElement.setValue(new_activity?.sat_trigger, forKey: "saturday")
-//        newElement.setValue(new_activity?.sun_trigger, forKey: "sunday")
-//        newElement.setValue(new_activity?.month_trigger, forKey: "monthly")
-//        newElement.setValue(new_activity?.week_trigger, forKey: "weekly")
-//        newElement.setValue(new_activity?.daily_trigger, forKey: "daily")
-//        newElement.setValue(new_activity?.time_choice, forKey: "time_choice")
-//        newElement.setValue(new_activity?.duration_choice, forKey: "duration_choice")
-//
-//        // saving a entity
-//
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-//
-//        // filtering
-//        //request.predicate = NSPredicate(format: "age = %@", "12")
-//
-//        if let category = new_activity?.category{
-//            let filter = NSPredicate(format: "name == %@", category)
-//            request.predicate = filter
-//
-//            // doing the request -- fetching the request
-//            request.returnsObjectsAsFaults = false
-//            do {
-//                let result = try context.fetch(request)
-//                for data in result as! [Category] {
-//
-//
-//                    //                    var category = Category(context: context)
-//                    //                    category = data
-//                    data.addToActivities(newElement as! Activity)
-//
-//                    print(category)
-//                }
-//
-//            } catch {
-//
-//                print("Failed")
-//            }
-//
-//            do {
-//                try context.save()
-//            }catch {print("failed save!")}
-//        }
+
     }
 
 

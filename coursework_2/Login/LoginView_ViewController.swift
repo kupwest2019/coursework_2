@@ -1,10 +1,4 @@
-//
-//  LoginView_ViewController.swift
-//  coursework_2
-//
-//  Created by Tiziano on 17/05/2019.
-//  Copyright © 2019 group_a. All rights reserved.
-//
+// VC of the main view of the application
 
 import UIKit
 import CoreData
@@ -29,6 +23,8 @@ class LoginView_ViewController: UIViewController {
             print("LOADED")
         }
         else{
+            
+            // population of the predifined categoris 
             print("NO LOADED")
             defaults.set("true", forKey: "Category_uploaded")
             
@@ -52,8 +48,7 @@ class LoginView_ViewController: UIViewController {
             let today : Date = date_helper.returnDateForCategoryPopulation()
             let newDate = date_helper.returnOnlyDayMonthYear(inputDate: today)
             
-            
-            
+  
             newElement.setValue("exercise", forKey: "name")
             newElement.setValue(color_category.red, forKey: "colour")
             newElement.setValue(predifinedGoal, forKey: "goal")
@@ -74,9 +69,6 @@ class LoginView_ViewController: UIViewController {
             newElement4.setValue(predifinedGoal, forKey: "goal")
             newElement4.setValue(newDate, forKey: "startDate")
 
-            
-            
-            
             // saving a entity
             do {
                 try context.save()
@@ -86,12 +78,7 @@ class LoginView_ViewController: UIViewController {
             
             
         }
-        
 
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
     
@@ -103,16 +90,5 @@ class LoginView_ViewController: UIViewController {
             
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -2,7 +2,6 @@
 //  ShowGoalDeail_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 17/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -65,35 +64,7 @@ class ShowGoalDeail_ViewController: UIViewController {
             }
             
         }
-//
-//        let fromPredicate = NSPredicate(format: "date >= %@", edit_category!.startDate! as NSDate)
-//        let toPredicate = NSPredicate(format: "date =< %@", today as NSDate)
-//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-//        fetchRequest2.predicate = datePredicate
-//
-//        // doing the request -- fetching the request
-//
-//        fetchRequest2.returnsObjectsAsFaults = false
-//        do {
-//
-//            print("COMPLETED ACTIVITIES")
-//            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
-//            for data in result {
-//                if data.category == edit_category!.name{
-//                    print(data)
-//                    self.completed_activities.append(data)
-//                }
-//
-//            }
-//
-//        } catch {
-//
-//            print("Failed")
-//        }
-//
-//
-//
-        
+    
         
     }
     

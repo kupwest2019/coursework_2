@@ -2,7 +2,6 @@
 //  ShowGoalCategory_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 17/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -37,37 +36,7 @@ class ShowGoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UI
         
         let core_data : Core_Data_Interface = accessingCoreData()
         core_data.updateGoal(date_reset: date_reset, activity_name: category_name, newGoal: choosenGoal)
-        
-//
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let choosenGoal : NSNumber = Int32(number[goal_picker.selectedRow(inComponent: 0)])! as NSNumber
-//        let today : Date = Date()
-//        let newDate = date_helper.returnOnlyDayMonthYear(inputDate: today)
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-//        // filtering
-//        //request.predicate = NSPredicate(format: "age = %@", "12")
-//        let filter = NSPredicate(format: "name == %@", self.edit_category!.name!)
-//        request.predicate = filter
-//
-//        // doing the request -- fetching the request
-//        request.returnsObjectsAsFaults = false
-//        do {
-//            let result = try context.fetch(request)
-//            let resultdata = result as! [Category]
-//
-//            for i in resultdata{
-//                i.setValue(choosenGoal, forKey: "goal")
-//                if(date_reset == true){
-//                    i.setValue(newDate, forKey: "startDate")
-//                }
-//                //
-//            }
-//            try context.save()
-//
-//        } catch {
-//            print("Failed")
-//        }
+ 
     }
     
     
@@ -115,14 +84,5 @@ class ShowGoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UI
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

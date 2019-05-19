@@ -2,7 +2,6 @@
 //  CompleteActivity_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 16/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -56,24 +55,7 @@ class CompleteActivity_ViewController: UIViewController {
         guard let date_activity = self.dateOfActivity else {fatalError("Unexpected class type in allObjects")}
         
         core_data.completeAnActivity(activityToBeExecuted: activity_exec, dateOfActivity: date_activity)
-//
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//
-//        // manage Update
-//        // create a new entity
-//        let entity = NSEntityDescription.entity(forEntityName: "CompletedActivity", in: context)
-//        let newElement = NSManagedObject(entity: entity!, insertInto: context)
-//        newElement.setValue(self.activityToBeExecuted!.name, forKey: "activity_name")
-//        newElement.setValue(self.dateOfActivity!, forKey: "date")
-//        newElement.setValue(self.activityToBeExecuted?.cateogry?.name!, forKey: "category")
-//
-//        // saving a entity
-//        do {
-//            try context.save()
-//        }catch {print("failed save!")}
-//
-        
+    
     }
     
     

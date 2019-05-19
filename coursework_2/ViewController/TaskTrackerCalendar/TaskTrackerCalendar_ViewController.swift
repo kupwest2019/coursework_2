@@ -2,7 +2,6 @@
 //  TaskTrackerCalendar_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 15/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -362,34 +361,6 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             addToCompletedActivities(activity: data, day: data.date!)
         }
         
-//
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "CompletedActivity")
-//
-//        // NB PAY ATTENTION TO DATE
-//        let fromPredicate = NSPredicate(format: "date >= %@", startDate as NSDate)
-//        let toPredicate = NSPredicate(format: "date =< %@", endDate as NSDate)
-//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-//        fetchRequest2.predicate = datePredicate
-//
-//        // doing the request -- fetching the request
-//
-//        fetchRequest2.returnsObjectsAsFaults = false
-//        do {
-//            print("//---COMPLETED--//")
-//            let result = try context.fetch(fetchRequest2) as! [CompletedActivity]
-//            for data in result {
-//                print(data)
-//                addToCompletedActivities(activity: data, day: data.date!)
-//            }
-//
-//        } catch {
-//
-//            print("Failed")
-//        }
-//
-        
     
     }
     
@@ -406,39 +377,7 @@ class TaskTrackerCalendar_ViewController: UIViewController {
             populateScheduledActivities(activity: i, maxDay: days, startDate: startDate, endDate: endDate)
         }
         
-        
-        
-//
-//
-//
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Activity")
-//
-//
-//
-//
-//
-//        let fromPredicate = NSPredicate(format: "end_date >= %@", startDate as NSDate)
-//        let toPredicate = NSPredicate(format: "start_date < %@", endDate as NSDate)
-//        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-//
-//        request.predicate = datePredicate
-//
-//        // doing the request -- fetching the request
-//        request.returnsObjectsAsFaults = false
-//        do {
-//            let result = try context.fetch(request)
-//            print("number of occurence present present --> ", result.count)
-//
-//            for i in result{
-//                populateScheduledActivities(activity: i as! Activity, maxDay: days, startDate: startDate, endDate: endDate)
-//
-//            }
-//
-//        } catch {
-//            print("Failed")
-//        }
+
     }
 
     func populateScheduledActivities(activity : Activity, maxDay : Int, startDate : Date, endDate : Date){

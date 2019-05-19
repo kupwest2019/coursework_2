@@ -2,13 +2,13 @@
 //  CoreDataHelper.swift
 //  coursework_2
 //
-//  Created by Tiziano on 14/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
+// helper Category object used during the creation
 struct Category_obj{
     var color : String = ""
     var name : String = ""
@@ -16,7 +16,6 @@ struct Category_obj{
     
 }
     
-
 struct CategoryColor {
     let blue : String = "Blue"
     let green : String = "Green"
@@ -42,6 +41,7 @@ struct Calendar_Day_Activity{
 }
 
 
+// helper Activity object used during the creation
 
 struct Activity_obj {
     var name : String?

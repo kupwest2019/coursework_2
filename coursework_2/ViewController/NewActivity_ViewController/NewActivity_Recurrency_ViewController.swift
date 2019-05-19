@@ -2,7 +2,6 @@
 //  NewActivity_Recurrency_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 14/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -29,17 +28,7 @@ class NewActivity_Recurrency_ViewController: UIViewController {
     var week_trigger:Bool = false
     var month_trigger:Bool = false
 
-    //var
-//    @IBOutlet weak var month: UIButton!
-//    @IBOutlet weak var week: UIButton!
-//    @IBOutlet weak var day: UIButton!
-//    @IBOutlet weak var mon: UIButton!
-//    @IBOutlet weak var tue: UIButton!
-//    @IBOutlet weak var wed: UIButton!
-//    @IBOutlet weak var thr: UIButton!
-//    @IBOutlet weak var fri: UIButton!
-//    @IBOutlet weak var sat: UIButton!
-//    @IBOutlet weak var sun: UIButton!
+
     @IBOutlet weak var month: RoundButtonDesignable!
     @IBOutlet weak var week: RoundButtonDesignable!
     

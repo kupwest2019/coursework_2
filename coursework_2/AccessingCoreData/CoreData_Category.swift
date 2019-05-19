@@ -1,10 +1,6 @@
-//
-//  CoreData_Category.swift
-//  coursework_2
-//
-//  Created by Tiziano on 18/05/2019.
-//  Copyright © 2019 group_a. All rights reserved.
-//
+// define the protocol and the functions for accessing the Core Data of the app
+
+
 
 import Foundation
 import CoreData

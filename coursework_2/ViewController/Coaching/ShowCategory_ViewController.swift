@@ -2,7 +2,6 @@
 //  ShowCategory_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 17/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -97,32 +96,7 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func populateList(){
-        
         activities = core_data.returnAllCategry()
-        
-//
-//
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let fetchRequest2 = NSFetchRequest<NSFetchRequestResult>(entityName: "Category")
-//        // filtering
-//        //request.predicate = NSPredicate(format: "age = %@", "12")
-//        //        let filter = NSPredicate(format: "name == %@", textFiled_activityName.text!)
-//        //        request.predicate = filter
-//
-//        // doing the request -- fetching the request
-//        fetchRequest2.returnsObjectsAsFaults = false
-//        do {
-//            let result = try context.fetch(fetchRequest2) as! [Category]
-//            for data in result {
-//                print(data)
-//                activities.append(data)
-//            }
-//
-//        } catch {
-//
-//            print("Failed")
-//        }
     }
     
     
@@ -182,7 +156,8 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
         timer?.invalidate()
     }
     
-    
+    @IBOutlet weak var animation: FourCategories!
+
     var timer : Timer?
     var index : CGFloat = 0.0
     var counter_timer : CGFloat = 0.0
@@ -200,7 +175,6 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
 
 
     
-    @IBOutlet weak var animation: FourCategories!
     func showAnimation(){
         
         let predefinedCategories : PredifinedCategory = PredifinedCategory()
@@ -311,14 +285,5 @@ class ShowCategory_ViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

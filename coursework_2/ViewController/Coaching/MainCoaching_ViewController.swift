@@ -2,7 +2,6 @@
 //  MainCoaching_ViewController.swift
 //  coursework_2
 //
-//  Created by Tiziano on 18/05/2019.
 //  Copyright © 2019 group_a. All rights reserved.
 //
 
@@ -213,7 +212,6 @@ class MainCoaching_ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        // Do any additional setup after loading the view.
     }
     override func viewWillDisappear(_ animated: Bool) {
         timer?.invalidate()
@@ -223,9 +221,7 @@ class MainCoaching_ViewController: UIViewController {
         counter_timer = 0.0
         movement_tick = 15.0
         bmi_cgfloat = CGFloat(self.bmi_user)
-        //activity_time_in_seconds = seconds
-        //movement_tick_per_second = 1/activity_time_in_seconds
-        //movement_tick = counter_time * movement_tick_per_second
+
         
         print(bmi_cgfloat)
         timer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -245,8 +241,7 @@ class MainCoaching_ViewController: UIViewController {
         print(counter_timer)
         print(movement_tick)
         if(movement_tick<self.bmi_cgfloat && index<1){
-            //index = index+0.0166
-            //index = index+self.movement_tick
+
             index = counter_timer
             movement_tick = movement_tick+(30*0.002)
             print(movement_tick)
@@ -310,14 +305,6 @@ class MainCoaching_ViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
