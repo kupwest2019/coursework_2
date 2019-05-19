@@ -16,6 +16,7 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
     var editing_mode_on: Bool = false
     var selectedRowPicker : Bool = false
     
+    @IBOutlet weak var btn_newCategory: RoundButtonDesignable!
     // MARK --
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -105,7 +106,15 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
             }
         }
         
+        // workaround newCategory
+        if(editing_mode_on == false){
+            self.btn_newCategory.isHidden = false
+        }
+        
         if(editing_mode_on==true){
+            // workaround newCategory
+            self.btn_newCategory.isHidden = true
+            
             print("editing mood")
             let old_element_index = (populate_categories_return_index())
             picker_category.selectRow(old_element_index, inComponent: 0, animated: true)
@@ -210,9 +219,31 @@ class NewActivity_Category_ViewController: UIViewController, UIPickerViewDelegat
         
         
         if(segue.identifier == "segue_createCategory_newCategory"){
-            print("SEGUE NEW ACTIVITY")
-            let passingArgument = segue.destination as? NewCategory_Name_ViewController
-            passingArgument?.new_activity = new_activity
+            
+            
+            if (editing_mode_on){
+                var new_activity_2 : Activity_obj = Activity_obj(name: nil, category: nil, start_date: nil, not_infinite: false, end_date: nil, duration: nil, time: nil, time_choice: false, duration_choice: false, mon_trigger: false, tue_trigger: false, wed_trigger: false, thr_trigger: false, fri_trigger: false, sat_trigger: false, sun_trigger: false, daily_trigger: false, week_trigger: false, month_trigger: false)
+                
+                new_activity_2.name = oldActivity?.name
+//                let choosenCategory = item[picker_category.selectedRow(inComponent: 0)]
+//                new_activity_2.category = choosenCategory.name
+                let passingArgument = segue.destination as? NewActivity_Dates_ViewController
+                passingArgument?.new_activity = new_activity_2
+                
+                passingArgument?.oldActivity = oldActivity
+                passingArgument?.editing_mode_on = true
+                
+                
+                
+            }
+            else{
+                
+                print("SEGUE NEW ACTIVITY")
+                let passingArgument = segue.destination as? NewCategory_Name_ViewController
+                passingArgument?.new_activity = new_activity
+            }
+            
+           
         }
         
         

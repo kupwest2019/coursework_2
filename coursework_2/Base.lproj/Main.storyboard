@@ -717,6 +717,7 @@
                         <viewLayoutGuide key="safeArea" id="fSW-E3-c5u"/>
                     </view>
                     <connections>
+                        <outlet property="btn_newCategory" destination="QQ0-q6-B5i" id="Z1U-aQ-J44"/>
                         <outlet property="nav_bar" destination="oQy-Ih-dYk" id="poX-hj-0cD"/>
                         <outlet property="nextButton" destination="gsA-df-mVf" id="yrd-vY-FYT"/>
                         <outlet property="picker_category" destination="9ez-0V-G4A" id="ef4-Uh-Dxj"/>
@@ -1247,6 +1248,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QhV-ec-MYf"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_create" destination="34U-6M-e9I" id="unu-pF-4DV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ib1-3t-Xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2233,7 +2237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-fi-aLb">
-                                <rect key="frame" x="16" y="64" width="288" height="455"/>
+                                <rect key="frame" x="16" y="64" width="288" height="455.00000000000011"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3052,13 +3056,13 @@
         <image name="update" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Shx-7r-i6M"/>
+        <segue reference="jbl-BP-g7S"/>
         <segue reference="y4k-1l-3L0"/>
         <segue reference="RXe-Ks-RG4"/>
-        <segue reference="429-Fl-KeZ"/>
+        <segue reference="hlN-gz-raK"/>
         <segue reference="LTQ-QI-3Tx"/>
         <segue reference="Zb1-Ge-pua"/>
-        <segue reference="oPy-3t-WBJ"/>
+        <segue reference="4nO-Ml-OYf"/>
         <segue reference="Wk3-OG-09P"/>
         <segue reference="prN-kg-XXZ"/>
         <segue reference="wio-EV-0Hj"/>
