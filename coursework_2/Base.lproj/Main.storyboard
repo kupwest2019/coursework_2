@@ -717,7 +717,7 @@
                         <viewLayoutGuide key="safeArea" id="fSW-E3-c5u"/>
                     </view>
                     <connections>
-                        <outlet property="btn_newCategory" destination="QQ0-q6-B5i" id="Z1U-aQ-J44"/>
+                        <outlet property="btn_createCategory" destination="QQ0-q6-B5i" id="UMg-Os-XFx"/>
                         <outlet property="nav_bar" destination="oQy-Ih-dYk" id="poX-hj-0cD"/>
                         <outlet property="nextButton" destination="gsA-df-mVf" id="yrd-vY-FYT"/>
                         <outlet property="picker_category" destination="9ez-0V-G4A" id="ef4-Uh-Dxj"/>
@@ -1248,9 +1248,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QhV-ec-MYf"/>
                     </view>
-                    <connections>
-                        <outlet property="btn_create" destination="34U-6M-e9I" id="unu-pF-4DV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ib1-3t-Xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3056,7 +3053,7 @@
         <image name="update" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jbl-BP-g7S"/>
+        <segue reference="Shx-7r-i6M"/>
         <segue reference="y4k-1l-3L0"/>
         <segue reference="RXe-Ks-RG4"/>
         <segue reference="hlN-gz-raK"/>

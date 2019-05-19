@@ -332,10 +332,6 @@ class NewActivity_Partner_ViewController: UIViewController {
         self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.blue, text1: "ACTIVITIES", color2: UIColor.black, text2: "new")
         /////
         
-        if editing_mode_on{
-            
-        }
-        
         //print(new_activity)
 
     }
