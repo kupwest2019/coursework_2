@@ -70,6 +70,103 @@
             </objects>
             <point key="canvasLocation" x="-101.25" y="144.71830985915494"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="Ojh-Sd-QlR">
+            <objects>
+                <viewController id="o2j-dn-fxt" customClass="ActivityCounter_ViewController" customModule="coursework_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oFf-BV-z7f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3aJ-be-kzU">
+                                <rect key="frame" x="16" y="74" width="288" height="238.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day selection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cf-II-ba2">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="V7i-N1-EIn">
+                                        <rect key="frame" x="0.0" y="30.5" width="288" height="25"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LD-lE-7yx">
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="25"/>
+                                                <state key="normal" image="leftArrow"/>
+                                                <connections>
+                                                    <action selector="prevDay:" destination="o2j-dn-fxt" eventType="touchUpInside" id="I3j-zc-vxY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXc-II-MJh">
+                                                <rect key="frame" x="144" y="0.0" width="144" height="25"/>
+                                                <state key="normal" image="rightArrow"/>
+                                                <connections>
+                                                    <action selector="nextDay:" destination="o2j-dn-fxt" eventType="touchUpInside" id="bwf-B8-fsD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The activity start at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1iL-eV-e2b">
+                                        <rect key="frame" x="0.0" y="65.5" width="288" height="20.5"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date From" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWF-Bc-ol3">
+                                        <rect key="frame" x="0.0" y="96" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day selected to verify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwn-3N-cka">
+                                        <rect key="frame" x="0.0" y="126.5" width="288" height="20.5"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU6-pZ-vNe">
+                                        <rect key="frame" x="0.0" y="157" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The activity has been completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-N0-fun">
+                                        <rect key="frame" x="0.0" y="187.5" width="288" height="20.5"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numbers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="en0-IV-TVZ">
+                                        <rect key="frame" x="0.0" y="218" width="288" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3aJ-be-kzU" firstAttribute="leading" secondItem="CaD-IQ-1Ti" secondAttribute="leading" constant="16" id="Lwg-qR-X73"/>
+                            <constraint firstItem="3aJ-be-kzU" firstAttribute="top" secondItem="CaD-IQ-1Ti" secondAttribute="top" constant="10" id="Mws-da-RQS"/>
+                            <constraint firstItem="CaD-IQ-1Ti" firstAttribute="trailing" secondItem="3aJ-be-kzU" secondAttribute="trailing" constant="16" id="bdf-Tp-aKA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CaD-IQ-1Ti"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="860-zM-XQB"/>
+                    <connections>
+                        <outlet property="date_end_label" destination="BU6-pZ-vNe" id="giK-3s-MG3"/>
+                        <outlet property="date_from_label" destination="DWF-Bc-ol3" id="Ydp-ig-vz0"/>
+                        <outlet property="numbers_label" destination="en0-IV-TVZ" id="SEU-xd-phq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bnz-UV-R0Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2724.375" y="-1832.7464788732395"/>
+        </scene>
         <!--Activities-->
         <scene sceneID="6w8-lK-NFg">
             <objects>
@@ -84,11 +181,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Activities" id="P2L-0G-fww">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="DeF-Kb-T62">
-                            <connections>
-                                <segue destination="X7B-ey-zaa" kind="presentation" identifier="segue_editActivity" id="ilv-rl-wia"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="edit" id="DeF-Kb-T62">
+                                <connections>
+                                    <segue destination="X7B-ey-zaa" kind="presentation" identifier="segue_editActivity" id="ilv-rl-wia"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="9kh-IH-Zhy">
+                                <connections>
+                                    <segue destination="o2j-dn-fxt" kind="show" identifier="history" id="aJk-6v-5Rc"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="WzG-zJ-aqg">
                                 <connections>
@@ -104,6 +208,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="button_edit" destination="DeF-Kb-T62" id="442-yr-XeJ"/>
+                        <outlet property="history_button" destination="9kh-IH-Zhy" id="YLC-jz-FYS"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMs-0M-JbR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3058,16 +3163,14 @@
         <image name="update" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VXW-EY-fwu"/>
-        <segue reference="Rz1-1w-ble"/>
         <segue reference="jbl-BP-g7S"/>
         <segue reference="y4k-1l-3L0"/>
         <segue reference="RXe-Ks-RG4"/>
         <segue reference="hlN-gz-raK"/>
-        <segue reference="uDC-UJ-Soq"/>
+        <segue reference="ilv-rl-wia"/>
         <segue reference="Qgy-5t-Jdo"/>
-        <segue reference="oPy-3t-WBJ"/>
-        <segue reference="Wk3-OG-09P"/>
+        <segue reference="4nO-Ml-OYf"/>
+        <segue reference="VCG-Rc-umX"/>
         <segue reference="94N-fN-blc"/>
         <segue reference="C6A-Ow-ThC"/>
         <segue reference="I8W-p3-8Xb"/>

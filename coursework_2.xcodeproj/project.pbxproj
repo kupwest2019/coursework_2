@@ -31,6 +31,7 @@
 		EB482EDF2289C672001F1F3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB482EDE2289C672001F1F3F /* Assets.xcassets */; };
 		EB482EE22289C672001F1F3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB482EE02289C672001F1F3F /* LaunchScreen.storyboard */; };
 		EB482EED2289C672001F1F3F /* coursework_2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */; };
+		EB53DA752291D54C00467D01 /* ActivityCounter_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB53DA742291D54C00467D01 /* ActivityCounter_ViewController.swift */; };
 		EB6C14E522905131000DC9A0 /* MainSettings_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E422905131000DC9A0 /* MainSettings_ViewController.swift */; };
 		EB6C14E922905CE4000DC9A0 /* FourElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14E822905CE4000DC9A0 /* FourElements.swift */; };
 		EB6C14EB22905DEE000DC9A0 /* MainCoaching_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */; };
@@ -105,6 +106,7 @@
 		EB482EE82289C672001F1F3F /* coursework_2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coursework_2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB482EEC2289C672001F1F3F /* coursework_2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coursework_2Tests.swift; sourceTree = "<group>"; };
 		EB482EEE2289C672001F1F3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB53DA742291D54C00467D01 /* ActivityCounter_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCounter_ViewController.swift; sourceTree = "<group>"; };
 		EB6C14E422905131000DC9A0 /* MainSettings_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettings_ViewController.swift; sourceTree = "<group>"; };
 		EB6C14E822905CE4000DC9A0 /* FourElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourElements.swift; sourceTree = "<group>"; };
 		EB6C14EA22905DEE000DC9A0 /* MainCoaching_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoaching_ViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				EB04DB88228B1B1000703614 /* Activity_TableViewController.swift */,
+				EB53DA742291D54C00467D01 /* ActivityCounter_ViewController.swift */,
 			);
 			path = MainViews_ViewController;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 			files = (
 				EBBC31FC228B99750064451F /* RoundBottonIBDesign.swift in Sources */,
 				EBAABE922290AFBC0044106B /* CustomNavBarText.swift in Sources */,
+				EB53DA752291D54C00467D01 /* ActivityCounter_ViewController.swift in Sources */,
 				EB6C14EB22905DEE000DC9A0 /* MainCoaching_ViewController.swift in Sources */,
 				EBA57E68228C66C40021F18A /* GoalCategory_ViewController.swift in Sources */,
 				EBE6AD37228EEB7900FA26FC /* Clock.swift in Sources */,

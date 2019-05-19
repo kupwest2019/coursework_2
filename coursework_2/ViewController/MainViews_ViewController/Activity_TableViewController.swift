@@ -24,6 +24,7 @@ class Activity_TableViewController: UITableViewController {
     var selected_activity : Activity?
     var dictionary_cat_act : [tableViewCustom] = []
 
+    @IBOutlet weak var history_button: UIBarButtonItem!
     
     
     
@@ -36,7 +37,9 @@ class Activity_TableViewController: UITableViewController {
     @IBOutlet weak var button_edit: UIBarButtonItem!
     override func viewWillAppear(_ animated: Bool) {
         
-        
+        self.history_button.isEnabled = false
+        self.button_edit.isEnabled = false
+
         // -- EDITING NAV_BAR --//
         let nav = self.navigationController?.navigationBar
         // 2
@@ -50,6 +53,7 @@ class Activity_TableViewController: UITableViewController {
         
         //
         editingAvailable = false
+        
         item.removeAll()
         dictionary_cat_act.removeAll()
         name_category.removeAll()
@@ -62,7 +66,6 @@ class Activity_TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.button_edit.isEnabled = false
 
     }
    
@@ -387,6 +390,7 @@ class Activity_TableViewController: UITableViewController {
 
         if editingAvailable == false{
             self.button_edit.isEnabled = true
+            self.history_button.isEnabled = true
         }
     }
 
@@ -396,6 +400,14 @@ class Activity_TableViewController: UITableViewController {
             passingArgument?.oldActivity = self.selected_activity!
             passingArgument?.editing_mode_on = true
         }
+        
+        if(segue.identifier == "history"){
+            let passingArgument = segue.destination as? ActivityCounter_ViewController
+            passingArgument?.activity = self.selected_activity!
+        }
+        
+        
+       
     }
     
 
