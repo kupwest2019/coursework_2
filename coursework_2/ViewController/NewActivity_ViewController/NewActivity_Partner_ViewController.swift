@@ -319,8 +319,7 @@ class NewActivity_Partner_ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+       
         // -- EDITING NAV_BAR --//
         let nav = self.navigationController?.navigationBar
         // 2
@@ -333,9 +332,14 @@ class NewActivity_Partner_ViewController: UIViewController {
         /////
         
         //print(new_activity)
+        
+        if(self.editing_mode_on == true){
+            btn_create.setTitle("UPDATE", for: .normal)
+        }
 
     }
     
+    @IBOutlet weak var btn_create: UIButton!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

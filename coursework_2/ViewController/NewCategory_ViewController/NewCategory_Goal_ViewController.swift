@@ -17,7 +17,8 @@ class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UI
     var editing_mode_on: Bool = false
     let date_helper : DealWithDate = DealWithDate()
 
-
+    @IBOutlet weak var btn_create: UIButton!
+    
     
     let number = ["0","5","6","7","8","9","10","15"]
 
@@ -28,6 +29,9 @@ class NewCategory_Goal_ViewController: UIViewController,UIPickerViewDelegate, UI
         picker_goal.delegate = self
         picker_goal.dataSource = self
         print(new_category)
+        if (editing_mode_on == true){
+            self.btn_create.setTitle("UPDATE", for: .normal)
+        }
         // Do any additional setup after loading the view.
     }
 

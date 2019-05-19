@@ -376,6 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="sAh-1p-hUG"/>
                     </view>
                     <connections>
+                        <outlet property="btn_create" destination="uFD-fq-r7s" id="hCr-s0-2W4"/>
                         <outlet property="buttoncreate" destination="uFD-fq-r7s" id="4SV-ef-Dp5"/>
                         <outlet property="picker_goal" destination="N7n-6M-CBf" id="qJD-dp-RcY"/>
                     </connections>
@@ -638,6 +639,7 @@
                         <viewLayoutGuide key="safeArea" id="DWw-wW-oJT"/>
                     </view>
                     <connections>
+                        <outlet property="btn_create" destination="iri-UM-9CD" id="uoD-xb-woA"/>
                         <outlet property="picker_goal" destination="GZu-IP-bHp" id="pDw-oC-lpE"/>
                     </connections>
                 </viewController>
@@ -1248,6 +1250,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QhV-ec-MYf"/>
                     </view>
+                    <connections>
+                        <outlet property="btn_create" destination="34U-6M-e9I" id="cj4-uu-ejr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ib1-3t-Xze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3053,15 +3058,15 @@
         <image name="update" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Shx-7r-i6M"/>
+        <segue reference="jbl-BP-g7S"/>
         <segue reference="y4k-1l-3L0"/>
         <segue reference="RXe-Ks-RG4"/>
         <segue reference="hlN-gz-raK"/>
-        <segue reference="LTQ-QI-3Tx"/>
-        <segue reference="Zb1-Ge-pua"/>
+        <segue reference="uDC-UJ-Soq"/>
+        <segue reference="Qgy-5t-Jdo"/>
         <segue reference="4nO-Ml-OYf"/>
         <segue reference="Wk3-OG-09P"/>
-        <segue reference="prN-kg-XXZ"/>
+        <segue reference="94N-fN-blc"/>
         <segue reference="wio-EV-0Hj"/>
         <segue reference="I8W-p3-8Xb"/>
     </inferredMetricsTieBreakers>

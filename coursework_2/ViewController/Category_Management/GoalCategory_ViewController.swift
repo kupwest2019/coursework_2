@@ -17,6 +17,7 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
     @IBOutlet weak var picker_goal: UIPickerView!
     let date_helper : DealWithDate = DealWithDate()
 
+    @IBOutlet weak var btn_create: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         picker_goal.delegate = self
@@ -30,6 +31,8 @@ class GoalCategory_ViewController: UIViewController,UIPickerViewDelegate, UIPick
             let index = number.firstIndex(of: n)
             
             self.picker_goal.selectRow(index!, inComponent: 0, animated: true)
+            
+            self.btn_create.setTitle("UPDATE", for: .normal)
         }
         // Do any additional setup after loading the view.
     }
