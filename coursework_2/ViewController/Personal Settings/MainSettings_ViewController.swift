@@ -41,7 +41,7 @@ class MainSettings_ViewController: UIViewController {
         // 3
         
         let nav_bar : NavigationBarCustom = ChangeTextNavigationBarAttribute()
-        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.orange, text1: "SETTINGS", color2: myColor.orange, text2: "")
+        self.navigationItem.titleView = nav_bar.textNavBarAttributes(color1: myColor.red, text1: "SETTINGS", color2: myColor.orange, text2: "")
         
         
 

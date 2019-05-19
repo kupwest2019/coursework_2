@@ -224,12 +224,12 @@ class TaskTrackerCalendar_ViewController: UIViewController {
         
         // 2
         let myColor = MyCustomColors()
-        // nav?.barStyle = UIBarStyle.blackOpaque
-        //nav?.backgroundColor = myColor.green
-        nav?.tintColor = myColor.red
+        nav?.barStyle = UIBarStyle.blackOpaque
+        nav?.backgroundColor = myColor.category_green
+        nav?.tintColor = myColor.light_orange
         
         let a : NavigationBarCustom = ChangeTextNavigationBarAttribute()
-        self.navigationItem.titleView = a.textNavBarAttributes(color1: UIColor.black, text1: "ACTIVITY", color2: UIColor(rgb: 0x076037, alphaVal: 1.0), text2: "tracker")
+        self.navigationItem.titleView = a.textNavBarAttributes(color1: myColor.category_light_orange, text1: "ACTIVITY", color2: myColor.orange, text2: "tracker")
         //self.clearAndsetHeaderSize()
         // Do any additional setup after loading the view.
     }
