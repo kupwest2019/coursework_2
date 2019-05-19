@@ -2506,7 +2506,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="p2o-y4-aXs"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-HU-VzT" customClass="ForElements" customModule="coursework_2" customModuleProvider="target">
@@ -3043,7 +3043,7 @@
         <segue reference="y4k-1l-3L0"/>
         <segue reference="RXe-Ks-RG4"/>
         <segue reference="429-Fl-KeZ"/>
-        <segue reference="Dbf-8u-PYN"/>
+        <segue reference="LTQ-QI-3Tx"/>
         <segue reference="Zb1-Ge-pua"/>
         <segue reference="oPy-3t-WBJ"/>
         <segue reference="Wk3-OG-09P"/>
