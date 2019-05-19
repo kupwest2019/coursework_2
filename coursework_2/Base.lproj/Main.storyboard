@@ -2231,13 +2231,24 @@
                     <view key="view" contentMode="scaleToFill" id="Y2b-xj-WGz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-fi-aLb">
+                                <rect key="frame" x="16" y="64" width="288" height="455"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H4s-Ct-MAj" firstAttribute="bottom" secondItem="xMt-fi-aLb" secondAttribute="bottom" id="DIM-Fe-3fE"/>
+                            <constraint firstItem="xMt-fi-aLb" firstAttribute="top" secondItem="H4s-Ct-MAj" secondAttribute="top" id="baW-zh-BdE"/>
+                            <constraint firstItem="H4s-Ct-MAj" firstAttribute="trailing" secondItem="xMt-fi-aLb" secondAttribute="trailing" constant="16" id="l63-DF-59N"/>
+                            <constraint firstItem="xMt-fi-aLb" firstAttribute="leading" secondItem="H4s-Ct-MAj" secondAttribute="leading" constant="16" id="wwj-D5-BdN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H4s-Ct-MAj"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ6-fZ-QZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4541" y="2514"/>
+            <point key="canvasLocation" x="4539.375" y="2513.0281690140846"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ltk-lO-tDI">
@@ -2247,7 +2258,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zNX-cD-wp8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help" translatesAutoresizingMaskIntoConstraints="NO" id="zNX-cD-wp8">
                                 <rect key="frame" x="16" y="64" width="288" height="455"/>
                             </imageView>
                         </subviews>
@@ -3029,7 +3040,9 @@
     </scenes>
     <resources>
         <image name="Logo" width="269" height="181"/>
+        <image name="about" width="320" height="479"/>
         <image name="calendar" width="25" height="25"/>
+        <image name="help" width="320" height="317.5"/>
         <image name="idea" width="25" height="25"/>
         <image name="leftArrow" width="25" height="25"/>
         <image name="new" width="25" height="25"/>
